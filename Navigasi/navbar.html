@@ -25,7 +25,7 @@
     <title>Navigasi</title>
   </head>
   <body>
-    <header>
+    <header class="mt-[25px]">
       <div class="flex items-center justify-between px-8">
         <!-- untuk logo -->
         <img src="./Logo (9).png" alt="" class="w-[111px] h-[51px]" />
@@ -34,7 +34,7 @@
             <li class="text-[#213D34] font-[500] text-[16px]">Beranda</li>
 
             <li class="flex items-center gap-1">
-              <span>Fitur</span>
+              <span class="text-[#213D34] font-[500] text-[16px]">Fitur</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -45,20 +45,24 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up "
+                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-[#213D34]"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M6 15l6 -6l6 6" />
               </svg>
             </li>
 
-            <li>Artikel</li>
-            <li>Tentang Kami</li>
-            <li>Kontak</li>
+            <li class="text-[#213D34] font-[500] text-[16px]">Artikel</li>
+            <li class="text-[#213D34] font-[500] text-[16px]">Tentang Kami</li>
+            <li class="text-[#213D34] font-[500] text-[16px]">Kontak</li>
           </ul>
         </nav>
-        <div>
-          <button>Coba Kalkulator</button>
+        <div class="">
+          <button
+            class="bg-[#213D34] w-[170px] h-[48px] rounded-[24px] text-white font-[500] text-[16px] flex items-center justify-center gap-2"
+          >
+            Coba Kalkulator
+          </button>
         </div>
       </div>
     </header>
