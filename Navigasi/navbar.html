@@ -35,7 +35,10 @@
               Beranda
             </li>
 
-            <li id="btn-fitur" class="flex items-center gap-1">
+            <li
+              id="btn-fitur"
+              class="relative flex items-center gap-1 cursor-pointer select-none"
+            >
               <div
                 class="flex items-center gap-1 text-[#213D34] font-medium text-[16px] font-karla"
               >
@@ -50,38 +53,145 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up w-4 h-4 transition-transform duration-300 text-[#213D34]"
+                  class="w-4 h-4 transition-transform duration-300 text-[#213D34]"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M6 15l6 -6l6 6" />
+                  <path d="M6 9l6 6l6 -6" />
                 </svg>
               </div>
 
+              <!-- yang tampil di dropdown -->
               <ul
-                class="absolute left-0 top-full z-50 min-w-[180px] rounded-xl border border-gray-100 bg-white p-2 shadow-xl opacity-0 invisible translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+                class="absolute left-0 top-full mt-2 z-50 w-56 rounded-2xl border border-gray-100 bg-white p-2 shadow-xl opacity-0 invisible translate-y-2 transition-all duration-200"
               >
                 <li>
                   <a
                     href="#"
-                    class="block rounded-lg px-4 py-2.5 text-[14px] text-[#213D34] hover:bg-[#213D34]/5 transition-colors"
-                    >Fitur 1</a
+                    class="group flex items-center gap-3 rounded-xl p-2.5 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
                   >
+                    <span
+                      class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#213D34]/10 group-hover:bg-white/20"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-calculator"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M4 5a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -14"
+                        />
+                        <path
+                          d="M8 8a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1l0 -1"
+                        />
+                        <path d="M8 14l0 .01" />
+                        <path d="M12 14l0 .01" />
+                        <path d="M16 14l0 .01" />
+                        <path d="M8 17l0 .01" />
+                        <path d="M12 17l0 .01" />
+                        <path d="M16 17l0 .01" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="font-semibold text-sm leading-tight">
+                        Kalkulator
+                      </p>
+                      <p class="text-xs opacity-70 mt-0.5">
+                        Hitung kebutuhan gizi
+                      </p>
+                    </div>
+                  </a>
                 </li>
+
                 <li>
                   <a
                     href="#"
-                    class="block rounded-lg px-4 py-2.5 text-[14px] text-[#213D34] hover:bg-[#213D34]/5 transition-colors"
-                    >Fitur 2</a
+                    class="group flex items-center gap-3 rounded-xl p-2.5 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
                   >
+                    <span
+                      class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#213D34]/10 group-hover:bg-white/20"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-list"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
+                        />
+                        <path
+                          d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2"
+                        />
+                        <path d="M9 12l.01 0" />
+                        <path d="M13 12l2 0" />
+                        <path d="M9 16l.01 0" />
+                        <path d="M13 16l2 0" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="font-semibold text-sm leading-tight">
+                        Cek Gizi
+                      </p>
+                      <p class="text-xs opacity-70 mt-0.5">
+                        Kenali status gizimu
+                      </p>
+                    </div>
+                  </a>
                 </li>
+
                 <li>
                   <a
                     href="#"
-                    class="block rounded-lg px-4 py-2.5 text-[14px] text-[#213D34] hover:bg-[#213D34]/5 transition-colors"
-                    >Fitur 3</a
+                    class="group flex items-center gap-3 rounded-xl p-2.5 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
                   >
+                    <span
+                      class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#213D34]/10 group-hover:bg-white/20"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-book"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                        <path d="M3 6l0 13" />
+                        <path d="M12 6l0 13" />
+                        <path d="M21 6l0 13" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="font-semibold text-sm leading-tight">Edukasi</p>
+                      <p class="text-xs opacity-70 mt-0.5">
+                        Pelajari tentang gizi
+                      </p>
+                    </div>
+                  </a>
                 </li>
               </ul>
+              <!-- akhir tag buat dropdown nya -->
             </li>
 
             <li class="text-[#213D34] font-medium text-[16px] font-karla">
