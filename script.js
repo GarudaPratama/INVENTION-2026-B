@@ -25,5 +25,6 @@ $(document).ready(function () {
         .addClass('opacity-0 invisible translate-y-2')
         .removeClass('opacity-100 visible translate-y-0');
     }
+  });
     
 })
