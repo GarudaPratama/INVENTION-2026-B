@@ -1,27 +1,89 @@
+```html
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- link tailwind dan font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+    <style type="text/tailwindcss">
+      @theme {
+        --font-karla: "Karla", sans-serif;
+        --font-rubik: "Rubik", sans-serif;
+      }
+    </style>
+
     <title>Lomba Invention 2026 Tim B</title>
   </head>
 
   <body class="h-[10000px]">
+    <header id="navbar" class="fixed top-0 left-0 z-50 w-full"></header>
 
-    <header id="navbar"></header>
+    <!-- Hero Section -->
+    <section
+      class="fixed top-0 left-0 z-10 flex h-screen w-full items-center justify-center overflow-hidden px-6"
+    >
+      <!-- svg background -->
+      <svg
+        class="absolute inset-0 h-full w-full"
+        viewBox="0 0 1920 1220"
+        fill="none"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1920 1220H1334.5C1278.61 1220 1233.27 1174.83 1233 1119H0V0H1920V1220Z"
+          fill="#F1F2ED"
+        />
+      </svg>
+
+      <img src="" alt="" />
+      <img src="" alt="" />
+      <img src="" alt="" />
+
+      <div
+        class="relative z-20 flex max-w-2xl flex-col items-center text-center"
+      >
+        <h1
+          class="text-[72px] font-black text-[#1e3a2b] tracking-normal uppercase leading-[1.1]"
+        >
+          Makan Sehat<br />Itu Ilmu, Bukan<br />Privilege
+        </h1>
+
+        <p
+          class="mt-6 text-[18px] text-[#213D34] font-medium leading-relaxed max-w-[600px]"
+        >
+          Akses panduan nutrisi berbasis sains, raih pola makan seimbang, dan
+          kembangkan gaya hidup sehat untuk semua orang. Mulai perjalanan gizimu
+          hari ini!
+        </p>
+
+        <button
+          class="mt-6 font-karla text-[#213D34] bg-[#D9EF78] font-bold text-[20px] py-2.5 px-6 rounded-full"
+        >
+          Cek Keperluan Gizi Mu
+        </button>
+      </div>
+    </section>
 
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
 
     <script src="script.js"></script>
     <script src="./smooth-scroll/smooth.js"></script>
     <script src="./smooth-scroll/smooth-tombol.js"></script>
-
   </body>
 </html>
+```
