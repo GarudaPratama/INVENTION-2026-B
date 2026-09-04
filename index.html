@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <html lang="en">
@@ -11,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -28,66 +31,250 @@
     <header id="navbar" class="fixed top-0 left-0 z-50 w-full"></header>
 
     <!-- Hero Section -->
- 
-<section class="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden px-6">
-  <!-- svg background -->
-  <svg
-    class="absolute inset-0 h-full w-full pointer-events-none z-0"
-    viewBox="0 0 1920 1220"
-    fill="none"
-    preserveAspectRatio="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M1920 1220H1334.5C1278.61 1220 1233.27 1174.83 1233 1119H0V0H1920V1220Z"
-      fill="#F1F2ED"
-    />
-  </svg>
 
-  <!-- Ornamen Makanan -->
-  <img
-    src="./assets/bayam.png"
-    alt="Bayam"
-    class="absolute top-12 left-32 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12"
-  />
-  <img
-    src="./assets/tempe.png"
-    alt="Tempe"
-    class="absolute bottom-16 left-24 w-[400px] h-[400px] object-contain pointer-events-none z-10"
-  />
-  <img
-    src="./assets/wortel.png"
-    alt="Wortel"
-    class="absolute top-12 right-32 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6"
-  />
-  <img
-    src="./assets/brokoli.png"
-    alt="Brokoli"
-    class="absolute bottom-4 right-24 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6"
-  />
+    <section
+      class="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden px-6"
+    >
+      <!-- svg background -->
+      <svg
+        class="absolute inset-0 h-full w-full pointer-events-none z-0"
+        viewBox="0 0 1920 1220"
+        fill="none"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1920 1220H1334.5C1278.61 1220 1233.27 1174.83 1233 1119H0V0H1920V1220Z"
+          fill="#F1F2ED"
+        />
+      </svg>
 
-  <!-- Main Content -->
-  <div class="relative z-20 flex max-w-2xl flex-col items-center text-center">
-    <h1 class="text-[72px] font-black text-[#1e3a2b] tracking-normal uppercase leading-[1.1]">
-      Makan Sehat<br />Itu Ilmu, Bukan<br />Privilege
-    </h1>
+      <!-- Ornamen Makanan -->
+      <img
+        src="./assets/bayam.png"
+        alt="Bayam"
+        class="absolute top-12 left-32 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12"
+      />
+      <img
+        src="./assets/tempe.png"
+        alt="Tempe"
+        class="absolute bottom-16 left-24 w-[400px] h-[400px] object-contain pointer-events-none z-10"
+      />
+      <img
+        src="./assets/wortel.png"
+        alt="Wortel"
+        class="absolute top-12 right-32 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6"
+      />
+      <img
+        src="./assets/brokoli.png"
+        alt="Brokoli"
+        class="absolute bottom-4 right-24 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6"
+      />
 
-    <p class="mt-6 text-[18px] text-[#213D34] font-medium leading-relaxed max-w-[600px]">
-      Akses panduan nutrisi berbasis sains, raih pola makan seimbang, dan kembangkan gaya hidup sehat untuk semua orang. Mulai perjalanan gizimu hari ini!
-    </p>
+      <!-- Main Content -->
+      <div
+        class="relative z-20 flex max-w-2xl flex-col items-center text-center"
+      >
+        <h1
+          class="text-[74px] font-black font-rubik text-[#213D34] tracking-normal uppercase leading-[1.1]"
+        >
+          Makan Sehat<br />Itu Ilmu, Bukan<br />Privilege
+        </h1>
 
-    <button class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group">
-      <span class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </span>
-      <span class="absolute flex items-center justify-center w-full h-full text-[#213D34] transition-all duration-700 transform group-hover:translate-x-full ease">Cek Keperluan Gizi Mu</span>
-      <span class="relative invisible">Cek Keperluan Gizi Mu</span>
-    </button>
-  </div>
-</section>
+        <p
+          class="mt-6 text-[18px] font-karla text-[#213D34] font-medium leading-relaxed max-w-[600px]"
+        >
+          Akses panduan nutrisi berbasis sains, raih pola makan seimbang, dan
+          kembangkan gaya hidup sehat untuk semua orang. Mulai perjalanan gizimu
+          hari ini!
+        </p>
 
+        <button
+          class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group"
+        >
+          <span
+            class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </span>
+          <span
+            class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
+            >Cek Keperluan Gizi Mu</span
+          >
+          <span class="relative invisible font-karla font-black"
+            >Cek Keperluan Gizi Mu</span
+          >
+        </button>
+      </div>
+    </section>
+
+    <!-- section about -->
+    <section
+      class="relative min-h-screen w-fullflex items-center justify-center px-6 py-20"
+    >
+      <div
+        class="max-w-[1152px] w-full mx-auto grid grid-cols-12 gap-12 items-center"
+      >
+        <!-- gambar buah -->
+        <div class="col-span-5 w-full">
+          <img
+            src="./assets/buah.png"
+            alt="Gizify"
+            class="w-full h-[520px] object-cover rounded-[28px]"
+          />
+        </div>
+
+        <!-- deskripsi -->
+        <div class="col-span-7 flex flex-col justify-center">
+          <div>
+            <span
+              class="inline-block font-semibold bg-[#D9EF78] text-[#213D34] font-karla text-[15px] px-4 py-1.5 rounded-full mb-4"
+            >
+              Apa Itu Gizify?
+            </span>
+          </div>
+
+          <h2
+            class="text-[54px] font-semibold font-rubik text-[#1E3A2B] tracking-tight mb-4"
+          >
+            Tentang Gizify
+          </h2>
+
+          <p
+            class="text-[#213D34] font-medium text-[18px] leading-relaxed mb-8 max-w-2xl"
+          >
+            Gizify hadir untuk membantumu memahami gizi dengan cara yang mudah,
+            menyenangkan, dan relevan dengan kehidupan sehari-hari. Kami percaya
+            bahwa informasi gizi yang tepat adalah kunci hidup sehat dan
+            berkualitas.
+          </p>
+
+          <!-- bagian card -->
+          <div class="grid grid-cols-3 gap-4">
+            <!-- Card 1: Edukasi Gizi -->
+            <div
+              class="bg-[#F1F2ED] p-5 rounded-[24px] flex flex-col items-start"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34]"
+              >
+                <!-- Icon Bunga/Tanaman -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-book"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                  <path d="M3 6l0 13" />
+                  <path d="M12 6l0 13" />
+                  <path d="M21 6l0 13" />
+                </svg>
+              </div>
+              <h3
+                class="font-bold text-[18px] font-karla text-[#213D34] mb-1.5"
+              >
+                Edukasi Gizi
+              </h3>
+              <p class="text-[15px] text-[#555555] font-karla font-medium">
+                Menyajikan informasi gizi berbasis sains dan mudah dipahami
+                semua orang.
+              </p>
+            </div>
+
+            <!-- Card 2: Gaya Hidup Seimbang -->
+            <div class="bg-[#F1F2ED] p-5 rounded-2xl flex flex-col items-start">
+              <div
+                class="w-12 h-12 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34]"
+              >
+                <!-- Icon Daun -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-seedling"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M12 10a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" />
+                  <path d="M12 14a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3" />
+                  <path d="M12 20l0 -10" />
+                </svg>
+              </div>
+              <h3
+                class="font-bold text-[18px] font-karla text-[#213D34] mb-1.5"
+              >
+                Gaya Hidup Seimbang
+              </h3>
+              <p class="text-[15px] text-[#555555] font-karla font-medium">
+                Mendukungmu membangun kebiasaan sehat yang seimbang dan
+                berkelanjutan.
+              </p>
+            </div>
+
+            <!-- Card 3: Mempunyai Beragam Fitur -->
+            <div class="bg-[#F1F2ED] p-5 rounded-2xl flex flex-col items-start">
+              <div
+                class="w-12 h-12 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34]"
+              >
+                <!-- Icon Fitur -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-category"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 4h6v6h-6l0 -6" />
+                  <path d="M14 4h6v6h-6l0 -6" />
+                  <path d="M4 14h6v6h-6l0 -6" />
+                  <path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-[18px] font-karla text-[#213D34] mb-1.5">
+                Mempunyai Beragam Fitur
+              </h3>
+              <p class="text-[15px] text-[#555555] font-karla font-medium">
+                Fitur yang terhubung satu sama lain salah satu fiturnya adalah
+                BMI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
