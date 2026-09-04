@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+  // Load Navbar
     $('#navbar').load('./Navigasi/navbar.html', function() {
         
         $(this).find('img').attr('src', './Navigasi/Logo-9.png');
