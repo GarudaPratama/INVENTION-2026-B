@@ -66,6 +66,15 @@ $(document).ready(function () {
       categoryText = 'Overweight (Kelebihan Berat Badan)';
     }
 
+    // Ganti Avatar Berdasarkan Gender
+    if (gender === 'wanita') {
+      $('#avatarMale').addClass('hidden');
+      $('#avatarFemale').removeClass('hidden');
+    } else {
+      $('#avatarFemale').addClass('hidden');
+      $('#avatarMale').removeClass('hidden');
+    }
+    
     // 5. Tampilkan Hasil di Halaman BMI
     $('#bmiResult').text(bmiResult);
     $('#bmiCategory').text(categoryText);
