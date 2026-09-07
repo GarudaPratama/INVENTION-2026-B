@@ -30,6 +30,8 @@ $(document).ready(function () {
     
 })
 
+// observer = pemantau
+// fungsi untuk animasi smooth fade in saat elemen terlihat
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
