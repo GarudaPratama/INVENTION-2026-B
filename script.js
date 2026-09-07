@@ -29,3 +29,18 @@ $(document).ready(function () {
   });
     
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.20 } // animasi baru berjalan saat 20% bagian dari elemen yang dianimasikan terlihat di layar
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+});
