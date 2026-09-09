@@ -72,3 +72,30 @@ const foodDatabase = [
     fact: "Air kelapa 78% lebih murah. Kombucha sering kali mengandung gula tambahan dari proses fermentasinya. Air kelapa murni ngasih hidrasi dan elektrolit jauh lebih bersih."
   },
 ];
+
+const tipsDatabase = [
+  {
+    targetGroup: "overweight",
+    category: "Gaya Hidup Sehat",
+    tips: `Menjaga berat badan ideal dimulai dari gizi seimbang, bukan diet ketat yang menyiksa.
+              Pilih aktivitas fisik yang kamu nikmati dan lakukan secara konsisten setiap hari.
+              Cukupi tidur 7–8 jam serta kelola stres agar hormon metabolisme tubuh tetap seimbang.
+              Fokus pada perubahan kecil yang konsisten untuk hasil sehat yang bertahan lama.`
+  },
+  {
+    targetGroup: "underweight",
+    category: "Protein Padat Gizi",
+    tips: `Naikkan berat badan secara sehat dengan mengonsumsi makanan padat nutrisi dan kaya kalori.
+              Lakukan latihan beban secara rutin untuk membangun massa otot, bukan sekadar menimbun lemak.
+              Makan lebih sering dalam porsi sedang dan selipkan camilan sehat di antara waktu makan utama.
+              Istirahat yang cukup serta terapkan pola makan konsisten agar berat badan naik secara optimal.`
+  },
+  {
+    targetGroup: "normal",
+    category: "Lemak Sehat & Imunitas",
+    tips: `Mempertahankan berat badan ideal berfokus pada asupan gizi seimbang untuk menjaga energi harian.
+              Rutin berolahraga untuk memperkuat otot, menjaga kebugaran, dan meningkatkan kesehatan jantung.
+              Cukupi istirahat dan kelola stres dengan baik agar fungsi metabolisme tubuh tetap optimal.
+              Konsistensi gaya hidup sehat adalah kunci utama menjaga kualitas hidup jangka panjang.`
+  }
+]
