@@ -50,6 +50,7 @@ $(document).ready(function () {
   filteredFoods.forEach(item => {
     const cardHtml = `
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex flex-col gap-4">
+      
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-[#213D34] bg-emerald-100 px-3 py-1 rounded-full">
             ${item.subcategory}

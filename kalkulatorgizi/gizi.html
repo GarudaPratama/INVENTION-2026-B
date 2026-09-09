@@ -30,81 +30,64 @@
     <!-- Tempat Navbar Loaded -->
     <div id="navbar-container"></div>
 
-    <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 my-6">
-      <!-- ini bagian button nya nnti mau dipindahin -->
-      <!-- <div class="mb-6">
-            <a
-                href="/bmi/bmi.html"
-                class="relative inline-flex items-center justify-center gap-2 overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium rounded-[24px] font-karla transition-colors duration-300 group px-6 h-[48px] hover:text-white"
-            >
-                <span
-                class="absolute inset-0 bg-[#213D34] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"
-                ></span>
-
-                <span class="relative z-10 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                </svg>
-                Kembali ke BMI
-                </span>
-            </a>
-        </div> -->
-
-      <!-- bagian atas kalori -->
+    <section class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 my-6">
       <!-- Container Utama Banner -->
       <div
-        class="relative w-[1256px] h-[480px] bg-[#D9EF78] text-[#213D34] rounded-[50px] px-16 py-10 mx-auto flex items-center justify-between overflow-hidden font-rubik"
+        class="relative w-full max-w-[1256px] min-h-[480px] bg-[#D9EF78] text-[#213D34] rounded-[100px] px-16 py-10 mx-auto flex items-center justify-between overflow-hidden font-rubik"
       >
         <!-- Hiasan SVG Daun di Latar Belakang Kanan -->
         <svg
-          class="absolute -right-8 -bottom-16 w-[520px] h-[520px] text-[#213D34]/20 pointer-events-none"
-          viewBox="0 0 200 200"
+          class="absolute right-12 -bottom-8 w-[520px] h-[520px] text-[#213D34]/20 pointer-events-none"
+          width="581"
+          height="405"
+          viewBox="0 0 581 405"
           fill="none"
-          stroke="currentColor"
-          stroke-width="8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M 40,170 C 60,110 100,50 170,30 C 130,100 110,130 90,170 Z"
+            d="M580.013 56.8676C580.858 52.3488 580.019 47.6792 577.657 43.7451C575.295 39.8111 571.573 36.8866 567.199 35.5269C451.507 -0.380593 348.38 12.0955 291.254 69.1595C253.504 106.89 240.203 160.776 253.824 218.697C234.385 232.902 218.23 251.15 206.465 272.19L178.775 225.881C205.717 193.107 214.633 154.2 203.284 117.23C185.634 60.2187 123.118 16.516 36.0737 0.315511C31.5707 -0.523894 26.9145 0.325199 22.989 2.7016C19.0635 5.078 16.1421 8.81622 14.7794 13.2066C-11.6081 98.0567 -2.27718 173.976 39.6966 216.261C53.5268 230.3 70.9547 240.235 90.0639 244.972C108.669 249.338 128.022 249.451 146.691 245.303L189.292 316.25L173.126 381.504C171.93 386.333 172.694 391.438 175.251 395.696C177.807 399.954 181.947 403.015 186.758 404.207C191.57 405.399 196.66 404.624 200.908 402.052C205.157 399.48 208.216 395.322 209.412 390.493L226.04 323.373C233.135 294.385 249.923 268.7 273.601 250.604C293.904 268.624 318.161 281.585 344.407 288.437C369.84 294.825 396.55 294.035 421.588 286.154C498.503 262.111 557.723 176.384 580.013 56.8676ZM66.1197 189.76C36.569 159.997 29.2829 105.07 45.7272 40.7305C110.088 56.0948 155.047 88.2734 167.466 128.407C173.954 149.34 170.485 171.02 157.855 191.106L116.26 121.834C113.64 117.714 109.518 114.786 104.772 113.674C100.026 112.563 95.0318 113.357 90.8544 115.886C86.6771 118.414 83.647 122.479 82.4102 127.212C81.1734 131.945 81.8277 136.972 84.2337 141.222L125.829 210.494C102.242 212.333 81.5506 205.299 66.1197 189.76ZM410.495 250.383C375.533 261.313 339.465 253.876 306.974 229.569L459.013 137.509C463.125 134.874 466.05 130.733 467.166 125.97C468.282 121.207 467.499 116.198 464.985 112.012C462.472 107.825 458.425 104.792 453.71 103.56C448.994 102.327 443.981 102.992 439.741 105.413L287.718 197.308C281.409 157.093 291.679 121.565 317.712 95.6678C362.294 51.1503 444.497 40.5448 539.937 66.5796C518.253 163.441 470.561 231.587 410.495 250.383Z"
+            fill="#213D34"
+            fill-opacity="0.3"
           />
-          <path d="M 80,120 C 40,110 20,80 30,50 C 60,50 75,80 80,120 Z" />
         </svg>
 
         <!-- KOLOM KIRI: Informasi & Dropdown Aktivitas -->
-        <div class="relative z-10 w-[520px] flex flex-col gap-4">
-          <div>
-            <span
-              class="text-[13px] font-bold uppercase tracking-wider opacity-80 block mb-1"
+        <div class="relative z-10 w-[520px]">
+          <span
+            class="text-[16px] font-medium uppercase tracking-wider font-rubik block mb-1"
+          >
+            KEBUTUHAN ENERGI HARIANMU
+          </span>
+
+          <h1
+            class="text-[52px] font-extrabold leading-tight font-rubik mb-4"
+          >
+            Rekomendasi Asupan Gizi
+          </h1>
+
+          <p class="text-[16px] font-medium leading-relaxed mb-6">
+            Tubuhmu butuh minimal
+            <span id="textBmr" class="font-bold underline decoration-2"
+              >0 kcal</span
             >
-              KEBUTUHAN ENERGI HARIANMU
-            </span>
-
-            <h1 class="text-[44px] font-extrabold leading-tight mb-2">
-              Rekomendasi Asupan Gizi
-            </h1>
-
-            <p class="text-[15px] font-medium leading-relaxed opacity-90">
-              Tubuhmu butuh minimal
-              <span id="textBmr" class="font-bold underline decoration-2"
-                >0 kcal</span
-              >
-              sehari, bahkan saat kamu cuma rebahan seharian.
-            </p>
-          </div>
+            sehari, bahkan saat kamu tidak berolahraga.
+          </p>
 
           <!-- Garis Pemisah -->
-          <div class="h-[1.5px] bg-[#213D34]/30 w-full my-1"></div>
+          <hr class="border-t-2 border-[#213D34]/30 w-[400px] mb-4" />
 
           <!-- Dropdown Pilih Aktivitas -->
           <div class="flex flex-col gap-2">
-            <label for="selectAktivitas" class="text-[17px] font-bold">
+            <label
+              for="selectAktivitas"
+              class="text-[18px] font-semibold font-rubik"
+            >
               Seberapa aktif harimu?
             </label>
 
             <select
               id="selectAktivitas"
-              class="w-full border-2 border-[#213D34] rounded-full px-5 py-3 text-[15px] font-medium bg-[#D9EF78] outline-none cursor-pointer"
+              class="w-full border-2 border-[#213D34] bg-transparent rounded-full px-5 py-3 text-[16px] font-normal font-rubik text-[#6D6D6D] outline-none cursor-pointer"
             >
               <option value="1.2">Jarang / Tidak Olahraga</option>
               <option value="1.375">Aktivitas Ringan (1-3x/minggu)</option>
@@ -118,38 +101,60 @@
         <div class="relative z-10 w-[420px] flex flex-col items-center gap-5">
           <!-- Box Hasil TDEE -->
           <div
-            class="w-full border-2 border-[#213D34] rounded-[30px] p-8 text-center bg-[#D9EF78]/70 backdrop-blur-xs"
+            class="w-full border-2 border-[#213D34] rounded-[30px] p-8 text-center"
           >
-            <span class="text-[18px] font-bold block mb-1">
-             Target Kalori Harianmu
+            <span class="text-[18px] font-medium font-rubik block mb-1">
+              Target Kalori Harianmu
             </span>
 
             <div
               id="textTdee"
-              class="text-[48px] font-black leading-tight my-1"
+              class="text-[48px] font-extrabold font-karla leading-tight my-1"
             >
               0 kcal/hari
             </div>
 
-            <p class="text-[14px] font-medium opacity-90">
+            <p class="text-[18px] font-rubik text-[#213D34] font-medium ">
               sudah disesuaikan sama aktivitasmu
             </p>
           </div>
 
           <!-- Tombol Kembali -->
           <a
-            href="../bmi/bmi.html"
-            class="w-[280px] border-2 border-[#213D34] bg-[#D9EF78] rounded-full py-3 text-center text-[15px] font-bold hover:bg-[#213D34] hover:text-[#D9EF78] transition-colors cursor-pointer"
+            href="/bmi/bmi.html"
+            class="relative inline-flex items-center justify-center gap-2 overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium rounded-full font-karla transition-colors duration-300 group px-6 h-[48px] hover:text-white"
           >
-            Kembali Ke BMI
+            <span
+              class="absolute inset-0 bg-[#213D34] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"
+            ></span>
+
+            <span class="relative z-10 flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                />
+              </svg>
+              Kembali ke BMI
+            </span>
           </a>
         </div>
       </div>
-      <div class="mb-4">
-        <h2 class="text-xl font-bold text-[#213D34]">
-          Menu Makanan yang Direkomendasikan
+
+      <!-- Judul Bagian Bawah -->
+      <div class="mt-24 mb-4 text-center">
+        <h2 class="text-[36px] font-bold font-rubik text-[#213D34] ">
+          Menu Yang Cocok Buat Kebutuhanmu
         </h2>
-        <p class="text-xs text-gray-500">
+        <p class="text-[18px] text-[#213D34] font-karla font-medium">
           Perbandingan Opsi Sultan vs Opsi Hemat sesuai kategori gizi Anda
         </p>
       </div>
@@ -157,7 +162,7 @@
       <div id="food-container" class="grid grid-cols-1 gap-6">
         <!-- Card hasil render JS -->
       </div>
-    </main>
+    </section>
 
     <!-- Library & Script -->
     <script
