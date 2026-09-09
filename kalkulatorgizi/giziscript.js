@@ -1,11 +1,10 @@
 $(document).ready(function () {
-    // SVG Icon Lampu (Rapi, ringan, & flex-shrink-0 agar tidak gepeng)
+  // SVG Icon Lampu (Rapi, ringan, & flex-shrink-0 agar tidak gepeng)
   const lampIconSvg = `
     <svg class="w-6 h-6 text-emerald-950 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2h-0a2 2 0 01-2-2v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
     </svg>
   `;
-
 
   $("#navbar, #navbar-container").load("../navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "../navigasi/Logo-9.png");
@@ -31,7 +30,7 @@ $(document).ready(function () {
     }
   });
 
-  // fungsi utama TDEE dan Rekomendasi makanan
+  // Fungsi Utama TDEE dan Rekomendasi Makanan
   const userBmr = parseInt(localStorage.getItem("userBmr")) || 1500;
   const userStatus = localStorage.getItem("userBmiStatus") || "normal";
 
@@ -70,7 +69,7 @@ $(document).ready(function () {
           </h3>
         </div>
 
-       <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-2 gap-6">
           <div class="p-6 bg-[#F3D0E7]/60 rounded-[30px] flex flex-col justify-between gap-4 border border-[#F3D0E7]">
             <div>
               <div class="flex justify-between items-start gap-2 mb-2">
@@ -96,19 +95,41 @@ $(document).ready(function () {
 
         </div>
 
-       <div class="bg-[#D9EF78] p-6 rounded-[32px] font-karla text-[#213D34] shadow-sm">
-           <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">${lampIconSvg}</span>
-        <span class="font-extrabold text-[16px] tracking-wide uppercase">
-         Fakta Nutrisi
-          </span>
-         </div>
-  <p class="text-[15px] font-medium leading-relaxed">
-    ${item.fact}
-  </p>
-</div>
+        <div class="bg-[#D9EF78] p-6 rounded-[32px] font-karla text-[#213D34] shadow-sm">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">${lampIconSvg}</span>
+            <span class="font-extrabold text-[16px] tracking-wide uppercase">
+              Fakta Nutrisi
+            </span>
+          </div>
+          <p class="text-[15px] font-medium leading-relaxed">
+            ${item.fact}
+          </p>
+        </div>
       </div>
     `;
     $container.append(cardHtml);
   });
+
+  // Render Card Tips & Panduan Gaya Hidup (Paling Bawah)
+  const userTip = tipsDatabase.find((item) => item.targetGroup === userStatus);
+
+  if (userTip) {
+    $("#tips-section").removeClass("hidden");
+
+    const tipsHtml = `
+      <div class="bg-[#213D34] text-[#F1F2ED] rounded-[40px] p-8 md:p-10 shadow-md font-karla border-2 border-[#213D34]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-[#D9EF78] text-[#213D34] font-extrabold text-[14px] uppercase px-4 py-1.5 rounded-full font-rubik">
+            ${userTip.category}
+          </span>
+        </div>
+        <p class="text-[16px] md:text-[18px] leading-relaxed whitespace-pre-line font-medium opacity-95">
+          ${userTip.tips}
+        </p>
+      </div>
+    `;
+
+    $("#tips-container").html(tipsHtml);
+  }
 });
