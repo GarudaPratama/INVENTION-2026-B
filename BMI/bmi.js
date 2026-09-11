@@ -1,4 +1,19 @@
 $(document).ready(function () {
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.20 } // Efek aktif saat 20% elemen terlihat di layar
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  
   
     $('#navbar, #navbar-container').load('../navigasi/navbar.html', function() {
         $(this).find('img').attr('src', '../navigasi/Logo-9.png');

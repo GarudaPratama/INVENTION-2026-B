@@ -1,5 +1,20 @@
 $(document).ready(function () {
-  // SVG Icon Lampu (Rapi, ringan, & flex-shrink-0 agar tidak gepeng)
+  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.20 } // Efek aktif saat 20% elemen terlihat di layar
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // SVG Icon Lampu
   const lampIconSvg = `
     <svg class="w-6 h-6 text-emerald-950 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2h-0a2 2 0 01-2-2v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -10,7 +25,7 @@ $(document).ready(function () {
     $(this).find("img").attr("src", "../navigasi/Logo-9.png");
   });
 
-  // 2. Logika Dropdown Navigasi
+  // Logika Dropdown Navigasi
   $(document).on("click", "#btn-fitur", function (e) {
     e.stopPropagation();
     $(this).find("div > svg").toggleClass("rotate-180");
@@ -36,7 +51,6 @@ $(document).ready(function () {
 
   $("#textBmr").text(userBmr + " kcal");
 
-  // Kalkulasi TDEE Awal (Aktivitas Minimal = BMR x 1.2)
   function updateTdee(multiplier) {
     const totalKalori = Math.round(userBmr * multiplier);
     $("#textTdee").text(totalKalori + " kcal/hari");
@@ -49,7 +63,6 @@ $(document).ready(function () {
     updateTdee(pengali);
   });
 
-  // Render Card Rekomendasi Makanan
   const filteredFoods = foodDatabase.filter(
     (item) => item.targetGroup === userStatus,
   );
@@ -58,8 +71,7 @@ $(document).ready(function () {
 
   filteredFoods.forEach((item) => {
     const cardHtml = `
-      <div class="border-2 border-emerald-950 rounded-[60px] p-10 flex flex-col gap-6 mb-8">
-      
+      <div class="reveal border-2 border-emerald-950 rounded-[60px] p-10 flex flex-col gap-6 mb-8">
         <div class="flex flex-col items-center text-center">
           <span class="text-[15px] font-semibold uppercase text-[#213D34] bg-[#D9EF78] px-4 py-1.5 rounded-full mb-3 font-rubik">
             ${item.subcategory}
@@ -78,10 +90,9 @@ $(document).ready(function () {
               </div>
               <p class="text-[15px] text-pink-900 leading-relaxed font-karla">${item.expensive.note}</p>
             </div>
-            <span class="text-[15px] font-bold text-pink-400 uppercase font-karla">Opsi Sultan</span>
+            <span class="text-[15px] font-bold text-pink-400 uppercase font-karla">Ospi Sultan</span>
           </div>
 
-          <!-- Sub-Card 2: Opsi Hemat -->
           <div class="p-6 bg-[#D2FFEA]/50 rounded-[30px] flex flex-col justify-between gap-4 border border-[#D2FFEA]">
             <div>
               <div class="flex justify-between items-start gap-2 mb-2">
@@ -92,7 +103,6 @@ $(document).ready(function () {
             </div>
             <span class="text-[15px] font-karla font-bold text-emerald-600 uppercase tracking-wide">Opsi Hemat</span>
           </div>
-
         </div>
 
         <div class="bg-[#D9EF78] p-6 rounded-[32px] font-karla text-[#213D34] shadow-sm">
@@ -108,23 +118,25 @@ $(document).ready(function () {
         </div>
       </div>
     `;
-    $container.append(cardHtml);
+
+    const $card = $(cardHtml);
+    $container.append($card);
+
+    observer.observe($card[0]);
   });
 
-  // Render Card Tips & Panduan Gaya Hidup (Paling Bawah)
+  // Render Card Tips & Panduan Gaya Hidup
   const userTip = tipsDatabase.find((item) => item.targetGroup === userStatus);
 
   if (userTip) {
     $("#tips-section").removeClass("hidden");
 
-    // Icon centang (dipakai di depan tiap poin)
     const checkIconSvg = `
       <svg class="w-[18px] h-[18px] text-[#D9EF78] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     `;
 
-    // Pecah tips jadi baris-baris terpisah, lalu bungkus tiap baris jadi <li>
     const tipsList = userTip.tips
       .split("\n")
       .filter((line) => line.trim() !== "")
@@ -139,7 +151,7 @@ $(document).ready(function () {
       .join("");
 
     const tipsHtml = `
-      <div class="bg-[#213D34] text-[#F1F2ED] rounded-[40px] p-8 md:p-10 shadow-md font-karla border-2 border-[#213D34]">
+      <div class="reveal bg-[#213D34] text-[#F1F2ED] rounded-[40px] p-8 md:p-10 shadow-md font-karla border-2 border-[#213D34]">
         <div class="flex items-center gap-3 mb-6">
           <span class="bg-[#D9EF78] text-[#213D34] font-extrabold text-[14px] uppercase px-4 py-1.5 rounded-full font-rubik">
             ${userTip.category}
@@ -151,6 +163,9 @@ $(document).ready(function () {
       </div>
     `;
 
-    $("#tips-container").html(tipsHtml);
+    const $tipsCard = $(tipsHtml);
+    $("#tips-container").html($tipsCard);
+
+    observer.observe($tipsCard[0]);
   }
 });

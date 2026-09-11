@@ -20,7 +20,18 @@
     <style type="text/tailwindcss">
       @theme {
         --font-karla: "Karla", sans-serif;
-        --font-rubik: "Rubik", sans-serif;
+        --font-rubik: "Rubik", sans-serif; 
+      }
+
+      /* Style untuk animasi scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
@@ -29,7 +40,7 @@
     <div id="navbar-container" class="fixed top-0 left-0 z-50 w-full"></div>
 
     <main class="flex-1 max-w-[1080px] w-full mx-auto p-6 my-6 mt-24">
-      <div class="flex justify-center gap-14 items-center">
+      <div class="reveal flex justify-center gap-14 items-center">
         <!-- kolom kiri bagian deskripsi -->
         <div>
           <span
@@ -160,7 +171,7 @@
       <!-- RESULT SECTION (MELEBAR FULL LAYAR/CONTAINER) -->
       <div
         id="resultSection"
-        class="hidden w-full bg-[#F1F2ED] rounded-3xl p-10 mt-6"
+        class="reveal hidden w-full bg-[#F1F2ED] rounded-3xl p-10 mt-6"
       >
         <div class="flex items-center justify-center gap-12">
           <!-- Avatar Icon -->
