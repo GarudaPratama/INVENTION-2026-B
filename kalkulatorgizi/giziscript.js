@@ -117,16 +117,37 @@ $(document).ready(function () {
   if (userTip) {
     $("#tips-section").removeClass("hidden");
 
+    // Icon centang (dipakai di depan tiap poin)
+    const checkIconSvg = `
+      <svg class="w-[18px] h-[18px] text-[#D9EF78] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    `;
+
+    // Pecah tips jadi baris-baris terpisah, lalu bungkus tiap baris jadi <li>
+    const tipsList = userTip.tips
+      .split("\n")
+      .filter((line) => line.trim() !== "")
+      .map(
+        (line) => `
+          <li class="flex items-start gap-2.5">
+            ${checkIconSvg}
+            <span class="text-[15px] md:text-[16px] leading-relaxed font-medium">${line.trim()}</span>
+          </li>
+        `,
+      )
+      .join("");
+
     const tipsHtml = `
       <div class="bg-[#213D34] text-[#F1F2ED] rounded-[40px] p-8 md:p-10 shadow-md font-karla border-2 border-[#213D34]">
-        <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center gap-3 mb-6">
           <span class="bg-[#D9EF78] text-[#213D34] font-extrabold text-[14px] uppercase px-4 py-1.5 rounded-full font-rubik">
             ${userTip.category}
           </span>
         </div>
-        <p class="text-[16px] md:text-[18px] leading-relaxed whitespace-pre-line font-medium opacity-95">
-          ${userTip.tips}
-        </p>
+        <ul class="flex flex-col gap-3.5">
+          ${tipsList}
+        </ul>
       </div>
     `;
 
