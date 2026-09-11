@@ -1,15 +1,14 @@
 $(document).ready(function () {
+  // 1. Load Navbar
+  $('#navbar').load('./Navigasi/navbar.html', function () {
+    $(this).find('img').attr('src', './Navigasi/Logo-9.png');
+  });
 
-  // Load Navbar
-    $('#navbar').load('./Navigasi/navbar.html', function() {
-        
-        $(this).find('img').attr('src', './Navigasi/Logo-9.png');
-    });
-
-    $(document).on('click', '#btn-fitur', function (e) {
+  // 2. Event Handler Dropdown Fitur
+  $(document).on('click', '#btn-fitur', function (e) {
     e.stopPropagation();
 
-    // HANYA muter SVG panah (SVG yang ada di dalam div), bukan SVG di dalam menu ul
+    // Muter SVG panah di dalam div utama
     $(this).find('div > svg').toggleClass('rotate-180');
 
     // Toggle dropdown menu
@@ -18,7 +17,7 @@ $(document).ready(function () {
       .toggleClass('opacity-0 invisible translate-y-2 opacity-100 visible translate-y-0');
   });
 
-  // Tutup dropdown saat klik luar
+  // 3. Tutup Dropdown saat Klik di Luar
   $(document).on('click', function (e) {
     if (!$(e.target).closest('#btn-fitur').length) {
       $('#btn-fitur div > svg').removeClass('rotate-180');
@@ -27,11 +26,32 @@ $(document).ready(function () {
         .removeClass('opacity-100 visible translate-y-0');
     }
   });
-    
-})
 
-// observer = pemantau
-// fungsi untuk animasi smooth fade in saat elemen terlihat
+  // 4. Logika Pergantian Gambar Mockup HP Berdasarkan Scroll
+  $(window).scroll(function () {
+    // Cek apakah elemen step ada di halaman sebelum menjalankan kalkulasi
+    if ($('#step-1').length && $('#step-2').length && $('#step-3').length) {
+      var scrollPosition = $(window).scrollTop() + $(window).height() / 2;
+
+      var topStep1 = $('#step-1').offset().top;
+      var topStep2 = $('#step-2').offset().top;
+      var topStep3 = $('#step-3').offset().top;
+
+      if (scrollPosition >= topStep3) {
+        $('.step-image').addClass('hidden').removeClass('flex');
+        $('#img-step-3').removeClass('hidden').addClass('flex');
+      } else if (scrollPosition >= topStep2) {
+        $('.step-image').addClass('hidden').removeClass('flex');
+        $('#img-step-2').removeClass('hidden').addClass('flex');
+      } else {
+        $('.step-image').addClass('hidden').removeClass('flex');
+        $('#img-step-1').removeClass('hidden').addClass('flex');
+      }
+    }
+  });
+});
+
+// 5. Intersection Observer untuk Animasi Fade In (Scroll Reveal)
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -41,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.20 } // animasi baru berjalan saat 20% bagian dari elemen yang dianimasikan terlihat di layar
+    { threshold: 0.20 }
   );
 
   document.querySelectorAll(".reveal, .reveal-throw").forEach((el) => observer.observe(el));

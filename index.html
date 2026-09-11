@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- logo tab browser -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/Gizify.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/Gizify.png"
+    />
 
     <!-- link tailwind dan font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,7 +66,10 @@
   </head>
 
   <body class="min-h-screen">
-    <header id="navbar" class="fixed top-0 left-0 z-50 w-full transition-all duration-300 ease-out bg-transparent"></header>
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 z-50 w-full transition-all duration-300 ease-out bg-transparent"
+    ></header>
 
     <!-- Hero Section -->
     <section
@@ -110,7 +118,7 @@
         <h1
           class="text-[74px] font-black font-rubik text-[#213D34] tracking-normal uppercase leading-[1.1]"
         >
-         Gizi Maksimal<br />Nggak Harus<br />Mahal. 
+          Gizi Maksimal<br />Nggak Harus<br />Mahal.
         </h1>
 
         <p
@@ -122,7 +130,7 @@
         </p>
 
         <button
-          onclick="window.location.href='./bmi/bmi.html'"
+          onclick="window.location.href = './bmi/bmi.html'"
           class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer"
         >
           <span
@@ -297,7 +305,9 @@
                   <path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
                 </svg>
               </div>
-              <h3 class="font-bold text-[18px] font-karla text-[#213D34] mb-1.5">
+              <h3
+                class="font-bold text-[18px] font-karla text-[#213D34] mb-1.5"
+              >
                 Mempunyai Beragam Fitur
               </h3>
               <p class="text-[15px] text-[#555555] font-karla font-medium">
@@ -310,6 +320,157 @@
       </div>
     </section>
 
+    <!-- section cara kerja kami -->
+    <section class="relative w-full py-20 flex flex-col items-center overflow-hidden">
+  <!-- SVG Background -->
+  <svg
+    class="absolute inset-0 h-full w-full pointer-events-none z-0"
+    viewBox="0 0 1440 3000"
+    preserveAspectRatio="xMidYMin slice"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M441.2 0C481.89 0.000263922 514.875 32.9862 514.875 73.6758C514.875 79.0303 514.303 84.2512 513.218 89.2812H1440.38V3000H-0.375V0H441.2Z"
+      fill="#F1F2ED"
+    />
+  </svg>
+
+  <!-- Header Section -->
+  <div class="relative z-10 w-full max-w-4xl py-32 flex flex-col items-center">
+    <span class="inline-block bg-[#D9EF78] text-[#213D34] font-semibold text-[15px] font-karla px-4 py-2 rounded-full mb-3">
+      Cara Kerja
+    </span>
+    <h2 class="text-[52px] font-bold font-rubik text-[#213D34] text-center">
+      Makan Sehat Nggak Pake Ribet, Cukup 3 Langkah.
+    </h2>
+  </div>
+
+  <!-- Container Konten 2 Kolom -->
+  <div class="flex gap-16 items-start relative z-10">
+    
+    <!-- Kolom Kiri: Gambar Sticky -->
+    <div class="w-1/2 sticky top-20 flex justify-center">
+      
+      <!-- Bingkai Mockup HP -->
+      <div class="w-[300px] h-[600px] bg-white rounded-[36px] border-4 border-[#213D34] shadow-xl overflow-hidden relative">
+        
+        <!-- Gambar 01 (Aktif Default) -->
+        <div id="img-step-1" class="step-image absolute inset-0 flex flex-col justify-between bg-white p-5 text-left">
+          <div>
+            <h3 class="text-[15px] font-rubik font-semibold text-[#213D34]/60 mb-3 uppercase">
+              Kalkulator BMI
+            </h3>
+            <div class="bg-[#F1F2ED] p-3.5 rounded-2xl mb-3">
+              <p class="text-[11px] font-karla font-semibold text-[#213D34]/70 mb-0.5">Tinggi Badan</p>
+              <p class="text-[18px] font-rubik font-bold text-[#213D34]">165 cm</p>
+            </div>
+            <div class="bg-[#F1F2ED] p-3.5 rounded-2xl mb-4">
+              <p class="text-[11px] font-karla font-semibold text-[#213D34]/70 mb-0.5">Berat Badan</p>
+              <p class="text-[18px] font-rubik font-bold text-[#213D34]">58 kg</p>
+            </div>
+            <button class="bg-[#D9EF78] text-[#213D34] text-[15px] font-semibold px-4 py-2 rounded-xl">
+              Cek Hasil
+            </button>
+          </div>
+
+          <div class="bg-[#213D34] p-4 rounded-2xl text-center text-white">
+            <p class="text-[15px] font-karla  font-bold text-[#D9EF78] mb-0.5">Status BMI Kamu</p>
+            <p class="text-[32px] font-bold my-1">Normal</p>
+            <p class="text-[15px] text-[#D9D9D9]">Target ± 1.950 kkal / hari</p>
+          </div>
+        </div>
+
+        <!-- Gambar 02 (Tersembunyi) -->
+        <div id="img-step-2" class="step-image absolute inset-0 hidden flex-col justify-between bg-white p-5 text-left">
+          <div>
+            <h3 class="text-[15px] font-rubik font-semibold text-[#213D34]/60 mb-3 uppercase">
+              Subtitusi Gizi
+            </h3>
+            <div class="grid grid-cols-2 gap-3 mb-5">
+              <div class="bg-[#F1F2ED] p-3 rounded-2xl flex flex-col justify-center">
+                <p class="text-[18px] font-bold font-rubik text-[#213D34]">Salmon</p>
+                <p class="text-[11px] font-medium font-karla text-[#213D34]/70 mt-0.5">Rp. 89.000/kg</p>
+              </div>
+              <div class="bg-[#213D34] p-3 rounded-2xl flex flex-col justify-center">
+                <p class="text-[18px] font-bold font-rubik text-[#D9EF78]">Lele + Tempe</p>
+                <p class="text-[11px] font-medium font-karla text-[#D9EF78]/80 mt-0.5">Rp. 24.000/kg</p>
+              </div>
+            </div>
+
+            <h4 class="text-[15px] font-semibold text-[#213D34]/60 mb-3 text-center uppercase">
+              Profil Gizi Setara
+            </h4>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center text-xs pb-1.5 border-b border-[#213D34]/15">
+                <span class="font-medium font-karla text-[#213D34]">Protein</span>
+                <span class="font-bold font-karla text-[#213D34]">21g / 22g</span>
+              </div>
+              <div class="flex justify-between items-center text-xs pb-1.5 border-b border-[#213D34]/15">
+                <span class="font-medium font-karla text-[#213D34]">Omega-3</span>
+                <span class="font-bold font-karla text-[#213D34]">Setara</span>
+              </div>
+              <div class="flex justify-between items-center text-xs pb-1.5 border-b border-[#213D34]/15">
+                <span class="font-medium font-karla text-[#213D34]">Zat Besi</span>
+                <span class="font-bold font-karla text-[#213D34]">Lebih Tinggi</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#D9EF78] p-4 rounded-2xl text-center text-[#213D34]">
+            <p class="text-[15px] font-karla font-bold mb-0.5">Hemat</p>
+            <p class="text-[22px] font-rubik font-black tracking-tight">Rp. 65.000/kg</p>
+          </div>
+        </div>
+
+        <!-- Gambar 03 (Tersembunyi) -->
+        <div id="img-step-3" class="step-image absolute inset-0 hidden flex-col bg-white p-5 text-left">
+          <h3 class="text-[15px] font-semibold text-[#213D34]/60 mb-3 uppercase">
+            Peta Pangan
+          </h3>
+          <div class="flex-1 w-full rounded-2xl overflow-hidden relative">
+            <img src="assets/images/map.png" alt="Peta Pangan" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: Teks Langkah -->
+    <div class="w-[500px] flex flex-col gap-40 py-5">
+      
+      <!-- Step 01 -->
+      <div id="step-1" class="step-item min-h-[350px] flex flex-col justify-center">
+        <h1 class="text-[168px] font-extrabold text-[#D9EF78] leading-none font-rubik">01</h1>
+        <h2 class="text-[36px] font-semibold text-[#213D34] font-rubik mb-3">Kenali Titik Mulaimu</h2>
+        <p class="text-[#213D34] text-[15px] font-medium font-karla">
+          Gizify tidak menghakimi. Masukkan tinggi dan berat badanmu untuk mengetahui target kalori harian secara presisi, ini adalah fondasi wajib sebelum kita mulai meracik substitusi gizimu.
+        </p>
+      </div>
+
+      <!-- Step 02 -->
+      <div id="step-2" class="step-item min-h-[350px] flex flex-col justify-center">
+        <h1 class="text-[168px] font-extrabold text-[#D9EF78] leading-none font-rubik">02</h1>
+        <h2 class="text-[36px] font-semibold text-[#213D34] font-rubik mb-3">Bongkar Alternatif Harga</h2>
+        <p class="text-[#213D34] text-[15px] font-medium font-karla">
+          Di sinilah senjata utama kami bekerja. Ketik makanan elit yang ingin kamu ganti (misal: Ikan Salmon). Algoritma Gizify akan menyandingkannya dengan kombinasi pangan lokal (misal: Lele + Tempe) yang memiliki profil gizi setara.
+        </p>
+      </div>
+
+      <!-- Step 03 -->
+      <div id="step-3" class="step-item min-h-[350px] flex flex-col justify-center">
+        <h1 class="text-[168px] font-extrabold text-[#D9EF78] leading-none font-rubik">03</h1>
+        <h2 class="text-[36px] font-semibold text-[#213D34] font-rubik mb-3">Eksekusi Di Lapangan</h2>
+        <p class="text-[#213D34] text-[15px] font-medium font-karla">
+          Teori tanpa aksi adalah ilusi. Setelah menemukan racikan gizi lokalmu, fitur Peta Pangan Gizify akan memandu kamu ke lokasi pasar tradisional atau warteg sehat terdekat untuk mendapatkan bahan segar tersebut hari ini juga.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+   <div class="h-[300px]"></div>
+</section>
     <!-- External Scripts -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
