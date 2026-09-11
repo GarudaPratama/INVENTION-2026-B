@@ -44,5 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.20 } // animasi baru berjalan saat 20% bagian dari elemen yang dianimasikan terlihat di layar
   );
 
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal, .reveal-throw").forEach((el) => observer.observe(el));
 });

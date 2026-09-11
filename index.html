@@ -29,13 +29,32 @@
       /* Style untuk animasi scroll reveal */
       .reveal {
         opacity: 0;
-        transform: translateY(35px);
+        transform: translateY(50px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* Style untuk animasi kelempar (toss/bounce effect) */
+      .reveal-throw {
+        opacity: 0;
+        transform: translateY(200px) scale(0.4);
+        /* cubic-bezier memberikan efek membal/overshoot seperti kelempar */
+        transition: opacity 0.5s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .reveal-throw.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      /* Jeda waktu agar kelempar satu per satu */
+      .delay-100 { transition-delay: 0.1s; }
+      .delay-300 { transition-delay: 0.3s; }
+      .delay-500 { transition-delay: 0.5s; }
+      .delay-700 { transition-delay: 0.7s; }
     </style>
 
     <title>Lomba Invention 2026 Tim B</title>
@@ -66,22 +85,22 @@
       <img
         src="./assets/BAYAM.png"
         alt="Bayam"
-        class="absolute top-12 left-32 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12 reveal"
+        class="absolute top-12 left-32 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12 reveal-throw delay-100"
       />
       <img
         src="./assets/TEMPE.png"
         alt="Tempe"
-        class="absolute bottom-16 left-24 w-[400px] h-[400px] object-contain pointer-events-none z-10 reveal"
+        class="absolute bottom-16 left-24 w-[400px] h-[400px] object-contain pointer-events-none z-10 reveal-throw delay-300"
       />
       <img
         src="./assets/WORTEL.png"
         alt="Wortel"
-        class="absolute top-12 right-32 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6 reveal"
+        class="absolute top-2 right-12 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6 reveal-throw delay-500"
       />
       <img
         src="./assets/BROKOLI.png"
         alt="Brokoli"
-        class="absolute bottom-4 right-24 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6 reveal"
+        class="absolute bottom-12 right-24 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6 reveal-throw delay-700"
       />
 
       <!-- Main Content -->
