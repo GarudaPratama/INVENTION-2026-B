@@ -19,7 +19,7 @@ $(document).ready(function () {
 
   // 3. Tutup Dropdown saat Klik di Luar
   $(document).on('click', function (e) {
-    if (!$(e.target).closest('#btn-fitur').length) {
+    if (!$(e.target).closest('#btn-[#btn-fitur]').length) {
       $('#btn-fitur div > svg').removeClass('rotate-180');
       $('#btn-fitur ul')
         .addClass('opacity-0 invisible translate-y-2')
@@ -27,9 +27,8 @@ $(document).ready(function () {
     }
   });
 
-  // 4. Logika Pergantian Gambar Mockup HP Berdasarkan Scroll
-  $(window).scroll(function () {
-    // Cek apakah elemen step ada di halaman sebelum menjalankan kalkulasi
+  // 4. Logika Pergantian Gambar Mockup HP Berdasarkan Scroll (Smooth Fade)
+  $(window).on('scroll', function () {
     if ($('#step-1').length && $('#step-2').length && $('#step-3').length) {
       var scrollPosition = $(window).scrollTop() + $(window).height() / 2;
 
@@ -37,16 +36,24 @@ $(document).ready(function () {
       var topStep2 = $('#step-2').offset().top;
       var topStep3 = $('#step-3').offset().top;
 
+      var activeStep = 1;
       if (scrollPosition >= topStep3) {
-        $('.step-image').addClass('hidden').removeClass('flex');
-        $('#img-step-3').removeClass('hidden').addClass('flex');
+        activeStep = 3;
       } else if (scrollPosition >= topStep2) {
-        $('.step-image').addClass('hidden').removeClass('flex');
-        $('#img-step-2').removeClass('hidden').addClass('flex');
+        activeStep = 2;
       } else {
-        $('.step-image').addClass('hidden').removeClass('flex');
-        $('#img-step-1').removeClass('hidden').addClass('flex');
+        activeStep = 1;
       }
+
+      // Sembunyikan semua layar HP dengan transisi fade out
+      $('.step-screen')
+        .removeClass('opacity-100 visible')
+        .addClass('opacity-0 invisible');
+
+      // Tampilkan layar HP yang aktif dengan transisi fade in
+      $('#img-step-' + activeStep)
+        .removeClass('opacity-0 invisible')
+        .addClass('opacity-100 visible');
     }
   });
 });
