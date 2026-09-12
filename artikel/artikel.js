@@ -54,4 +54,23 @@ $(document).ready(function () {
     $('#article-title').text('Artikel Tidak Ditemukan');
     $('#article-content').html('<p>Maaf, artikel yang kamu cari tidak ada.</p>');
   }
+
+});
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document
+    .querySelectorAll(".reveal, .reveal-throw")
+    .forEach((el) => observer.observe(el));
 });
