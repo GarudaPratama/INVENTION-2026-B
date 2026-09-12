@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- link untuk font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
 
+    <!-- link untuk tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- konfigurasi tailwind untuk font poppins -->
     <style type="text/tailwindcss">
       @theme {
         --font-karla: "Karla", sans-serif;
@@ -22,189 +24,173 @@
 
     <title>Navigasi</title>
   </head>
-
   <body>
     <header class="mt-[20px]">
       <div class="flex items-center justify-between px-9">
-        <!-- Logo -->
-        <img
-          src="./navigasi/Logo-9.png"
-          alt=""
-          class="w-[111px] h-[51px]"
-        />
-
-        <!-- Navigation -->
+        <!-- untuk logo -->
+        <img src="./navigasi/Logo-9.png" alt="" class="w-[111px] h-[51px]" />
         <nav>
-          <ul class="relative flex items-center gap-12">
-
-            <!-- Active Pill -->
-            <span
-              id="pill"
-              class="absolute h-[36px] bg-[#D9EF78] rounded-full transition-all duration-300 ease-out pointer-events-none"
-            ></span>
-
-            <!-- Beranda -->
+          <ul class="flex items-center gap-12">
             <li class="text-[#213D34] font-medium text-[16px] font-karla">
-              <a
-                href="/index.html"
-                class="nav-link relative z-10 inline-block px-4 py-1.5 text-[#213D34] font-medium text-[16px] font-karla rounded-full"
-              >
-                Beranda
-              </a>
+              <a href="/index.html">Beranda</a>
             </li>
 
-            <!-- Fitur -->
             <li
               id="btn-fitur"
               class="relative flex items-center gap-1 cursor-pointer select-none"
             >
               <div
-                class="nav-link relative z-10 flex items-center gap-1 px-4 py-1.5 text-[#213D34] font-medium text-[16px] font-karla rounded-full"
+                class="flex items-center gap-1 text-[#213D34] font-medium text-[16px] font-karla"
               >
                 <span>Fitur</span>
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
+                  fill="none"
                   stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   class="w-4 h-4 transition-transform duration-300 text-[#213D34]"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 9l6 6l6 -6" />
                 </svg>
               </div>
 
-              <!-- Dropdown Fitur -->
+              <!-- yang tampil di dropdown -->
               <ul
                 class="absolute left-0 top-full mt-2 z-50 w-52 rounded-2xl border border-gray-100 bg-white p-2 shadow-xl opacity-0 invisible translate-y-2 transition-all duration-200 space-y-1"
               >
-                <!-- Kalkulator BMI -->
                 <li>
                   <a
                     href="/bmi/bmi.html"
                     class="group flex items-center gap-3 rounded-xl p-2.5 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
                   >
-                    <div
-                      class="flex items-center justify-center w-9 h-9 rounded-lg bg-[#D9EF78] text-[#213D34] group-hover:bg-white"
+                    <span
+                      class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#213D34]/10 group-hover:bg-white/20"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
+                        width="24"
+                        height="24"
                         viewBox="0 0 24 24"
-                        stroke-width="1.8"
+                        fill="none"
                         stroke="currentColor"
-                        class="w-5 h-5"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-calculator"
                       >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6.75 3.75h10.5A2.25 2.25 0 0 1 19.5 6v12a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 18V6a2.25 2.25 0 0 1 2.25-2.25Z"
+                          d="M4 5a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -14"
                         />
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M8.25 7.5h7.5M8.25 11.25h1.5m2.25 0h1.5m2.25 0h0M8.25 15h1.5m2.25 0h1.5m2.25 0h0"
+                          d="M8 8a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1l0 -1"
                         />
+                        <path d="M8 14l0 .01" />
+                        <path d="M12 14l0 .01" />
+                        <path d="M16 14l0 .01" />
+                        <path d="M8 17l0 .01" />
+                        <path d="M12 17l0 .01" />
+                        <path d="M16 17l0 .01" />
                       </svg>
-                    </div>
-
+                    </span>
                     <div>
-                      <p class="font-medium">Kalkulator</p>
-                      <p class="text-xs opacity-60 group-hover:opacity-80">
-                        Cek BMI
+                      <p class="font-semibold text-sm leading-tight">
+                        Kalkulator
+                      </p>
+                      <p class="text-xs opacity-70 mt-0.5">
+                        Hitung kebutuhan gizi
                       </p>
                     </div>
                   </a>
                 </li>
 
-                <!-- Cek Gizi -->
                 <li>
                   <a
                     href="/kalkulatorgizi/gizi.html"
                     class="group flex items-center gap-3 rounded-xl p-2.5 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
                   >
-                    <div
-                      class="flex items-center justify-center w-9 h-9 rounded-lg bg-[#D9EF78] text-[#213D34] group-hover:bg-white"
+                    <span
+                      class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#213D34]/10 group-hover:bg-white/20"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
+                        width="24"
+                        height="24"
                         viewBox="0 0 24 24"
-                        stroke-width="1.8"
+                        fill="none"
                         stroke="currentColor"
-                        class="w-5 h-5"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-list"
                       >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 3.75c-4.556 0-8.25 3.694-8.25 8.25s3.694 8.25 8.25 8.25 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75Z"
+                          d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
                         />
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 7.5v4.5l3 1.5"
+                          d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2"
                         />
+                        <path d="M9 12l.01 0" />
+                        <path d="M13 12l2 0" />
+                        <path d="M9 16l.01 0" />
+                        <path d="M13 16l2 0" />
                       </svg>
-                    </div>
-
+                    </span>
                     <div>
-                      <p class="font-medium">Cek Gizi</p>
-                      <p class="text-xs opacity-60 group-hover:opacity-80">
-                        Cek status gizi
+                      <p class="font-semibold text-sm leading-tight">
+                        Cek Gizi
+                      </p>
+                      <p class="text-xs opacity-70 mt-0.5">
+                        Kenali status gizimu
                       </p>
                     </div>
                   </a>
                 </li>
+
               </ul>
             </li>
 
-            <!-- Artikel -->
             <li class="text-[#213D34] font-medium text-[16px] font-karla">
-              <a
-                href="/artikel/artikel.html"
-                class="nav-link relative z-10 inline-block px-4 py-1.5 text-[#213D34] font-medium text-[16px] font-karla rounded-full"
-              >
-                Artikel
-              </a>
+              <a href="/artikel/artikel.html">Artikel</a>
             </li>
-
-            <!-- Tentang Kami -->
-            <li
-              class="text-[#213D34] font-medium text-[16px] font-karla"
-            >
+            <li class="text-[#213D34] font-medium text-[16px] font-karla">
               Tentang Kami
             </li>
-
-            <!-- Kontak -->
-            <li
-              class="text-[#213D34] font-medium text-[16px] font-karla"
-            >
+            <li class="text-[#213D34] font-medium text-[16px] font-karla">
               Kontak
             </li>
           </ul>
         </nav>
-
-        <!-- Button BMI -->
         <div>
           <button
             onclick="window.location.href='./bmi/bmi.html'"
-            class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[170px] h-[48px] hover:text-white cursor-pointer"
+            class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[170px] h-[48px] hover:text-white cursor-pointer"
           >
+            <!-- Layer Warna Latar yang Menyapu -->
             <span
               class="absolute inset-0 bg-[#213D34] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"
             ></span>
 
-            <span class="relative z-10">
-              Cek BMI
-            </span>
+            <!-- Teks Tombol (z-10 agar tetap berada di atas layer warna) -->
+            <span class="relative z-10">Cek BMI</span>
           </button>
         </div>
       </div>
     </header>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    
+    <script src="navbar.js"></script>
   </body>
 </html>
