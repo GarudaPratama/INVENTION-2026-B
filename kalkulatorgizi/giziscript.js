@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -9,7 +8,7 @@ $(document).ready(function () {
         }
       });
     },
-    { threshold: 0.20 } // Efek aktif saat 20% elemen terlihat di layar
+    { threshold: 0.2 }, // Efek aktif saat 20% elemen terlihat di layar
   );
 
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
@@ -21,8 +20,33 @@ $(document).ready(function () {
     </svg>
   `;
 
-  $("#navbar, #navbar-container").load("../navigasi/navbar.html", function () {
-    $(this).find("img").attr("src", "../navigasi/Logo-9.png");
+  $("#navbar").load("../Navigasi/navbar.html", function () {
+    $(this).find("img").attr("src", "../Navigasi/Logo-9.png");
+  });
+  // Variabel penanda agar kode tidak dieksekusi terus-menerus saat scroll
+  let isScrolled = false;
+
+  $(window).on("scroll", function () {
+    const scrollTop = $(window).scrollTop();
+
+    // Saat scroll lebih dari 50px DAN belum dalam status scrolled
+    if (scrollTop > 50 && !isScrolled) {
+      isScrolled = true;
+      $("#navbar")
+        .addClass(
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-2xl left-6 right-6",
+        )
+        .removeClass("left-0 right-0");
+    }
+    // Saat scroll kurang dari/sama dengan 50px DAN sedang dalam status scrolled
+    else if (scrollTop <= 50 && isScrolled) {
+      isScrolled = false;
+      $("#navbar")
+        .removeClass(
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-2xl left-6 right-6",
+        )
+        .addClass("left-0 right-0");
+    }
   });
 
   // Logika Dropdown Navigasi
