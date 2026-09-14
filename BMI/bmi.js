@@ -40,14 +40,14 @@ $(window).on("scroll", function () {
   if (scrollTop > 50 && !isScrolled) {
     isScrolled = true;
     $("#navbar")
-      .addClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-2xl left-6 right-6")
+      .addClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6")
       .removeClass("left-0 right-0");
   } 
   // Saat scroll kurang dari/sama dengan 50px DAN sedang dalam status scrolled
   else if (scrollTop <= 50 && isScrolled) {
     isScrolled = false;
     $("#navbar")
-      .removeClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-2xl left-6 right-6")
+      .removeClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6")
       .addClass("left-0 right-0");
   }
 });
