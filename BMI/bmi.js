@@ -13,6 +13,20 @@ $(document).ready(function () {
 
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+  const observers = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("activate");
+          observers.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.05 }, // Efek aktif langsung
+  );
+
+  document.querySelectorAll(".reveals").forEach((el) => observers.observe(el));
+
   $("#navbar").load("../Navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "../Navigasi/Logo-9.png");
   });
