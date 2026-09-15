@@ -136,7 +136,7 @@ $(document).ready(function () {
               Fakta Nutrisi
             </span>
           </div>
-          <p class="text-[15px] font-medium leading-relaxed">
+          <p class="text-[15px] font-medium leading-relaxed font-karla">
             ${item.fact}
           </p>
         </div>
