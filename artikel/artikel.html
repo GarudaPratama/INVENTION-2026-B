@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artikel</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,35 +20,99 @@
     <style type="text/tailwindcss">
       @theme {
         --font-karla: "Karla", sans-serif;
-        --font-rubik: "Rubik", sans-serif; 
+        --font-rubik: "Rubik", sans-serif;
       }
 
       /* Style untuk animasi scroll reveal */
       .reveal {
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
     </style>
-</head>
-<body>
-    <!-- Contoh Kartu Artikel 1 -->
-    <a href="detailartikel.html?id=1" class="reveal block bg-white p-5 rounded-2xl shadow">
-        <h3>Kenali Titik Mulaimu (BMI)</h3>
-        <span class="text-lime-600">Baca Selengkapnya →</span>
-    </a>
+  </head>
+  <body class="bg-[#F9F9F9]">
+    <section class="px-20 py-10">
+      <!-- Bagian atasnya -->
+      <div class="max-w-[1200px] mx-auto">
+        <span
+          class="inline-block bg-[#D9EF78] text-[#213D34] font-semibold text-[15px] px-4 py-1.5 rounded-full mb-2 font-karla"
+        >
+          Artikel Edukasi
+        </span>
 
-    <!-- Contoh Kartu Artikel 2 -->
-    <a href="detailartikel.html?id=2" class="reveal block bg-white p-5 rounded-2xl shadow">
-        <h3>Substitusi Salmon dengan Lele</h3>
-        <span class="text-lime-600">Baca Selengkapnya →</span>
-    </a>
+        <h1 class="font-rubik font-bold text-[52px] text-[#213D34]">
+          Penjelasan Tentang Mitos-Mitos yang Beredar
+        </h1>
+
+        <!-- Search Bar -->
+        <div class="relative w-full mt-6">
+          <input
+            type="text"
+            id="searchArtikel"
+            placeholder="Cari artikel..."
+            class="w-full h-[50px] rounded-full px-16 pr-14 font-karla text-[16px] text-[#213D34] outline-none bg-[#F1F2ED] focus:border-2 border-[#213D34]"
+          />
+
+          <button
+            type="button"
+            class="absolute left-2 top-1/2 -translate-y-1/2 w-[40px] h-[40px] bg-[#F9F9F9] rounded-full flex items-center justify-center text-[#213D34]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </button>
+
+          <!-- button x -->
+          <button
+            type="button"
+            id="clearSearch"
+            class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-[#213D34]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-x"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M6.707 5.293l5.293 5.292l5.293 -5.292a1 1 0 0 1 1.414 1.414l-5.292 5.293l5.292 5.293a1 1 0 0 1 -1.414 1.414l-5.293 -5.292l-5.293 5.292a1 1 0 1 1 -1.414 -1.414l5.292 -5.293l-5.292 -5.293a1 1 0 0 1 1.414 -1.414"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- bagian artikel -->
+      <div
+        id="daftarArtikel"
+        class="max-w-[1200px]  mx-auto grid grid-cols-3 gap-3 mt-18"
+      >
+        <!-- Artikel akan muncul dari jQuery -->
+      </div>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="artikel.js"></script>
-</body>
+  </body>
 </html>
