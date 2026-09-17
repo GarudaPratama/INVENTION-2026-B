@@ -130,7 +130,6 @@ $(document).ready(function () {
 
 });
 
-
 // 6. Intersection Observer untuk Animasi Fade In (Scroll Reveal)
 document.addEventListener("DOMContentLoaded", () => {
 

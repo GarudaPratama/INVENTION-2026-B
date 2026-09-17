@@ -23,6 +23,15 @@
         --font-rubik: "Rubik", sans-serif;
       }
 
+      /* Mencegah flash elemen sebelum Tailwind & JS siap */
+      body {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+      body.ready {
+        opacity: 1;
+      }
+
       /* Style untuk animasi scroll reveal */
       .reveal {
         opacity: 0;
@@ -42,9 +51,9 @@
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500 ease-in-out pb-3"
     ></div>
-    <section class="px-20 py-10 mt-24">
+    <section class="px-20 py-10 mt-24 min-h-[70vh]">
       <!-- Bagian atasnya -->
-      <div class="max-w-[1200px] mx-auto">
+      <div class="reveal max-w-[1200px] mx-auto">
         <span
           class="inline-block bg-[#D9EF78] text-[#213D34] font-semibold text-[15px] px-4 py-1.5 rounded-full mb-2 font-karla"
         >
@@ -110,12 +119,12 @@
       <!-- bagian artikel -->
       <div
         id="daftarArtikel"
-        class="max-w-[1200px] mx-auto grid grid-cols-3 gap-3 mt-18"
+        class="reveal max-w-[1200px] mx-auto grid grid-cols-3 gap-3 mt-18"
       >
-        <!-- Artikel akan muncul dari jQuery -->
+        <!-- hasil dari jquery -->
       </div>
 
-      <div class="flex gap-6 justify-center mt-12 mb-12">
+      <div class="reveal flex gap-6 justify-center mt-12 mb-12">
         <p
           class="font-rubik font-bold bg-[#F1F2ED] px-4 py-2 text-[#2C4A3B] text-[22px] hover:bg-[#D9EF78] transition duration-300 hover:px-4 py-2 rounded-[10px]"
         >
@@ -173,7 +182,7 @@
     </section>
 
     <footer
-      class="w-full text-[#D9EF78] pt-12 pb-8 px-16 bg-transparent relative"
+      class="w-full mt-auto text-[#D9EF78] pt-12 pb-8 px-16 bg-transparent relative"
       style="
         background-image: url(&quot;../assets/FOOTER.png&quot;);
         background-size: cover;

@@ -30,7 +30,7 @@ $(document).ready(function () {
   $("#navbar").load("../Navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "../Navigasi/Logo-9.png");
   });
- // Variabel penanda agar kode tidak dieksekusi terus-menerus saat scroll
+ 
 let isScrolled = false;
 
 $(window).on("scroll", function () {
