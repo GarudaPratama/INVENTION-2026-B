@@ -114,7 +114,7 @@ $(document).ready(function () {
               </div>
               <p class="text-[15px] text-pink-900 leading-relaxed font-karla">${item.expensive.note}</p>
             </div>
-            <span class="text-[15px] font-bold text-pink-400 uppercase font-karla">Ospi Sultan</span>
+            <span class="text-[15px] font-bold text-pink-400 uppercase font-karla">Opsi Sultan</span>
           </div>
 
           <div class="p-6 bg-[#D2FFEA]/50 rounded-[30px] flex flex-col justify-between gap-4 border border-[#D2FFEA]">
