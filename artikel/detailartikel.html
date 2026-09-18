@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title id="page-title">Detail Artikel</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <head>
+    <meta charset="UTF-8" />
+    <title id="page-title">Detail Artikel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
@@ -19,34 +19,336 @@
     <style type="text/tailwindcss">
       @theme {
         --font-karla: "Karla", sans-serif;
-        --font-rubik: "Rubik", sans-serif; 
+        --font-rubik: "Rubik", sans-serif;
       }
 
       /* Style untuk animasi scroll reveal */
       .reveal {
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* styling bagian judul artikel */
+      #article-content h2 {
+        font-family: "Rubik", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        color: #213d34;
+        margin-top: 32px;
+        margin-bottom: 12px;
+      }
+
+      #article-content h3 {
+        font-family: "Rubik", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        color: #213d34;
+        margin-top: 24px;
+        margin-bottom: 8px;
+      }
     </style>
-</head>
-<body class="bg-[#F1F2ED] text-[#213D34] p-8">
+  </head>
+  <body class="bg-[#F1F2ED] text-[#213D34] scroll-smooth">
+    <section class="reveal max-w-[800px] mx-auto p-8">
+      <!-- Navigasi -->
+      <div class="flex justify-between items-center mb-8">
+        <div class="font-karla font-bold text-sm text-black">
+          Beranda / Detail Artikel
+        </div>
 
-  <a href="artikel.html" class="reveal inline-block mb-6 font-bold">← Kembali ke Daftar</a>
+        <a
+          href="artikel.html"
+          class="font-karla text-xs font-semibold text-black border border-black rounded-full px-4 py-2 hover:bg-[#2C4A3B] hover:text-white transition-colors"
+        >
+          Kembali Ke Daftar Artikel
+        </a>
+      </div>
 
-  <article class="reveal max-w-3xl mx-auto bg-white p-8 rounded-3xl shadow-lg">
-    <h1 id="article-title" class="text-4xl font-bold mb-4">Judul Loading...</h1>
-    <img id="article-image" src="" alt="" class="w-full h-64 object-cover rounded-2xl mb-6 hidden">
-    <div id="article-content" class="text-lg leading-relaxed space-y-4">
-      <!-- Isi artikel akan masuk ke sini -->
-    </div>
-  </article>
+      <!-- Judul Artikel -->
+      <h1
+        id="article-title"
+        class="font-rubik font-bold text-4xl text-[#2C4A3B] leading-tight mb-4"
+      >
+        Judul Loading...
+      </h1>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="artikel.js"></script>
-</body>
+      <!-- Tanggal -->
+      <p class="font-karla font-bold text-sm text-black mb-6">
+        Gizify, 15 Agustus 2026, 13:30 WIB
+      </p>
+
+      <!-- Gambar Artikel (Pembungkus dibuat ketengah) -->
+      <div class="mb-8 flex justify-center">
+        <img
+          id="article-image"
+          src=""
+          alt=""
+          class="w-full max-w-[680px] h-[580px] rounded-2xl hidden"
+        />
+      </div>
+
+      <!-- Isi Artikel -->
+      <div
+        id="article-content"
+        class="font-karla text-lg text-[#5C6660] leading-relaxed space-y-4 mx-auto"
+      ></div>
+
+      <!-- Bagikan Pendapat -->
+      <div class="mt-12 mx-auto">
+        <h2 class="font-rubik font-bold text-2xl text-[#2C4A3B] mb-3">
+          Bagikan Pendapatmu
+        </h2>
+
+        <textarea
+          placeholder="Tuliskan Pendapatmu..."
+          class="w-full h-[168px] border border-[#213D34] rounded-2xl p-6 font-karla text-base text-[#5C6660] outline-none resize-none"
+        ></textarea>
+      </div>
+
+      <!-- Bagian Bawah Artikel -->
+      <div class="mt-8 mx-auto border-t border-[#8A918C] pt-4">
+        <div class="flex justify-between items-center">
+          <!-- Teks Selesai Membaca -->
+          <p class="font-rubik font-bold text-sm text-[#5C6660]">
+            Selesai Membaca Artikel Ini ?
+          </p>
+
+          <!-- Tombol -->
+          <div class="flex items-center gap-4">
+            <!-- Ke Atas -->
+            <a
+              href="#"
+              class="font-karla font-bold text-[9px] text-[#213D34] border border-[#213D34] rounded-full px-4 py-1 hover:bg-[#213D34] hover:text-white transition-colors"
+            >
+              KE ATAS
+            </a>
+
+            <!-- Kembali -->
+            <a
+              href="artikel.html"
+              class="font-karla text-sm text-[#213D34] border border-[#213D34] rounded-full px-4 py-2 hover:bg-[#213D34] hover:text-white transition-colors"
+            >
+              Kembali Ke Daftar Artikel
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-16 bg-transparent relative"
+      style="
+        background-image: url(&quot;../assets/FOOTER.png&quot;);
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
+      "
+    >
+      <div class="w-full">
+        <div class="flex flex-row justify-between items-center gap-10 pb-10">
+          <div
+            class="grid grid-cols-3 gap-12 text-[#F1F2ED] font-karla font-bold text-[16px]"
+          >
+            <div>
+              <h3 class="font-bold text-[18px] font-karla mb-3 text-[#D9EF78]">
+                Tautan Cepat
+              </h3>
+
+              <ul class="space-y-2 opacity-90">
+                <li>
+                  <a href="index.html" class="hover:underline"> Beranda </a>
+                </li>
+
+                <li>
+                  <a href="/BMI/bmi.html" class="hover:underline"> Cek Gizi </a>
+                </li>
+
+                <li>
+                  <a href="/finder/finder.html" class="hover:underline">
+                    Gizi Finder
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/artikel/artikel.html" class="hover:underline">
+                    Artikel
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="hover:underline"> Tentang Kami </a>
+                </li>
+
+                <li>
+                  <a href="#" class="hover:underline"> Kontak </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="ffont-bold text-[18px] font-karla mb-3 text-[#D9EF78]">
+                Fitur
+              </h3>
+
+              <ul class="space-y-2 opacity-90">
+                <li>
+                  <a href="#" class="hover:underline"> Kalkulator BMI </a>
+                </li>
+
+                <li>
+                  <a href="#" class="hover:underline"> Kalkulator BMR </a>
+                </li>
+
+                <li>
+                  <a href="#" class="hover:underline"> Peta Pangan </a>
+                </li>
+
+                <li>
+                  <a href="#" class="hover:underline"> Mitos vs Fakta </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-[18px] font-karla mb-3 text-[#D9EF78]">
+                Kontak
+              </h3>
+
+              <ul class="space-y-2 opacity-90">
+                <li>
+                  <a href="tel:+628974643100" class="hover:underline">
+                    +62 897-4643-100
+                  </a>
+                </li>
+
+                <li>
+                  <a href="mailto:gizify@gmail.com" class="hover:underline">
+                    gizify@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <img
+              src="../assets/footerlogo.png"
+              alt=""
+              class="w-[300px] h-auto shirink-0"
+            />
+          </div>
+        </div>
+
+        <div
+          class="border-t-2 border-[#D9EF78] pt-6 flex flex-row justify-between items-center gap-4 text-[] opacity-90"
+        >
+          <div class="flex items-center gap-4 text-[#D9EF78]">
+            <a href="https://www.tiktok.com" class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.instagram.com"
+              class="hover:text-[#F1F2ED] transition duration-300 ease-in-out hover:scale-110"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"
+                />
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                <path d="M16.5 7.5v.01" />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.x.com"
+              class="hover:text-[#F1F2ED] transition duration-300 ease-in-out hover:scale-110"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 4l11.733 16h4.267l-11.733 -16l-4.267 0" />
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.github.com"
+              class="hover:text-[#F1F2ED] transition duration-300 ease-in-out hover:scale-110"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <p class="text-right font-karla font-bold text-[16px]">
+            © 2026 Gizify. Semua hak dilindungi undang-undang.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="artikel.js"></script>
+  </body>
 </html>
