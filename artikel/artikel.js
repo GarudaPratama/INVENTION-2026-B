@@ -406,7 +406,7 @@ $(document).ready(function () {
       $("#article-title").text("Artikel Tidak Ditemukan");
 
       $("#article-content").html(`
-        <div class="py-8 text-center font-karla">
+        <div class="py-12 text-center font-karla">
           <p class="text-lg text-gray-600">
             Maaf, artikel yang kamu cari tidak tersedia atau telah dihapus.
           </p>
@@ -424,7 +424,6 @@ $(document).ready(function () {
     }
   }
 });
-
 
 // ===== ANIMASI SCROLL REVEAL =====
 
