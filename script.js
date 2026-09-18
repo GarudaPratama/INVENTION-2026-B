@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   // 1. Load Navbar
   $("#navbar").load("./navigasi/navbar.html", function () {
-    $(this).find("img").attr("src", "/navigasi/Logo-9.png");
+    $(this).find("img").attr("src", "./navigasi/Logo-9.png");
   });
 
   // Variabel penanda agar kode tidak dieksekusi terus-menerus saat scroll
