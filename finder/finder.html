@@ -10,9 +10,233 @@
       href="../assets/icon2.png"
       class="object-cover"
     />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>GiziFinder</title>
 </head>
-<body>
-    
-</body>
+ <body class="bg-[#F8F9FA] text-[#213D34] p-4 md:p-8">
+    <div class="max-w-6xl mx-auto py-6">
+      
+      <!-- 1. BADGE -->
+      <div class="flex justify-center mb-4">
+        <span class="bg-[#D9EF78] text-[#2C4A3B] font-karla font-semibold px-5 py-1.5 rounded-full text-[15px]">
+          Finder Gizify
+        </span>
+      </div>
+
+      <!-- 2. JUDUL UTAMA & DESKRIPSI -->
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <!-- HP: text-2xl, Laptop/Desktop: text-5xl -->
+        <h1 class="font-rubik font-bold text-[28px] md:text-[52px]/[52px] mb-4">
+          Pasar Pangan Terdekat, Lengkap Dengan Isi Lapaknya
+        </h1>
+        <!-- HP: text-xs, Laptop/Desktop: text-base -->
+        <p class="font-karla font-medium text-[#5C6660] text-[15px] md:text-[18px]">
+          Cari pasar atau warung sehat di sekitarmu, lihat bahan bergizi apa yang tersedia, lalu belanja hari ini juga.
+        </p>
+      </div>
+
+      <!-- 3. BOX STATISTIK -->
+      <div class="max-w-xl mx-auto bg-[#F1F2ED] border border-[#2C4A3B] rounded-2xl p-4 flex items-center justify-between text-center mb-8">
+        <div class="flex-1 border-r border-[#2C4A3B]">
+          <p class="font-rubik font-extrabold text-[15px] md:text-[18px] text-[#2C4A3B]">650+</p>
+          <p class="font-karla  font-normal text-[10px] md:text-[15px] text-[#2C4A3B]">Lokasi Terpetakan</p>
+        </div>
+        <div class="flex-1 border-r border-gray-200">
+          <p class="font-rubik font-extrabold text-[15px] md:text-[18px] text-[#2C4A3B]">38</p>
+          <p class="font-karla  font-normal text-[10px] md:text-[15px] text-[#2C4A3B]">Kota Tercakup</p>
+        </div>
+        <div class="flex-1">
+          <p class="font-rubik font-extrabold text-[13px] md:text-[18px] text-[#2C4A3B]">Rp750rb</p>
+          <p class="font-karla font-normal text-[10px] md:text-[15px] text-[#2C4A3B]">Hemat rata-rata/bulan</p>
+        </div>
+      </div>
+
+      <!-- 4. SEARCH BAR -->
+      <div class="relative max-w-5xl mx-auto mb-6">
+        <span class="absolute inset-y-0 left-4 flex items-center text-[#5C6660]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </span>
+        <input
+          type="text"
+          placeholder="Cari pasar atau warung..."
+          class="w-full pl-12 pr-4 py-3 bg-[#F1F2ED] rounded-full text-[15px] font-karla outline-none focus:ring-2 focus:ring-[#213D34]"
+        />
+      </div>
+
+      <!-- 5. FILTER BUTTONS -->
+      <div class="flex flex-wrap gap-2 max-w-5xl mx-auto mb-6 font-karla text-xs font-medium">
+        <button class="bg-[#D9EF78] text-[#213D34] font-bold px-4 py-2 rounded-full">
+          Semua Lokasi
+        </button>
+        <button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-100">
+          Pasar Tradisional
+        </button>
+        <button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-100">
+          Warung Sehat
+        </button>
+        <button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-100">
+          Buka Sekarang
+        </button>
+        <button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-100">
+          Di Bawah 1 Km
+        </button>
+      </div>
+
+      <!-- 6. JUMLAH LOKASI -->
+      <div class="max-w-5xl mx-auto mb-4 font-karla text-xs">
+        <span class="font-bold text-[#213D34]">12</span>
+        <span class="text-gray-500">Lokasi Ditemukan Di Sekitarmu</span>
+      </div>
+
+      <!-- 7. GRID KARTU (HP: 1 Kolom -> Tablet: 2 Kolom -> Desktop: 4 Kolom) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        
+        <!-- Kartu 1 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500" alt="Warung Sayur Bu Yani" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Warung Sayur Bu Yani</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Cisitu Indah III No. 4, Bandung</p>
+              <p class="flex items-center gap-1">🕒 06.00 - 19.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 2 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500" alt="Warteg Ibu Yaya" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Warteg Ibu Yaya</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Tebet Raya No. 8, Jakarta Selatan</p>
+              <p class="flex items-center gap-1">🕒 07.00 - 21.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 3 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500" alt="Pasar Balarajae" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Pasar Balarajae</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Balarajae Raya, Jakarta Pusat</p>
+              <p class="flex items-center gap-1">🕒 05.00 - 13.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 4 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500" alt="Pasar Balarajae" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Pasar Balarajae</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Balarajae Raya, Jakarta Pusat</p>
+              <p class="flex items-center gap-1">🕒 05.00 - 13.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Kartu 4 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500" alt="Pasar Balarajae" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Pasar Balarajae</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Balarajae Raya, Jakarta Pusat</p>
+              <p class="flex items-center gap-1">🕒 05.00 - 13.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Kartu 4 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500" alt="Pasar Balarajae" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Pasar Balarajae</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Balarajae Raya, Jakarta Pusat</p>
+              <p class="flex items-center gap-1">🕒 05.00 - 13.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Kartu 4 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500" alt="Pasar Balarajae" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Pasar Balarajae</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Balarajae Raya, Jakarta Pusat</p>
+              <p class="flex items-center gap-1">🕒 05.00 - 13.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Kartu 4 -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500" alt="Pasar Balarajae" class="w-full h-36 object-cover" />
+          <div class="p-4 flex flex-col justify-between flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-rubik font-bold text-sm text-[#213D34]">Pasar Balarajae</h3>
+              <span class="font-karla text-xs font-bold text-gray-600 flex items-center gap-1">
+                ⭐ 4.4
+              </span>
+            </div>
+            <div class="space-y-1 font-karla text-xs text-gray-500">
+              <p class="flex items-center gap-1">📍 Jl. Balarajae Raya, Jakarta Pusat</p>
+              <p class="flex items-center gap-1">🕒 05.00 - 13.00 (Sen-Ming)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
 </html>
