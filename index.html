@@ -10,6 +10,7 @@
       type="image/png"
       sizes="32x32"
       href="./assets/icon2.png"
+      class="object-cover"
     />
 
     <!-- link tailwind dan font -->
@@ -192,14 +193,14 @@
             <span
               class="inline-block font-semibold bg-[#D9EF78] text-[#213D34] font-karla text-[15px] px-4 py-1.5 rounded-full mb-4"
             >
-              Apa Itu Gizify?
+              Tentang Gizify
             </span>
           </div>
 
           <h2
             class="text-[54px] font-semibold font-rubik text-[#1E3A2B] tracking-tight mb-4"
           >
-            Tentang Gizify
+            Gizify Bukan Sekedar Web
           </h2>
 
           <p
@@ -245,7 +246,9 @@
               >
                 Edukasi Gizi Terpercaya
               </h3>
-              <p class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight">
+              <p
+                class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight"
+              >
                 Menyajikan informasi gizi berbasis sains dan mudah dipahami
                 semua orang.
               </p>
@@ -281,7 +284,9 @@
               >
                 Gaya Hidup Seimbang
               </h3>
-              <p class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight">
+              <p
+                class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight"
+              >
                 Mendukungmu membangun kebiasaan sehat yang seimbang dan
                 berkelanjutan.
               </p>
@@ -318,7 +323,9 @@
               >
                 Mempunyai Beragam Fitur
               </h3>
-              <p class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight">
+              <p
+                class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight"
+              >
                 Fitur yang terhubung satu sama lain salah satu fiturnya adalah
                 BMI.
               </p>
@@ -862,15 +869,17 @@
               <p
                 class="font-karla font-regular text-[16px]/[22px] text-[#5C6660] mt-4"
               >
-                Gizify tidak menghakimi. 
-                Masukkan tinggi dan berat badanmu untuk mengetahui target kalori harian.
+                Gizify tidak menghakimi. Masukkan tinggi dan berat badanmu untuk
+                mengetahui target kalori harian.
               </p>
             </div>
 
             <!-- untuk bagian button -->
             <div class="mt-6">
               <button
-                onclick="window.location.href='artikel/detailartikel.html?id=1'"
+                onclick="
+                  window.location.href = 'artikel/detailartikel.html?id=1'
+                "
                 class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[150px] h-[38px] hover:text-white cursor-pointer"
               >
                 <!-- Layer Warna Latar yang Menyapu -->
@@ -920,15 +929,17 @@
               <p
                 class="font-karla font-regular text-[16px]/[22px] text-[#5C6660] mt-4"
               >
-                Tidak perlu beli bahan mahal untuk dapat gizi seimbang.
-                Lele dan tempe punya kandungan gizi yang baik.
+                Tidak perlu beli bahan mahal untuk dapat gizi seimbang. Lele dan
+                tempe punya kandungan gizi yang baik.
               </p>
             </div>
 
             <!-- untuk bagian button -->
             <div class="mt-6">
               <button
-                onclick="window.location.href='artikel/detailartikel.html?id=2'"
+                onclick="
+                  window.location.href = 'artikel/detailartikel.html?id=2'
+                "
                 class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[150px] h-[38px] hover:text-white cursor-pointer"
               >
                 <!-- Layer Warna Latar yang Menyapu -->
@@ -978,7 +989,7 @@
               <p
                 class="font-karla font-regular text-[16px]/[22px] text-[#5C6660] mt-4"
               >
-                Temukan lokasi warteg sehat dan pasar tradisional terdekat dari 
+                Temukan lokasi warteg sehat dan pasar tradisional terdekat dari
                 lokasimu dengan fitur Peta Pangan Gizify.
               </p>
             </div>
@@ -986,7 +997,9 @@
             <!-- untuk bagian button -->
             <div class="mt-6">
               <button
-                onclick="window.location.href='artikel/detailartikel.html?id=3'"
+                onclick="
+                  window.location.href = 'artikel/detailartikel.html?id=3'
+                "
                 class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[150px] h-[38px] hover:text-white cursor-pointer"
               >
                 <!-- Layer Warna Latar yang Menyapu -->
@@ -1484,7 +1497,10 @@
 
             <div>
               <button
-                onclick="event.preventDefault(); alert('Pesan Berhasil Dikirim!')"
+                onclick="
+                  event.preventDefault();
+                  alert('Pesan Berhasil Dikirim!');
+                "
                 class="mt-6 relative inline-flex items-center justify-center w-[500px] h-[50px] py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer"
               >
                 <span
@@ -1527,9 +1543,9 @@
     </section>
 
     <footer
-      class="w-full text-[#D9EF78] pt-12 pb-8 px-16 bg-transparent relative"
+      class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-16 bg-transparent relative"
       style="
-        background-image: url(&quot;./assets/FOOTER.png&quot;);
+        background-image: url(&quot;../assets/FOOTER.png&quot;);
         background-size: cover;
         background-repeat: repeat;
         background-position: center;
@@ -1565,14 +1581,6 @@
                     Artikel
                   </a>
                 </li>
-
-                <li>
-                  <a href="#" class="hover:underline"> Tentang Kami </a>
-                </li>
-
-                <li>
-                  <a href="#" class="hover:underline"> Kontak </a>
-                </li>
               </ul>
             </div>
 
@@ -1583,19 +1591,19 @@
 
               <ul class="space-y-2 opacity-90">
                 <li>
-                  <a href="#" class="hover:underline"> Kalkulator BMI </a>
+                  <a href="/bmi/bmi.html" class="hover:underline"> Cek Gizi </a>
                 </li>
 
                 <li>
-                  <a href="#" class="hover:underline"> Kalkulator BMR </a>
+                  <a href="/finder/finder.html" class="hover:underline">
+                    Gizi Finder
+                  </a>
                 </li>
 
                 <li>
-                  <a href="#" class="hover:underline"> Peta Pangan </a>
-                </li>
-
-                <li>
-                  <a href="#" class="hover:underline"> Mitos vs Fakta </a>
+                  <a href="/artikel/artikel.html" class="hover:underline">
+                    Artikel
+                  </a>
                 </li>
               </ul>
             </div>
@@ -1623,9 +1631,9 @@
 
           <div>
             <img
-              src="./assets/footerlogo.png"
+              src="../assets/footerlogo.png"
               alt=""
-              class="w-[400px] h-[200px]"
+              class="w-[400px] h-auto object-cover"
             />
           </div>
         </div>
@@ -1725,7 +1733,7 @@
             </a>
           </div>
 
-          <p class="text-right font-karla font-bold text-[18px]">
+          <p class="text-right font-karla font-bold text-[16px]">
             © 2026 Gizify. Semua hak dilindungi undang-undang.
           </p>
         </div>
