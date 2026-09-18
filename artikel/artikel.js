@@ -158,7 +158,7 @@ const databaseArtikel = {
       </p>
 
       <p>
-        Padahal, banyak yang mengira sehat itu mahal, padahal makanan
+        Padahal makanan
         lokal Indonesia sangat melimpah nutrisi. Sayuran seperti bayam,
         kangkung, dan kacang panjang, misalnya, mudah ditemukan dengan
         harga sangat terjangkau namun kaya akan vitamin dan mineral.
