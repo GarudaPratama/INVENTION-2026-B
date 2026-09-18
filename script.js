@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   // 1. Load Navbar
-  $("#navbar").load("/navigasi/navbar.html", function () {
+  $("#navbar").load("./navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "/navigasi/Logo-9.png");
   });
 
