@@ -1,7 +1,7 @@
 const databaseArtikel = {
   1: {
     judul: "Kenali Titik Mulaimu dengan Kalkulator BMI",
-    gambar: "/assets/image 24.png",
+    gambar: "/assets/gambarcard1.png",
     deskripsi:
       "Gizify tidak menghakimi. Masukkan tinggi dan berat badanmu untuk mengetahui target kalori harian.",
     isi: `
@@ -47,7 +47,7 @@ const databaseArtikel = {
 
   2: {
     judul: "Bongkar Alternatif: Salmon vs Lele & Tempe",
-    gambar: "/assets/cardimg2.png",
+    gambar: "/assets/gambarcard2.png",
     deskripsi:
       "Tidak perlu beli bahan mahal untuk dapat gizi seimbang. Lele dan tempe punya kandungan gizi yang baik.",
     isi: `
@@ -95,7 +95,7 @@ const databaseArtikel = {
 
   3: {
     judul: "Panduan Eksekusi Pangan di Pasar Tradisional",
-    gambar: "/assets/cardimg3.png",
+    gambar: "/assets/gambarcard3.png",
     deskripsi:
       "Temukan lokasi warteg sehat dan pasar tradisional terdekat dari lokasimu dengan fitur Peta Pangan Gizify.",
     isi: `
@@ -143,7 +143,7 @@ const databaseArtikel = {
 
   4: {
     judul: "Mitos Gizi Mahal yang Perlu Kamu Tahu",
-    gambar: "/assets/artikelsalad.png",
+    gambar: "/assets/gambarcard4.png",
     deskripsi:
       "Banyak yang mengira sehat itu mahal. Padahal makanan lokal Indonesia sangat melimpah nutrisi.",
     isi: `
@@ -190,7 +190,7 @@ const databaseArtikel = {
 
   5: {
     judul: "Cara Menghitung Kebutuhan Kalori Harian",
-    gambar: "/assets/cardimg4.png",
+    gambar: "/assets/gambarcard5.png",
     deskripsi:
       "Menghitung kalori bukan berarti menyiksa diri. Ini tentang memberikan bahan bakar yang cukup untuk tubuh.",
     isi: `
@@ -239,7 +239,7 @@ const databaseArtikel = {
 
   6: {
     judul: "Resep Hemat & Sehat Berbahan Dasar Tempe",
-    gambar: "/assets/cardimg5.png",
+    gambar: "/assets/gambarcard6.png",
     deskripsi:
       "Olahan tempe kreatif yang tidak membosankan untuk menu makan harian kamu.",
     isi: `
