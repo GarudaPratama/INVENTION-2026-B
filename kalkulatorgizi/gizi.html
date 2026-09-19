@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link
+    <link
       rel="icon"
       type="image/png"
       sizes="32x32"
@@ -44,9 +44,7 @@
       }
     </style>
   </head>
-  <body
-    class="bg-[#F9F9F9] min-h-screen flex flex-col"
-  >
+  <body class="bg-[#F9F9F9] min-h-screen flex flex-col">
     <!-- Tempat Navbar Loaded -->
     <div
       id="navbar"
@@ -128,22 +126,46 @@
 
           <!-- Dropdown Pilih Aktivitas -->
           <div class="flex flex-col gap-2">
-            <label
-              for="selectAktivitas"
-              class="text-[18px] font-semibold font-rubik"
-            >
-              Seberapa aktif harimu?
-            </label>
+            <div class="flex flex-col gap-2">
+              <label
+                for="selectAktivitas"
+                class="text-[22px] font-semibold font-rubik"
+              >
+                Seberapa aktif harimu?
+              </label>
 
-            <select
-              id="selectAktivitas"
-              class="w-full border-2 border-[#213D34] bg-transparent rounded-full px-5 py-3 text-[16px] font-normal font-rubik text-[#6D6D6D] outline-none cursor-pointer"
-            >
-              <option value="1.2">Jarang / Tidak Olahraga</option>
-              <option value="1.375">Aktivitas Ringan (1-3x/minggu)</option>
-              <option value="1.55">Aktivitas Sedang (3-5x/minggu)</option>
-              <option value="1.725">Aktivitas Berat (6-7x/minggu)</option>
-            </select>
+              <div class="relative">
+                <select
+                  id="selectAktivitas"
+                  class="w-full appearance-none border-2 border-[#213D34] bg-transparent rounded-full px-5 py-3 pr-12 text-[16px] font-normal font-rubik text-[#6D6D6D] outline-none cursor-pointer"
+                >
+                  <option value="1.2">Jarang / Tidak Olahraga</option>
+                  <option value="1.375">Aktivitas Ringan (1-3x/minggu)</option>
+                  <option value="1.55">Aktivitas Sedang (3-5x/minggu)</option>
+                  <option value="1.725">Aktivitas Berat (6-7x/minggu)</option>
+                </select>
+
+                <!-- Icon Dropdown -->
+                <div
+                  id="iconAktivitas"
+                  class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none transition-transform duration-200"
+                  >
+                  <svg
+                    class="w-5 h-5 text-[#213D34]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -232,7 +254,7 @@
       </div>
     </section>
 
-  <footer
+    <footer
       class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-16 bg-transparent relative"
       style="
         background-image: url(&quot;../assets/FOOTER.png&quot;);
@@ -271,7 +293,6 @@
                     Artikel
                   </a>
                 </li>
-
               </ul>
             </div>
 
@@ -286,11 +307,15 @@
                 </li>
 
                 <li>
-                  <a href="/finder/finder.html" class="hover:underline"> Gizi Finder </a>
+                  <a href="/finder/finder.html" class="hover:underline">
+                    Gizi Finder
+                  </a>
                 </li>
 
                 <li>
-                  <a href="/artikel/artikel.html" class="hover:underline"> Artikel </a>
+                  <a href="/artikel/artikel.html" class="hover:underline">
+                    Artikel
+                  </a>
                 </li>
               </ul>
             </div>

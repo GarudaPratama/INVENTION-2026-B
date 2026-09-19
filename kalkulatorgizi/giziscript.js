@@ -87,6 +87,15 @@ $(document).ready(function () {
     updateTdee(pengali);
   });
 
+  // Icon Dropdown Aktivitas
+$("#selectAktivitas").on("click", function () {
+  $("#iconAktivitas").toggleClass("rotate-180");
+});
+
+$("#selectAktivitas").on("blur", function () {
+  $("#iconAktivitas").removeClass("rotate-180");
+});
+
   const filteredFoods = foodDatabase.filter(
     (item) => item.targetGroup === userStatus,
   );

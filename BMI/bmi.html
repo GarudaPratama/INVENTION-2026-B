@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link
+    <link
       rel="icon"
       type="image/png"
       sizes="32x32"
@@ -145,15 +145,39 @@
             >
               <label
                 class="font-bold text-[12px] text-[#213D34] uppercase font-rubik"
-                >Jenis Kelamin</label
               >
-              <select
-                id="inputGender"
-                class="w-full bg-[#D9EF78] border-2 border-[#213D34] rounded-full px-5 py-2.5 font-medium text-[15px] text-[#213D34] outline-none cursor-pointer uppercase"
-              >
-                <option value="pria">Pria</option>
-                <option value="wanita">Wanita</option>
-              </select>
+                Jenis Kelamin
+              </label>
+
+              <div class="relative">
+                <select
+                  id="inputGender"
+                  class="w-full appearance-none bg-[#D9EF78] border-2 border-[#213D34] rounded-full px-5 py-2.5 pr-12 font-medium text-[15px] text-[#213D34] outline-none cursor-pointer uppercase"
+                >
+                  <option value="pria">Pria</option>
+                  <option value="wanita">Wanita</option>
+                </select>
+
+                <!-- Icon Dropdown Gender -->
+                <div
+                  id="iconGender"
+                  class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none transition-transform duration-200"
+                >
+                  <svg
+                    class="w-5 h-5 text-[#213D34]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
 
             <!-- Box 2: Berat & Tinggi Badan -->
@@ -316,8 +340,8 @@
       </div>
     </main>
 
-     <footer
-      class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-16 bg-transparent relative "
+    <footer
+      class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-16 bg-transparent relative"
       style="
         background-image: url(&quot;../assets/FOOTER.png&quot;);
         background-size: cover;
@@ -355,7 +379,6 @@
                     Artikel
                   </a>
                 </li>
-
               </ul>
             </div>
 
@@ -370,11 +393,15 @@
                 </li>
 
                 <li>
-                  <a href="/finder/finder.html" class="hover:underline"> Gizi Finder </a>
+                  <a href="/finder/finder.html" class="hover:underline">
+                    Gizi Finder
+                  </a>
                 </li>
 
                 <li>
-                  <a href="/artikel/artikel.html" class="hover:underline"> Artikel </a>
+                  <a href="/artikel/artikel.html" class="hover:underline">
+                    Artikel
+                  </a>
                 </li>
               </ul>
             </div>

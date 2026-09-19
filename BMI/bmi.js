@@ -30,27 +30,31 @@ $(document).ready(function () {
   $("#navbar").load("../Navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "../Navigasi/Logo-9.png");
   });
- 
-let isScrolled = false;
 
-$(window).on("scroll", function () {
-  const scrollTop = $(window).scrollTop();
+  let isScrolled = false;
 
-  // Saat scroll lebih dari 50px DAN belum dalam status scrolled
-  if (scrollTop > 50 && !isScrolled) {
-    isScrolled = true;
-    $("#navbar")
-      .addClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6")
-      .removeClass("left-0 right-0");
-  } 
-  // Saat scroll kurang dari/sama dengan 50px DAN sedang dalam status scrolled
-  else if (scrollTop <= 50 && isScrolled) {
-    isScrolled = false;
-    $("#navbar")
-      .removeClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6")
-      .addClass("left-0 right-0");
-  }
-});
+  $(window).on("scroll", function () {
+    const scrollTop = $(window).scrollTop();
+
+    // Saat scroll lebih dari 50px DAN belum dalam status scrolled
+    if (scrollTop > 50 && !isScrolled) {
+      isScrolled = true;
+      $("#navbar")
+        .addClass(
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6",
+        )
+        .removeClass("left-0 right-0");
+    }
+    // Saat scroll kurang dari/sama dengan 50px DAN sedang dalam status scrolled
+    else if (scrollTop <= 50 && isScrolled) {
+      isScrolled = false;
+      $("#navbar")
+        .removeClass(
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6",
+        )
+        .addClass("left-0 right-0");
+    }
+  });
 
   // 2. Logika Dropdown Navigasi
   $(document).on("click", "#btn-fitur", function (e) {
@@ -70,6 +74,15 @@ $(window).on("scroll", function () {
         .addClass("opacity-0 invisible translate-y-2")
         .removeClass("opacity-100 visible translate-y-0");
     }
+  });
+
+  // Icon Dropdown Gender
+  $("#inputGender").on("click", function () {
+    $("#iconGender").toggleClass("rotate-180");
+  });
+
+  $("#inputGender").on("blur", function () {
+    $("#iconGender").removeClass("rotate-180");
   });
 
   // fungsi utama BMI
