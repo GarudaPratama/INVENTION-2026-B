@@ -38,18 +38,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-
-      .reveals {
-        opacity: 0;
-        transform: translateY(50px);
-        transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
-      }
-      .reveals.activate {
-        opacity: 1;
-        transform: translateY(0);
-      }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>GiziFinder</title>
@@ -60,9 +48,31 @@
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500 ease-in-out pb-3"
     ></div>
+    <nav
+      class="reveal mt-36 mb-8 ml-60 flex items-center gap-2 text-sm font-karla text-[#213D34]/70"
+    >
+      <a
+        href="/index.html"
+        class="hover:text-[#213D34] hover:underline transition-colors flex items-center gap-1"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        Beranda
+      </a>
+      <span class="text-[#213D34]/40">/</span>
+      <span class="font-bold text-[#213D34]">GiziFinder</span>
+    </nav>
     <section class="w-full max-w-6xl mx-auto px-4 md:px-8 py-6 mb-24">
       <!-- 1. BADGE -->
-      <div class="flex justify-center mb-4">
+      <div class="reveal flex justify-center mb-4">
         <span
           class="bg-[#D9EF78] text-[#2C4A3B] font-karla font-semibold px-5 py-1.5 rounded-full text-[15px]"
         >
@@ -71,7 +81,7 @@
       </div>
 
       <!-- 2. JUDUL UTAMA & DESKRIPSI -->
-      <div class="text-center max-w-2xl mx-auto mb-8">
+      <div class="reveal text-center max-w-2xl mx-auto mb-8">
         <h1 class="font-rubik font-bold text-[28px] md:text-[52px]/[52px] mb-4">
           Pasar Pangan Terdekat, Lengkap Dengan Isi Lapaknya
         </h1>
@@ -86,7 +96,7 @@
 
       <!-- 3. BOX STATISTIK -->
       <div
-        class="max-w-xl mx-auto bg-[#F1F2ED] border border-[#2C4A3B] rounded-2xl p-4 flex items-center justify-between text-center mb-8"
+        class="reveal max-w-xl mx-auto bg-[#F1F2ED] border border-[#2C4A3B] rounded-2xl p-4 flex items-center justify-between text-center mb-8"
       >
         <div class="flex-1 border-r border-[#2C4A3B]">
           <p
@@ -127,7 +137,7 @@
       </div>
 
       <!-- 4. SEARCH BAR -->
-      <div class="relative max-w-5xl mx-auto mb-6">
+      <div class="reveal relative max-w-5xl mx-auto mb-6">
         <span
           class="absolute inset-y-0 left-4 flex items-center text-[#5C6660]"
         >
@@ -155,7 +165,7 @@
 
       <!-- filter -->
       <div
-        class="flex flex-wrap gap-2 max-w-5xl mx-auto mb-6 font-rubik text-[12px] font-medium"
+        class="reveal flex flex-wrap gap-2 max-w-5xl mx-auto mb-6 font-rubik text-[12px] font-medium"
       >
         <div class="bg-[#D9EF78] text-[#2C4A3B] px-4 py-2 rounded-full">
           Semua Lokasi
@@ -183,7 +193,7 @@
       </div>
 
       <!-- text lokasi -->
-      <div class="max-w-5xl mx-auto mb-4 font-rubik text-[12px]">
+      <div class="reveal max-w-5xl mx-auto mb-4 font-rubik text-[12px]">
         <span class="font-extrabold text-[#213D34]">9</span>
         <span class="text-[#2C4A3B]">Lokasi Ditemukan Di Sekitarmu</span>
       </div>
@@ -194,12 +204,12 @@
       >
         <!-- Kartu 1 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard1.png"
             alt="Warung Sayur Bu Yani"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -250,8 +260,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Cisitu Indah III No. 4, Bandung
               </p>
               <p class="flex items-center gap-1">
@@ -282,12 +293,12 @@
 
         <!-- Kartu 2 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard2.png"
             alt="Warteg Ibu  Yaya"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -338,8 +349,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Tebet Raya No. 8, Jakarta Selatan
               </p>
               <p class="flex items-center gap-1">
@@ -370,12 +382,12 @@
 
         <!-- Kartu 3 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard3.png"
             alt="pasar balarajae"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -426,8 +438,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 jl. Balarajae Raya, jakarta Pusat
               </p>
               <p class="flex items-center gap-1">
@@ -458,12 +471,12 @@
 
         <!-- Kartu 4 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard4.png"
             alt="Warung Gizi Mbok sri"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -514,8 +527,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Kaliurang KM 5, Yogyakarta
               </p>
               <p class="flex items-center gap-1">
@@ -546,12 +560,12 @@
 
         <!-- Kartu 5 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard5.png"
             alt="Pasar Malabar"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -602,8 +616,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Malabar No. 12, Bandung
               </p>
               <p class="flex items-center gap-1">
@@ -634,12 +649,12 @@
 
         <!-- Kartu 6 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard6.png"
             alt="Pasar Gede Klewer"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -690,8 +705,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Urip Sumoharjo, Surakarta
               </p>
               <p class="flex items-center gap-1">
@@ -722,12 +738,12 @@
 
         <!-- Kartu 7 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard7.png"
             alt="Pasar Terong"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -778,8 +794,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Terong No. 1, Makassar
               </p>
               <p class="flex items-center gap-1">
@@ -810,12 +827,12 @@
 
         <!-- Kartu 8 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard8.png"
             alt="Pasar Bersehati"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -866,8 +883,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Pasar 45, Manado
               </p>
               <p class="flex items-center gap-1">
@@ -898,12 +916,12 @@
 
         <!-- Kartu 9 -->
         <div
-          class="bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col"
+          class="group reveal bg-white rounded-2xl border border-[#2C4A3B] overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl cursor-pointer"
         >
           <img
             src="../assets/imagecard9.png"
             alt="Pasar Santa"
-            class="w-full h-58 object-cover"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div class="p-6 flex flex-col justify-between flex-1">
             <div class="flex justify-between items-center mb-4">
@@ -954,8 +972,9 @@
                     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                     <path
                       d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
                 Jl. Cipaku I No. 1, Jakarta Selatan
               </p>
               <p class="flex items-center gap-1">
@@ -985,9 +1004,9 @@
         </div>
       </div>
 
-      <!-- bagian pasar favorite -->
+      <!-- bagian pasar favorit -->
       <div
-        class="bg-[#2C4A3B] mt-24 rounded-3xl p-10 max-sm:p-6 flex flex-row max-sm:flex-col items-center max-sm:items-start justify-between gap-6 max-w-6xl mx-auto"
+        class="reveal bg-[#2C4A3B] mt-24 rounded-3xl p-10 max-sm:p-6 flex flex-row max-sm:flex-col items-center max-sm:items-start justify-between gap-6 max-w-6xl mx-auto"
       >
         <!-- SISI KIRI: Judul & Deskripsi -->
         <div>
@@ -1006,9 +1025,34 @@
 
         <!-- SISI KANAN: Tombol Usul -->
         <button
-          class="bg-[#D9EF78] text-[#2C4A3B] font-rubik font-semibold px-6 py-3 rounded-full text-[15px] hover:opacity-90 transition whitespace-nowrap"
+          onclick="window.location.href = '/BMI/bmi.html'"
+          class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer"
         >
-          Usulkan Lokasi Baru
+          <span
+            class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </span>
+          <span
+            class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
+            >Usulkan Lokasi Baru
+          </span>
+          <span class="relative invisible font-karla font-black"
+            >Usulkan Lokasi Baru
+          </span>
         </button>
       </div>
     </section>
@@ -1211,5 +1255,15 @@
         </div>
       </div>
     </footer>
+
+    <!-- Library & Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="finder.js"></script>
+
+    <script src="../smooth-scroll/smooth.js"></script>
   </body>
 </html>
