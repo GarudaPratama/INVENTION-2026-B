@@ -73,19 +73,19 @@
     ></header>
 
     <!-- Hero Section -->
-     <section
+    <section
       class="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden px-6"
     >
       <!-- svg background -->
       <svg
         class="absolute inset-0 h-full w-full pointer-events-none z-0"
-        viewBox="0 0 1920 1220"
+        viewBox="0 0 1920 1300"
         fill="none"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M1920 1220 H1350 C 1290 1220, 1290 1170, 1230 1170 H0 V0 H1920 V1220Z"
+          d="M1920 1300 H1420 C1300 1300, 1300 1150, 1180 1150 H0 V0 H1920 V1300 Z"
           fill="#F1F2ED"
         />
       </svg>
@@ -165,38 +165,45 @@
 
     <!-- Section About -->
     <section
-      class="relative min-h-screen w-full flex items-center justify-center px-6 py-20"
+      class="relative min-h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-16 py-20 max-md:py-12 max-md:px-4"
     >
       <div
-        class="max-w-[1152px] w-full mx-auto grid grid-cols-12 gap-12 items-center"
+        class="max-w-[1200px] w-full mx-auto grid grid-cols-12 gap-8 lg:gap-10 items-center max-md:grid-cols-1 max-md:gap-6"
       >
         <!-- Gambar Buah -->
-        <div class="col-span-5 w-full reveal">
+        <div
+          class="col-span-4 w-full reveal max-md:col-span-1 max-md:max-w-md max-md:mx-auto"
+        >
           <img
             src="./assets/buah.png"
             alt="Gizify"
-            class="w-full h-[520px] object-cover rounded-[28px]"
+            class="w-full h-[460px] object-cover rounded-[28px] max-md:h-[320px] max-md:rounded-[20px]"
           />
         </div>
 
-        <!-- Deskripsi -->
-        <div class="col-span-7 flex flex-col justify-center reveal">
+        <!-- Deskripsi & Card -->
+        <div
+          class="col-span-8 w-full flex flex-col justify-center reveal max-md:col-span-1 max-md:items-center max-md:text-center"
+        >
+          <!-- Badge -->
           <div>
             <span
-              class="inline-block font-semibold bg-[#D9EF78] text-[#213D34] font-karla text-[15px] px-4 py-1.5 rounded-full mb-4"
+              class="inline-block font-semibold bg-[#D9EF78] text-[#213D34] font-karla text-[15px] px-4 py-1.5 rounded-full mb-4 max-md:text-[12px] max-md:px-3.5 max-md:py-1 max-md:mb-3"
             >
               Tentang Gizify
             </span>
           </div>
 
+          <!-- Judul -->
           <h2
-            class="text-[54px] font-semibold font-rubik text-[#1E3A2B] tracking-tight mb-4"
+            class="text-[44px] font-semibold font-rubik text-[#1E3A2B] tracking-tight mb-4 max-md:text-[28px] max-md:mb-3 leading-tight"
           >
             Gizify Bukan Sekedar Web
           </h2>
 
+          <!-- Paragraf -->
           <p
-            class="text-[#5C6660] font-medium text-[18px] leading-relaxed mb-8 max-w-2xl"
+            class="text-[#5C6660] font-medium text-[16px] lg:text-[17px] leading-relaxed mb-8 max-w-2xl max-md:text-[14px] max-md:mb-6"
           >
             Gizify hadir untuk membantumu memahami gizi dengan cara yang mudah,
             menyenangkan, dan relevan dengan kehidupan sehari-hari. Kami percaya
@@ -205,25 +212,26 @@
           </p>
 
           <!-- Bagian Card -->
-          <div class="grid grid-cols-3 gap-4">
+          <div
+            class="grid grid-cols-3 gap-3 lg:gap-3.5 w-full max-md:grid-cols-2"
+          >
             <!-- Card 1 -->
             <div
-              class="bg-[#F1F2ED] p-5 rounded-[24px] flex flex-col items-start reveal"
+              class="bg-[#F1F2ED] p-3.5 lg:p-4 rounded-[20px] flex flex-col items-start reveal max-md:rounded-[18px]"
             >
               <div
-                class="w-12 h-12 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34]"
+                class="w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34] shrink-0 max-md:w-9 max-md:h-9"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-book"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
@@ -234,12 +242,12 @@
                 </svg>
               </div>
               <h3
-                class="font-medium text-[20px] font-rubik text-[#213D34] mb-5 leading-none"
+                class="font-medium text-[16px] lg:text-[18px] font-rubik text-[#213D34] mb-2 leading-snug max-md:text-[16px]"
               >
                 Edukasi Gizi Terpercaya
               </h3>
               <p
-                class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight"
+                class="text-[12px] lg:text-[14px] text-[#5C6660] font-karla font-medium leading-snug max-md:text-[12px]"
               >
                 Menyajikan informasi gizi berbasis sains dan mudah dipahami
                 semua orang.
@@ -248,22 +256,21 @@
 
             <!-- Card 2 -->
             <div
-              class="bg-[#F1F2ED] p-5 rounded-2xl flex flex-col items-start reveal"
+              class="bg-[#F1F2ED] p-3.5 lg:p-4 rounded-[20px] flex flex-col items-start reveal max-md:rounded-[18px]"
             >
               <div
-                class="w-12 h-12 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34]"
+                class="w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34] shrink-0 max-md:w-9 max-md:h-9"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-seedling"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M12 10a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" />
@@ -272,12 +279,12 @@
                 </svg>
               </div>
               <h3
-                class="font-medium text-[20px] font-rubik text-[#213D34] mb-5 leading-none"
+                class="font-medium text-[16px] lg:text-[18px] font-rubik text-[#213D34] mb-2 leading-snug max-md:text-[16px]"
               >
                 Gaya Hidup Seimbang
               </h3>
               <p
-                class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight"
+                class="text-[12px] lg:text-[14px] text-[#5C6660] font-karla font-medium leading-snug max-md:text-[12px]"
               >
                 Mendukungmu membangun kebiasaan sehat yang seimbang dan
                 berkelanjutan.
@@ -286,22 +293,21 @@
 
             <!-- Card 3 -->
             <div
-              class="bg-[#F1F2ED] p-5 rounded-2xl flex flex-col items-start reveal"
+              class="bg-[#F1F2ED] p-3.5 lg:p-4 rounded-[20px] flex flex-col items-start reveal max-md:hidden"
             >
               <div
-                class="w-12 h-12 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34]"
+                class="w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34] shrink-0"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-category"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M4 4h6v6h-6l0 -6" />
@@ -311,12 +317,12 @@
                 </svg>
               </div>
               <h3
-                class="font-medium text-[20px] font-rubik text-[#213D34] mb-5 leading-none"
+                class="font-medium text-[16px] lg:text-[18px] font-rubik text-[#213D34] mb-2 leading-snug"
               >
                 Mempunyai Beragam Fitur
               </h3>
               <p
-                class="text-[15px] text-[#5C6660] font-karla font-medium leading-tight"
+                class="text-[12px] lg:text-[14px] text-[#5C6660] font-karla font-medium leading-snug"
               >
                 Fitur yang terhubung satu sama lain salah satu fiturnya adalah
                 BMI.
