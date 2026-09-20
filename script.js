@@ -151,6 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   document
-    .querySelectorAll(".reveal, .reveal-throw")
+    .querySelectorAll(".reveal")
     .forEach((el) => observer.observe(el));
 });
