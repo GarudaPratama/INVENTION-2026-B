@@ -32,6 +32,19 @@
         --font-rubik: "Rubik", sans-serif;
       }
 
+      /* Style untuk animasi scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       .reveal-throw {
         animation: throw-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
       }
