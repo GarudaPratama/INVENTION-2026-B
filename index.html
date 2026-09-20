@@ -32,42 +32,34 @@
         --font-rubik: "Rubik", sans-serif;
       }
 
-      .reveal {
-        opacity: 0;
-        transform: translateY(50px);
-        transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
       .reveal-throw {
-        opacity: 0;
-        transform: translateY(200px) scale(0.4);
-        transition:
-          opacity 0.5s ease-out,
-          transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation: throw-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
       }
 
-      .reveal-throw.active {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+      @keyframes throw-in {
+        from {
+          opacity: 0;
+          translate: 0 200px;
+          scale: 0.4;
+        }
+        to {
+          opacity: 1;
+          translate: 0 0;
+          scale: 1;
+        }
       }
 
-      .delay-100 {
-        transition-delay: 0.1s;
+      .reveal-throw.delay-100 {
+        animation-delay: 0.1s;
       }
-      .delay-300 {
-        transition-delay: 0.3s;
+      .reveal-throw.delay-300 {
+        animation-delay: 0.3s;
       }
-      .delay-500 {
-        transition-delay: 0.5s;
+      .reveal-throw.delay-500 {
+        animation-delay: 0.5s;
       }
-      .delay-700 {
-        transition-delay: 0.7s;
+      .reveal-throw.delay-700 {
+        animation-delay: 0.7s;
       }
     </style>
 
@@ -81,7 +73,7 @@
     ></header>
 
     <!-- Hero Section -->
-    <section
+     <section
       class="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden px-6"
     >
       <!-- svg background -->
@@ -93,7 +85,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M1920 1220H1334.5C1278.61 1220 1233.27 1174.83 1233 1119H0V0H1920V1220Z"
+          d="M1920 1220 H1350 C 1290 1220, 1290 1170, 1230 1170 H0 V0 H1920 V1220Z"
           fill="#F1F2ED"
         />
       </svg>
@@ -102,22 +94,22 @@
       <img
         src="./assets/BAYAM.png"
         alt="Bayam"
-        class="absolute top-12 left-32 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12 reveal-throw delay-100"
+        class="absolute top-12 left-32 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12 reveal-throw delay-100 max-xl:top-16 max-xl:left-8 max-xl:w-[260px] max-xl:h-[260px] max-lg:top-16 max-lg:-left-10 max-lg:w-[240px] max-lg:h-[240px] max-sm:top-20 max-sm:left-2 max-sm:w-[130px] max-sm:h-[130px]"
       />
       <img
         src="./assets/TEMPE.png"
         alt="Tempe"
-        class="absolute bottom-16 left-24 w-[400px] h-[400px] object-contain pointer-events-none z-10 reveal-throw delay-300"
+        class="absolute bottom-16 left-24 w-[400px] h-[400px] object-contain pointer-events-none z-10 reveal-throw delay-300 max-xl:bottom-10 max-xl:left-2 max-xl:w-[280px] max-xl:h-[280px] max-lg:bottom-16 max-lg:-left-5 max-lg:w-[220px] max-lg:h-[220px] max-sm:bottom-13 max-sm:left-3 max-sm:w-[135px] max-sm:h-[135px]"
       />
       <img
         src="./assets/WORTEL.png"
         alt="Wortel"
-        class="absolute top-2 right-12 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6 reveal-throw delay-500"
+        class="absolute top-2 right-12 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6 reveal-throw delay-500 max-xl:top-16 max-xl:right-10 max-xl:w-[300px] max-xl:h-[300px] max-lg:top-12 max-lg:-right-10 max-lg:w-[260px] max-lg:h-[260px] max-sm:top-18 max-sm:-right-2 max-sm:w-[150px] max-sm:h-[150px]"
       />
       <img
         src="./assets/BROKOLI.png"
         alt="Brokoli"
-        class="absolute bottom-12 right-24 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6 reveal-throw delay-700"
+        class="absolute bottom-12 right-24 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6 reveal-throw delay-700 max-xl:bottom-8 max-xl:right-2 max-xl:w-[270px] max-xl:h-[270px] max-lg:bottom-16 max-lg:-right-8 max-lg:w-[230px] max-lg:h-[230px] max-sm:bottom-11 max-sm:right-1 max-sm:w-[145px] max-sm:h-[145px]"
       />
 
       <!-- Main Content -->
@@ -125,13 +117,13 @@
         class="relative z-20 flex max-w-2xl flex-col items-center text-center reveal"
       >
         <h1
-          class="text-[74px] font-black font-rubik text-[#213D34] tracking-normal uppercase leading-[1.1]"
+          class="text-[74px] font-black font-rubik text-[#213D34] tracking-normal uppercase leading-[1.1] max-xl:text-[64px] max-lg:text-[56px] max-sm:text-[32px]"
         >
           Gizi Maksimal<br />Nggak Harus<br />Mahal.
         </h1>
 
         <p
-          class="mt-6 text-[18px] font-karla text-[#5C6660] font-medium leading-relaxed max-w-[600px]"
+          class="mt-6 text-[18px] font-karla text-[#5C6660] font-medium leading-snug max-w-[600px] max-xl:max-w-[520px] max-xl:text-[17px] max-lg:max-w-[480px] max-lg:text-[16px] max-sm:mt-4 max-sm:text-[15px]"
         >
           Akses panduan nutrisi berbasis sains, raih pola makan seimbang, dan
           kembangkan gaya hidup sehat untuk semua orang. Mulai perjalanan gizimu
@@ -140,13 +132,13 @@
 
         <button
           onclick="window.location.href = '/BMI/bmi.html'"
-          class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer"
+          class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer max-sm:mt-5 max-sm:px-6 max-sm:text-[15px]"
         >
           <span
             class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
           >
             <svg
-              class="w-6 h-6"
+              class="w-6 h-6 max-sm:w-5 max-sm:h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
