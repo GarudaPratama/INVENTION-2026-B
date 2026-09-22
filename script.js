@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   // 1. Load Navbar
   $("#navbar").load("./Navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "./Navigasi/Logo-9.png");
@@ -9,35 +8,33 @@ $(document).ready(function () {
   let isScrolled = false;
 
   $(window).on("scroll", function () {
-
     const scrollTop = $(window).scrollTop();
 
     // Saat scroll lebih dari 50px DAN belum dalam status scrolled
     if (scrollTop > 50 && !isScrolled) {
-
       isScrolled = true;
 
       $("#navbar")
-        .addClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6")
+        .addClass(
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6",
+        )
         .removeClass("left-0 right-0");
-
     }
 
     // Saat scroll kurang dari/sama dengan 50px DAN sedang dalam status scrolled
     else if (scrollTop <= 50 && isScrolled) {
-
       isScrolled = false;
 
       $("#navbar")
-        .removeClass("bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6")
+        .removeClass(
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6",
+        )
         .addClass("left-0 right-0");
     }
   });
 
-
   // 2. Event Handler Dropdown Fitur
   $(document).on("click", "#btn-fitur", function (e) {
-
     e.stopPropagation();
 
     // Muter SVG panah di dalam div utama
@@ -51,12 +48,9 @@ $(document).ready(function () {
       );
   });
 
-
   // 3. Tutup Dropdown saat Klik di Luar
   $(document).on("click", function (e) {
-
     if (!$(e.target).closest("#btn-fitur").length) {
-
       $("#btn-fitur div > svg").removeClass("rotate-180");
 
       $("#btn-fitur ul")
@@ -65,12 +59,9 @@ $(document).ready(function () {
     }
   });
 
-
   // 4. Logika Pergantian Gambar Mockup HP Berdasarkan Scroll (Smooth Fade)
   $(window).on("scroll", function () {
-
     if ($("#step-1").length && $("#step-2").length && $("#step-3").length) {
-
       var scrollPosition = $(window).scrollTop() + $(window).height() / 2;
 
       var topStep1 = $("#step-1").offset().top;
@@ -99,10 +90,8 @@ $(document).ready(function () {
     }
   });
 
-
   // 5. FAQ - Buka dan Tutup Pertanyaan
   $(document).on("click", ".faq-header", function () {
-
     // Ambil FAQ yang sedang diklik
     var item = $(this).closest(".faq-item");
 
@@ -127,30 +116,20 @@ $(document).ready(function () {
     // Putar panah
     icon.toggleClass("rotate-180");
   });
-
 });
 
 // 6. Intersection Observer untuk Animasi Fade In (Scroll Reveal)
 document.addEventListener("DOMContentLoaded", () => {
-
   const observer = new IntersectionObserver(
     (entries) => {
-
       entries.forEach((entry) => {
-
         if (entry.isIntersecting) {
-
           entry.target.classList.add("active");
-
         }
-
       });
-
     },
     { threshold: 0.2 },
   );
 
-  document
-    .querySelectorAll(".reveal")
-    .forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 });
