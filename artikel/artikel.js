@@ -285,7 +285,6 @@ const databaseArtikel = {
   },
 };
 
-
 // ===== MENAMPILKAN ARTIKEL DI HALAMAN DAFTAR =====
 
 function tampilkanArtikel(data) {
@@ -306,76 +305,70 @@ function tampilkanArtikel(data) {
   }
 
   $.each(data, function (id, artikel) {
-    const kartuArtikel = `
-      <a
-        href="detailartikel.html?id=${id}"
-        class="flex flex-col rounded-2xl overflow-hidden shadow mt-6 min-h-[550px] bg-[#F1F2ED] mr-2 transition-transform duration-300 hover:-translate-y-1"
+    const kartuArtikel = `<a
+  href="detailartikel.html?id=${id}"
+  class="flex flex-col rounded-2xl overflow-hidden shadow min-h-[550px] max-md:min-h-0 bg-[#F1F2ED] transition-transform duration-300 hover:-translate-y-1 w-full"
+>
+  <img
+    src="${artikel.gambar}"
+    alt="${artikel.judul}"
+    class="w-full h-[350px] max-md:h-[260px] max-sm:h-[220px] object-cover"
+  />
+
+  <div class="px-8 py-6 pb-8 max-sm:px-5 max-sm:py-5 flex flex-col flex-1">
+    <h3
+      class="font-rubik font-semibold text-[28px] max-md:text-[22px] max-sm:text-[18px] leading-tight text-[#213D34] mb-2 line-clamp-2 min-h-[70px] max-sm:min-h-0"
+    >
+      ${artikel.judul}
+    </h3>
+
+    <p
+      class="font-karla font-normal text-[16px] max-sm:text-[14px] leading-normal text-[#5C6660] mb-8 max-sm:mb-6 line-clamp-3 min-h-[72px] max-sm:min-h-0"
+    >
+      ${artikel.deskripsi}
+    </p>
+
+    <button
+      class="mt-auto relative inline-flex items-center justify-center px-8 py-3 max-sm:px-6 max-sm:py-2.5 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer max-sm:text-[14px]"
+    >
+      <span
+        class="absolute inset-0 flex items-center justify-center w-full h-full text-[#D9EF78] duration-700 -translate-x-full bg-[#213D34] group-hover:translate-x-0 ease"
       >
-        <img
-          src="${artikel.gambar}"
-          alt="${artikel.judul}"
-          class="w-full h-[300px] object-cover"
-        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M5 12l14 0" />
+          <path d="M15 16l4 -4" />
+          <path d="M15 8l4 4" />
+        </svg>
+      </span>
 
-        <div class="px-8 py-6 pb-8 flex flex-col flex-1">
-          <h3
-            class="font-rubik font-semibold text-[28px] leading-tight text-[#213D34] mb-2 line-clamp-2 min-h-[70px]"
-          >
-            ${artikel.judul}
-          </h3>
+      <span
+        class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
+      >
+        Baca Artikel
+      </span>
 
-          <p
-            class="font-karla font-normal text-[16px] leading-normal text-[#5C6660] mb-8 line-clamp-3 min-h-[72px]"
-          >
-            ${artikel.deskripsi}
-          </p>
-
-          <button
-            class="mt-auto relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer"
-          >
-            <span
-              class="absolute inset-0 flex items-center justify-center w-full h-full text-[#D9EF78] duration-700 -translate-x-full bg-[#213D34] group-hover:translate-x-0 ease"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  stroke="none"
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path d="M5 12l14 0" />
-                <path d="M15 16l4 -4" />
-                <path d="M15 8l4 4" />
-              </svg>
-            </span>
-
-            <span
-              class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
-            >
-              Baca Artikel
-            </span>
-
-            <span class="relative invisible font-karla font-black">
-              Baca Artikel
-            </span>
-          </button>
-        </div>
-      </a>
+      <span class="relative invisible font-karla font-black">
+        Baca Artikel
+      </span>
+    </button>
+  </div>
+</a>
     `;
 
     $("#daftarArtikel").append(kartuArtikel);
   });
 }
-
 
 $(document).ready(function () {
   $("body").addClass("ready");
@@ -441,11 +434,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   );
 
-  document
-    .querySelectorAll(".reveal")
-    .forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 });
-
 
 // ===== FITUR PENCARIAN & RESET ARTIKEL =====
 
@@ -476,7 +466,6 @@ $(document).on("input", "#searchArtikel", function () {
   }
 });
 
-
 $(document).on("click", "#clearSearch", function () {
   $("#searchArtikel").val("").focus();
 
@@ -488,13 +477,11 @@ $(document).on("click", "#clearSearch", function () {
   }
 });
 
-
 // ===== LOAD NAVBAR & ANIMASI SCROLL NAVBAR =====
 
 $("#navbar").load("../Navigasi/navbar.html", function () {
   $(this).find("img").attr("src", "../Navigasi/Logo-9.png");
 });
-
 
 let isScrolled = false;
 
@@ -520,7 +507,6 @@ $(window).on("scroll", function () {
   }
 });
 
-
 // ===== LOGIKA DROPDOWN NAVIGASI =====
 
 $(document).on("click", "#btn-fitur", function (e) {
@@ -540,7 +526,6 @@ $(document).on("click", "#btn-fitur", function (e) {
       .addClass("opacity-0 invisible translate-y-2");
   }
 });
-
 
 $(document).on("click", function (e) {
   if (!$(e.target).closest("#btn-fitur").length) {
