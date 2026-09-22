@@ -60,42 +60,163 @@
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500 ease-in-out pb-3"
     ></div>
-    <section class="reveal max-w-[800px] mx-auto p-8 mt-32">
-      <!-- Navigasi -->
-      <div class="flex justify-between items-center mb-8">
-        <nav
-          class="reveal mt-6 flex items-center gap-2 text-sm font-karla text-[#213D34]/70"
+<section class="reveal max-w-[800px] mx-auto p-8 mt-32 max-md:mt-20 max-md:p-6 max-sm:mt-24 max-sm:p-4">
+  <!-- Navigasi -->
+  <div class="flex justify-between items-center mb-8 max-sm:flex-col max-sm:items-start max-sm:gap-4">
+    <nav
+      class="reveal mt-6 flex items-center gap-2 text-sm font-karla text-[#213D34]/70 max-sm:mt-0 max-sm:flex-wrap max-sm:text-[13px] max-sm:pt-4 "
+    >
+      <a
+        href="/index.html"
+        class="hover:text-[#213D34] hover:underline transition-colors flex items-center gap-1"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
         >
-          <a
-            href="/index.html"
-            class="hover:text-[#213D34] hover:underline transition-colors flex items-center gap-1"
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        Beranda
+      </a>
+      <span class="text-[#213D34]/40">/</span>
+      <a
+        href="/artikel/artikel.html"
+        class="hover:text-[#213D34] hover:underline transition-colors flex items-center gap-1"
+      >
+        Artikel
+      </a>
+      <span class="text-[#213D34]/40">/</span>
+      <span class="font-bold text-[#213D34]">Detail Artikel</span>
+    </nav>
+
+    <button
+      onclick="window.location.href = '/artikel/artikel.html'"
+      class="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-sm:hidden"
+    >
+      <span
+        class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M5 12l14 0" />
+          <path d="M5 12l4 4" />
+          <path d="M5 12l4 -4" />
+        </svg>
+      </span>
+      <span
+        class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
+        >Kembali Ke Daftar Artikel</span
+      >
+      <span class="relative invisible font-karla font-black"
+        >Kembali Ke Daftar Artikel</span
+      >
+    </button>
+  </div>
+
+  <!-- Judul Artikel -->
+  <h1
+    id="article-title"
+    class="font-rubik font-extrabold text-[52px] text-[#213D34] leading-tight mb-8 max-md:text-[36px] max-sm:text-[26px] max-sm:mb-4"
+  >
+    Judul Loading...
+  </h1>
+
+  <!-- Tanggal -->
+  <p class="font-rubik font-medium text-[18px] text-[#5C6660] mb-6 max-md:text-[16px] max-sm:text-[14px] max-sm:mb-4">
+    Gizify, 15 Agustus 2026, 13:30 WIB
+  </p>
+
+  <!-- Gambar Artikel -->
+  <div class="mb-8 flex justify-center max-sm:mb-6">
+    <img
+      id="article-image"
+      src=""
+      alt=""
+      class="w-full max-w-[680px] h-[580px] object-cover rounded-2xl hidden max-md:h-[380px] max-sm:h-[220px]"
+    />
+  </div>
+
+  <!-- Isi Artikel -->
+  <div
+    id="article-content"
+    class="font-karla text-[22px] text-[#5C6660] leading-relaxed space-y-4 mx-auto font-normal max-md:text-[18px] max-sm:text-[16px]"
+  ></div>
+
+  <!-- Bagikan Pendapat -->
+  <div class="mt-12 mx-auto max-sm:mt-8">
+    <h2 class="font-rubik font-semibold text-[28px] text-[#2C4A3B] mb-3 max-md:text-[24px] max-sm:text-[20px]">
+      Bagikan Pendapatmu
+    </h2>
+
+    <textarea
+      placeholder="Tuliskan Pendapatmu..."
+      class="w-full h-[168px] border border-[#213D34] rounded-2xl p-6 font-karla text-[18px] text-[#5C6660] outline-none resize-none max-md:p-4 max-sm:h-[130px] max-sm:text-[15px]"
+    ></textarea>
+  </div>
+
+  <!-- Bagian Bawah Artikel -->
+  <div class="mt-8 mx-auto border-t border-[#5C6660] pt-4 pb-24 max-sm:pb-12">
+    <div class="flex justify-between items-center gap-4 max-md:flex-col max-md:items-start">
+      <!-- Teks Selesai Membaca -->
+      <p class="font-rubik font-semibold text-[18px] text-[#5C6660] max-sm:text-[16px]">
+        Selesai Membaca Artikel Ini ?
+      </p>
+
+      <!-- Tombol -->
+      <div class="flex items-center gap-4 max-sm:flex-col max-sm:w-full max-sm:gap-2">
+        <a
+          href="#top"
+          class="mt-6 relative inline-flex items-center justify-center px-2 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"
+        >
+          <span
+            class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 translate-y-full bg-[#D9EF78] group-hover:-translate-y-0 ease"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-up"
             >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 5l0 14" />
+              <path d="M16 9l-4 -4" />
+              <path d="M8 9l4 -4" />
             </svg>
-            Beranda
-          </a>
-          <span class="text-[#213D34]/40">/</span>
-          <a
-            href="/artikel/artikel.html"
-            class="hover:text-[#213D34] hover:underline transition-colors flex items-center gap-1"
+          </span>
+          <span
+            class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:-translate-y-full ease"
+            >Ke Atas</span
           >
-            Artikel
-          </a>
-          <span class="text-[#213D34]/40">/</span>
-          <span class="font-bold text-[#213D34]">Detail Artikel</span>
-        </nav>
+          <span class="relative invisible font-karla font-black"
+            >Ke Atas</span
+          >
+        </a>
 
+        <!-- Kembali -->
         <button
           onclick="window.location.href = '/artikel/artikel.html'"
-          class="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer"
+          class="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"
         >
           <span
             class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
@@ -127,130 +248,9 @@
           >
         </button>
       </div>
-
-      <!-- Judul Artikel -->
-      <h1
-        id="article-title"
-        class="font-rubik font-extrabold text-[52px] text-[#213D34] leading-none mb-8"
-      >
-        Judul Loading...
-      </h1>
-
-      <!-- Tanggal -->
-      <p class="font-rubik font-medium text-[18px] text-[#5C6660] mb-6">
-        Gizify, 15 Agustus 2026, 13:30 WIB
-      </p>
-
-      <!-- Gambar Artikel (Pembungkus dibuat ketengah) -->
-      <div class="mb-8 flex justify-center">
-        <img
-          id="article-image"
-          src=""
-          alt=""
-          class="w-full max-w-[680px] h-[580px] rounded-2xl hidden"
-        />
-      </div>
-
-      <!-- Isi Artikel -->
-      <div
-        id="article-content"
-        class="font-karla text-[22px] text-[#5C6660] leading-relaxed space-y-4 mx-auto font-normal"
-      ></div>
-
-      <!-- Bagikan Pendapat -->
-      <div class="mt-12 mx-auto">
-        <h2 class="font-rubik font-semibold text-[28px] text-[#2C4A3B] mb-3">
-          Bagikan Pendapatmu
-        </h2>
-
-        <textarea
-          placeholder="Tuliskan Pendapatmu..."
-          class="w-full h-[168px] border border-[#213D34] rounded-2xl p-6 font-karla text-[18px] text-[#5C6660] outline-none resize-none"
-        ></textarea>
-      </div>
-
-      <!-- Bagian Bawah Artikel -->
-      <div class="mt-8 mx-auto border-t border-[#5C6660] pt-4 pb-24">
-        <div class="flex justify-between items-center gap-4">
-          <!-- Teks Selesai Membaca -->
-          <p class="font-rubik font-semibold text-[18px] text-[#5C6660]">
-            Selesai Membaca Artikel Ini ?
-          </p>
-
-          <!-- Tombol -->
-          <div class="flex items-center gap-4">
-            <a
-              href="#top"
-              class="mt-6 relative inline-flex items-center justify-center px-2 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer"
-            >
-              <span
-                class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 translate-y-full bg-[#D9EF78] group-hover:-translate-y-0 ease"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-up"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M12 5l0 14" />
-                  <path d="M16 9l-4 -4" />
-                  <path d="M8 9l4 -4" />
-                </svg>
-              </span>
-              <span
-                class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:-translate-y-full ease"
-                >Ke Atas</span
-              >
-              <span class="relative invisible font-karla font-black"
-                >Ke Atas</span
-              >
-            </a>
-
-            <!-- Kembali -->
-            <button
-              onclick="window.location.href = '/artikel/artikel.html'"
-              class="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer"
-            >
-              <span
-                class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M5 12l14 0" />
-                  <path d="M5 12l4 4" />
-                  <path d="M5 12l4 -4" />
-                </svg>
-              </span>
-              <span
-                class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
-                >Kembali Ke Daftar Artikel</span
-              >
-              <span class="relative invisible font-karla font-black"
-                >Kembali Ke Daftar Artikel</span
-              >
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <footer
       class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-16 bg-transparent relative"
@@ -273,7 +273,7 @@
 
               <ul class="space-y-2 opacity-90">
                 <li>
-                  <a href="/index.html" class="hover:underline"> Beranda </a>
+                  <a href="index.html" class="hover:underline"> Beranda </a>
                 </li>
 
                 <li>
@@ -453,6 +453,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="artikel.js"></script>
 
-    <script src="../smooth-scroll/smooth-gabung.js"></script>
+    <script src="../smooth-scroll/smooth-tombol.js"></script>
   </body>
 </html>
