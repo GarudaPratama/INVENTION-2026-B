@@ -104,52 +104,57 @@ $("#selectAktivitas").on("blur", function () {
 
   filteredFoods.forEach((item) => {
     const cardHtml = `
-       <div class="reveal border-2 border-emerald-950 rounded-[60px] p-10 flex flex-col gap-6 mb-8 max-lg:rounded-[48px] max-lg:p-8 max-sm:rounded-[36px] max-sm:p-4 max-sm:gap-4 max-sm:mb-0">
-        <div class="flex flex-col items-center text-center">
-          <span class="text-[15px] font-semibold uppercase text-[#213D34] bg-[#D9EF78] px-4 py-1.5 rounded-full mb-3 font-rubik max-sm:text-[12px] max-sm:px-3.5 max-sm:py-1 max-sm:mb-2">
-            ${item.subcategory}
-          </span>
-          <h3 class="text-[52px] font-extrabold text-[#213D34] font-rubik max-lg:text-[40px] max-sm:text-[23px]">
-            ${item.category}
-          </h3>
-        </div>
+ <div class="reveal mb-8 flex flex-col gap-4 rounded-[36px] border-2 border-emerald-950 p-4 sm:mb-0 sm:gap-6 sm:rounded-[60px] sm:p-10">
+  
+  <!-- Header Card -->
+  <div class="flex flex-col items-center text-center">
+    <span class="mb-2 rounded-full bg-[#D9EF78] px-3.5 py-1 font-rubik text-[12px] font-semibold uppercase text-[#213D34] sm:mb-3 sm:px-4 sm:py-1.5 sm:text-[15px]">
+      ${item.subcategory}
+    </span>
+    <h3 class="font-rubik text-[23px] font-extrabold text-[#213D34] lg:text-[40px] xl:text-[52px]">
+      ${item.category}
+    </h3>
+  </div>
 
-        <div class="grid grid-cols-2 gap-6 max-lg:gap-4 max-sm:grid-cols-1">
-          <div class="p-6 bg-[#F3D0E7]/60 rounded-[30px] flex flex-col justify-between gap-4 border border-[#F3D0E7] max-lg:p-5 max-lg:rounded-[26px] max-sm:grid max-sm:grid-cols-[1fr_auto] max-sm:items-center max-sm:gap-x-3 max-sm:gap-y-2 max-sm:p-4 max-sm:rounded-[24px]">
-            <div class="max-sm:contents">
-              <div class="flex justify-between items-start gap-2 mb-2 max-sm:contents">
-                <span class="font-bold text-pink-950 text-[15px] font-rubik max-sm:col-span-2 max-sm:row-start-2 max-sm:text-[18px]">${item.expensive.name}</span>
-                <span class="text-[15px] font-karla font-bold text-pink-700 bg-pink-200 px-3 py-1 rounded-full max-sm:col-start-2 max-sm:row-start-1 max-sm:justify-self-end max-sm:text-[13px]">${item.expensive.price}</span>
-              </div>
-              <p class="text-[15px] text-pink-900 leading-relaxed font-karla max-sm:col-span-2 max-sm:row-start-3 max-sm:text-[13px]">${item.expensive.note}</p>
-            </div>
-            <span class="text-[15px] font-bold text-pink-400 uppercase font-karla max-sm:col-start-1 max-sm:row-start-1 max-sm:text-[12px]">Opsi Sultan</span>
-          </div>
-
-          <div class="p-6 bg-[#D2FFEA]/50 rounded-[30px] flex flex-col justify-between gap-4 border border-[#D2FFEA] max-lg:p-5 max-lg:rounded-[26px] max-sm:grid max-sm:grid-cols-[1fr_auto] max-sm:items-center max-sm:gap-x-3 max-sm:gap-y-2 max-sm:p-4 max-sm:rounded-[24px]">
-            <div class="max-sm:contents">
-              <div class="flex justify-between items-start gap-2 mb-2 max-sm:contents">
-                <span class="font-bold text-emerald-950 text-[15px] font-rubik max-sm:col-span-2 max-sm:row-start-2 max-sm:text-[18px]">${item.cheap.name}</span>
-                <span class="text-[15px] font-karla font-extrabold text-emerald-800 bg-emerald-200 px-3 py-1 rounded-full max-sm:col-start-2 max-sm:row-start-1 max-sm:justify-self-end max-sm:text-[13px]">${item.cheap.price}</span>
-              </div>
-              <p class="text-[15px] font-karla text-emerald-900 leading-relaxed max-sm:col-span-2 max-sm:row-start-3 max-sm:text-[13px]">${item.cheap.note}</p>
-            </div>
-            <span class="text-[15px] font-karla font-bold text-emerald-600 uppercase tracking-wide max-sm:col-start-1 max-sm:row-start-1 max-sm:text-[12px]">Opsi Hemat</span>
-          </div>
+  <!-- Grid Opsi Sultan & Hemat -->
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+    
+    <!-- Opsi Sultan -->
+    <div class="flex flex-col justify-between gap-3 rounded-[24px] border border-[#F3D0E7] bg-[#F3D0E7]/60 p-4 sm:rounded-[30px] sm:p-6">
+      <div>
+        <div class="mb-2 flex items-center justify-between gap-2">
+          <span class="font-karla text-[12px] font-bold uppercase text-pink-500 sm:text-[15px]">Opsi Sultan</span>
+          <span class="rounded-full bg-pink-200 px-3 py-1 font-karla text-[13px] font-bold text-pink-700 sm:text-[15px]">${item.expensive.price}</span>
         </div>
-
-        <div class="bg-[#D9EF78] p-6 rounded-[32px] font-karla text-[#213D34] shadow-sm max-lg:p-5 max-sm:grid max-sm:grid-cols-[auto_1fr] max-sm:gap-x-3 max-sm:gap-y-1 max-sm:p-4 max-sm:rounded-[24px]">
-          <div class="flex items-center gap-2 mb-2 max-sm:contents">
-            <span class="text-lg max-sm:row-span-2 max-sm:self-start">${lampIconSvg}</span>
-            <span class="font-extrabold text-[16px] tracking-wide uppercase max-sm:col-start-2 max-sm:text-[15px]">
-              Fakta Nutrisi
-            </span>
-          </div>
-          <p class="text-[15px] font-medium leading-relaxed font-karla max-sm:col-start-2 max-sm:text-[14px]">
-            ${item.fact}
-          </p>
-        </div>
+        <h4 class="mb-1 font-rubik text-[16px] font-bold text-pink-950 sm:text-[18px]">${item.expensive.name}</h4>
+        <p class="font-karla text-[13px] leading-relaxed text-pink-900 sm:text-[15px]">${item.expensive.note}</p>
       </div>
+    </div>
+
+    <!-- Opsi Hemat -->
+    <div class="flex flex-col justify-between gap-3 rounded-[24px] border border-[#D2FFEA] bg-[#D2FFEA]/50 p-4 sm:rounded-[30px] sm:p-6">
+      <div>
+        <div class="mb-2 flex items-center justify-between gap-2">
+          <span class="font-karla text-[12px] font-bold uppercase tracking-wide text-emerald-600 sm:text-[15px]">Opsi Hemat</span>
+          <span class="rounded-full bg-emerald-200 px-3 py-1 font-karla text-[13px] font-extrabold text-emerald-800 sm:text-[15px]">${item.cheap.price}</span>
+        </div>
+        <h4 class="mb-1 font-rubik text-[16px] font-bold text-emerald-950 sm:text-[18px]">${item.cheap.name}</h4>
+        <p class="font-karla text-[13px] leading-relaxed text-emerald-900 sm:text-[15px]">${item.cheap.note}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Fakta Nutrisi -->
+  <div class="flex items-start gap-3 rounded-[24px] bg-[#D9EF78] p-4 font-karla text-[#213D34] shadow-sm sm:rounded-[32px] sm:p-6">
+    <span class="mt-0.5 shrink-0 text-lg">${lampIconSvg}</span>
+    <div>
+      <h4 class="mb-1 font-karla text-[14px] font-extrabold uppercase tracking-wide sm:text-[16px]">Fakta Nutrisi</h4>
+      <p class="font-karla text-[13px] font-medium leading-relaxed sm:text-[15px]">${item.fact}</p>
+    </div>
+  </div>
+
+</div>
     `;
 
     const $card = $(cardHtml);
