@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  
   // 1. Load Navbar
   $("#navbar").load("./Navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "./Navigasi/Logo-9.png");
@@ -119,18 +118,37 @@ $(document).ready(function () {
   });
 });
 
-// 6. Intersection Observer untuk Animasi Fade In (Scroll Reveal)
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
+// 1. Tahan (pause) animasi throw semua ornamen di awal saat DOM siap
+$(".reveal-throw").css("animation-play-state", "paused");
 
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+// 2. Observer untuk memantau .reveal (Teks & Tombol Utama)
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const $target = $(entry.target);
+
+        // A. Jalankan animasi .reveal (Teks Hero)
+        $target.addClass("active");
+
+        // B. Cari ornamen sayuran (.reveal-throw) di dalam Section yang sama
+        const $parentSection = $target.closest("section");
+        const $throws = $parentSection.find(".reveal-throw");
+
+        // C. Tunggu 500ms (0.5s), baru jalankan animasi terlemparnya sayuran!
+        setTimeout(() => {
+          $throws.css("animation-play-state", "running");
+        }, 500);
+
+        // Stop observe agar animasi tidak berulang terus saat scroll naik-turun
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 },
+);
+
+// Daftarkan semua elemen .reveal ke observer
+$(".reveal").each(function () {
+  observer.observe(this);
 });
