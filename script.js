@@ -128,17 +128,14 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         const $target = $(entry.target);
 
-        // A. Jalankan animasi .reveal (Teks Hero)
         $target.addClass("active");
 
-        // B. Cari ornamen sayuran (.reveal-throw) di dalam Section yang sama
         const $parentSection = $target.closest("section");
         const $throws = $parentSection.find(".reveal-throw");
 
-        // C. Tunggu 500ms (0.5s), baru jalankan animasi terlemparnya sayuran!
         setTimeout(() => {
           $throws.css("animation-play-state", "running");
-        }, 500);
+        }, 300);
 
         // Stop observe agar animasi tidak berulang terus saat scroll naik-turun
         observer.unobserve(entry.target);
