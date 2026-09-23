@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
 
     <!-- link untuk font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +15,7 @@
     <!-- link untuk tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- konfigurasi tailwind untuk font poppins -->
+    <!-- konfigurasi tailwind untuk font karla -->
     <style type="text/tailwindcss">
       @theme {
         --font-karla: "Karla", sans-serif;
@@ -27,10 +26,16 @@
   </head>
   <body>
     <header class="mt-[20px]">
-      <div class="flex items-center justify-between px-9">
+      <div class="flex items-center justify-between px-9 max-md:px-6 max-sm:px-4">
         <!-- untuk logo -->
-        <img src="./navigasi/Logo-9.png" alt="" class="w-[111px] h-[51px]" />
-        <nav>
+        <img
+          src="./navigasi/Logo-9.png"
+          alt=""
+          class="w-[111px] h-[51px] max-sm:w-[90px] max-sm:h-auto"
+        />
+
+        <!-- ================= NAV DESKTOP (hilang di tablet & HP) ================= -->
+        <nav class="max-md:hidden">
           <ul class="ml-10 flex items-center gap-12">
             <li class="text-[#213D34] font-medium text-[16px] font-karla">
               <a href="/index.html">Beranda</a>
@@ -101,17 +106,13 @@
                       </svg>
                     </span>
                     <div>
-                      <p class="font-bold font-karla text-[16px]">
-                       NutriCalc
-                      </p>
+                      <p class="font-bold font-karla text-[16px]">NutriCalc</p>
                       <p class="text-[14px] font-karla font-medium opacity-70 leading-none">
-                       Hitung kebutuhan gizi Anda
+                        Hitung kebutuhan gizi Anda
                       </p>
                     </div>
                   </a>
                 </li>
-
-                <div></div>
 
                 <li>
                   <a
@@ -147,16 +148,13 @@
                       </svg>
                     </span>
                     <div>
-                      <p class="font-bold font-karla text-[16px]">
-                        GiziFinder
-                      </p>
+                      <p class="font-bold font-karla text-[16px]">GiziFinder</p>
                       <p class="text-[14px] font-karla font-medium opacity-70 leading-none w-36">
                         Temukan pangan sehat di sekitarmu.
                       </p>
                     </div>
                   </a>
                 </li>
-
               </ul>
             </li>
 
@@ -165,29 +163,192 @@
             </li>
           </ul>
         </nav>
-        <div>
+
+        <!-- tombol cek BMI desktop (hilang di tablet & HP) -->
+        <div class="max-md:hidden">
           <button
             onclick="window.location.href='/BMI/bmi.html'"
-            class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[170px] h-[48px] hover:text-white cursor-pointer"
+            class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium rounded-[24px] font-karla transition-colors duration-300 group w-[170px] h-[48px] hover:text-white cursor-pointer"
           >
-            <!-- Layer Warna Latar yang Menyapu -->
+            <!-- layer warna latar yang menyapu -->
             <span
               class="absolute inset-0 bg-[#213D34] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"
             ></span>
 
-            <!-- Teks Tombol (z-10 agar tetap berada di atas layer warna) -->
+            <!-- teks tombol (z-10 agar tetap berada di atas layer warna) -->
+            <span class="relative z-10">Cek BMI</span>
+          </button>
+        </div>
+
+        <!-- tombol hamburger (hanya muncul di tablet & HP) -->
+        <button
+          id="btn-hamburger"
+          class="hidden max-md:flex items-center justify-center w-11 h-11 rounded-xl text-[#213D34] hover:bg-[#213D34]/10 cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- MENU KHUSUS TABLET & HP                                       -->
+    <!-- ============================================================ -->
+    <div class="hidden max-md:block">
+      <!-- latar belakang blur (muncul saat menu terbuka) -->
+      <div
+        id="backdrop"
+        class="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+      ></div>
+
+      <!-- panel menu yang turun dari atas -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-x-0 top-0 z-50 bg-[#F1F2ED] rounded-b-[32px] shadow-sm transition-transform duration-300 -translate-y-full"
+      >
+        <!-- baris atas: logo + tombol close -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+          <img
+            src="./navigasi/Logo-9.png"
+            alt=""
+            class="w-[111px] h-[51px] max-sm:w-[90px] max-sm:h-auto"
+          />
+          <button
+            id="btn-close"
+            class="flex items-center justify-center w-11 h-11 rounded-xl text-[#213D34] hover:bg-[#213D34]/10 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- isi menu -->
+        <ul class="px-6 py-4 space-y-1">
+          <li>
+            <a
+              href="/index.html"
+              class="block rounded-xl px-3 py-3 text-[#213D34] font-medium text-[16px] font-karla hover:bg-[#213D34]/10"
+            >
+              Beranda
+            </a>
+          </li>
+
+          <li>
+            <button
+              id="btn-fitur-mobile"
+              class="flex w-full items-center justify-between rounded-xl px-3 py-3 text-[#213D34] font-medium text-[16px] font-karla hover:bg-[#213D34]/10 cursor-pointer select-none"
+            >
+              <span>Fitur</span>
+              <svg
+                id="icon-fitur-mobile"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-4 h-4 transition-transform duration-300"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M6 9l6 6l6 -6" />
+              </svg>
+            </button>
+
+            <!-- submenu fitur (terbuka saat "Fitur" diklik) -->
+            <ul
+              id="submenu-mobile"
+              class="hidden mt-1 ml-3 space-y-1 border-l-2 border-[#213D34]/10 pl-3"
+            >
+              <li>
+                <a
+                  href="/BMI/bmi.html"
+                  class="block rounded-xl px-3 py-2 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
+                >
+                  <p class="font-bold font-karla text-[16px]">NutriCalc</p>
+                  <p class="text-[14px] font-karla font-medium opacity-70">
+                    Hitung kebutuhan gizi Anda
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/finder/finder.html"
+                  class="block rounded-xl px-3 py-2 text-[#213D34] hover:bg-[#213D34] hover:text-white transition-colors"
+                >
+                  <p class="font-bold font-karla text-[16px]">GiziFinder</p>
+                  <p class="text-[14px] font-karla font-medium opacity-70">
+                    Temukan pangan sehat di sekitarmu.
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="/artikel/artikel.html"
+              class="block rounded-xl px-3 py-3 text-[#213D34] font-medium text-[16px] font-karla hover:bg-[#213D34]/10"
+            >
+              Artikel
+            </a>
+          </li>
+        </ul>
+
+        <!-- tombol cek BMI di dalam menu -->
+        <div class="px-6 pb-6 pt-2">
+          <button
+            onclick="window.location.href='/BMI/bmi.html'"
+            class="relative overflow-hidden border-2 border-[#213D34] text-[#213D34] font-medium rounded-[24px] font-karla transition-colors duration-300 group w-full h-[48px] hover:text-white cursor-pointer"
+          >
+            <span
+              class="absolute inset-0 bg-[#213D34] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"
+            ></span>
             <span class="relative z-10">Cek BMI</span>
           </button>
         </div>
       </div>
-    </header>
+    </div>
+
+    <!-- jQuery HARUS di atas navbar.js -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    
+
     <script src="navbar.js"></script>
   </body>
 </html>

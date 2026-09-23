@@ -16,7 +16,7 @@ $(document).ready(function () {
 
       $("#navbar")
         .addClass(
-          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6",
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6 max-sm:rounded-b-[32px] max-sm:left-2 max-sm:right-2",
         )
         .removeClass("left-0 right-0");
     }
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
       $("#navbar")
         .removeClass(
-          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6",
+          "bg-white/90 backdrop-blur-md shadow-md rounded-b-[50px] left-6 right-6 max-sm:rounded-b-[32px] max-sm:left-2 max-sm:right-2",
         )
         .addClass("left-0 right-0");
     }
