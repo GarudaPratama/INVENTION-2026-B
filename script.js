@@ -118,34 +118,51 @@ $(document).ready(function () {
   });
 });
 
-// 1. Tahan (pause) animasi throw semua ornamen di awal saat DOM siap
-$(".reveal-throw").css("animation-play-state", "paused");
+$(document).ready(function () {
+  // 1. Tahan (pause) animasi throw semua ornamen di awal
+  $(".reveal-throw").css("animation-play-state", "paused");
 
-// 2. Observer untuk memantau .reveal (Teks & Tombol Utama)
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const $target = $(entry.target);
+  // Fungsi untuk menjalankan animasi Hero
+  function startScrollAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const $target = $(entry.target);
 
-        $target.addClass("active");
+            // A. Teks Hero (.reveal) Mulai Muncul
+            $target.addClass("active");
 
-        const $parentSection = $target.closest("section");
-        const $throws = $parentSection.find(".reveal-throw");
+            // B. Cari ornamen sayuran di Section ini
+            const $parentSection = $target.closest("section");
+            const $throws = $parentSection.find(".reveal-throw");
 
-        setTimeout(() => {
-          $throws.css("animation-play-state", "running");
-        }, 300);
+            // C. Tunggu 800ms (.reveal selesai), baru jalankan animasi sayuran
+            setTimeout(() => {
+              $throws.css("animation-play-state", "running");
+            }, 800);
 
-        // Stop observe agar animasi tidak berulang terus saat scroll naik-turun
-        observer.unobserve(entry.target);
-      }
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    $(".reveal").each(function () {
+      observer.observe(this);
     });
-  },
-  { threshold: 0.2 },
-);
+  }
 
-// Daftarkan semua elemen .reveal ke observer
-$(".reveal").each(function () {
-  observer.observe(this);
+  // 2. LOGIKA SPLASH SCREEN (2 DETIK PAS)
+  setTimeout(() => {
+    // Hilangkan splash screen secara mulus
+    $("#splash-screen").addClass("opacity-0 pointer-events-none");
+
+    // Hapus dari HTML setelah transisi fade-out selesai & jalankan animasi Hero
+    setTimeout(() => {
+      $("#splash-screen").remove();
+      startScrollAnimations();
+    }, 300); // 300ms sesuai duration-300 di CSS
+  }, 2000); // Loading selama 2 detik
 });
