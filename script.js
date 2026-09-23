@@ -1,17 +1,5 @@
 $(document).ready(function () {
-  // === ANIME CUTSCENE SPLASH (PAS 3.0 DETIK) ===
-  const splash = document.getElementById("splash-screen");
-
-  setTimeout(() => {
-    if (splash) {
-      // Efek ledakan cahaya kilat saat masuk ke website utama
-      splash.classList.add("anime-final-warp");
-
-      setTimeout(() => {
-        splash.remove();
-      }, 500);
-    }
-  }, 3000); // 3000ms = 3 Detik Pas
+  
   // 1. Load Navbar
   $("#navbar").load("./Navigasi/navbar.html", function () {
     $(this).find("img").attr("src", "./Navigasi/Logo-9.png");
