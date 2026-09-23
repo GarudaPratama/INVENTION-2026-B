@@ -118,51 +118,57 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  // 1. Tahan (pause) animasi throw semua ornamen di awal
-  $(".reveal-throw").css("animation-play-state", "paused");
+// 1. Tahan (pause) animasi throw semua ornamen di awal
+$(".reveal-throw").css("animation-play-state", "paused");
 
-  // Fungsi untuk menjalankan animasi Hero
-  function startScrollAnimations() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const $target = $(entry.target);
+// Fungsi untuk menjalankan animasi Hero
+function startScrollAnimations() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const $target = $(entry.target);
 
-            // A. Teks Hero (.reveal) Mulai Muncul
-            $target.addClass("active");
+          // A. Teks Hero (.reveal) Mulai Muncul
+          $target.addClass("active");
 
-            // B. Cari ornamen sayuran di Section ini
-            const $parentSection = $target.closest("section");
-            const $throws = $parentSection.find(".reveal-throw");
+          // B. Cari ornamen sayuran di Section ini
+          const $parentSection = $target.closest("section");
+          const $throws = $parentSection.find(".reveal-throw");
 
-            // C. Tunggu 800ms (.reveal selesai), baru jalankan animasi sayuran
-            setTimeout(() => {
-              $throws.css("animation-play-state", "running");
-            }, 800);
+          // C. Tunggu 800ms (.reveal selesai), baru jalankan animasi sayuran
+          setTimeout(() => {
+            $throws.css("animation-play-state", "running");
+          }, 800);
 
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 },
-    );
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
 
-    $(".reveal").each(function () {
-      observer.observe(this);
-    });
-  }
+  $(".reveal").each(function () {
+    observer.observe(this);
+  });
+}
 
-  // 2. LOGIKA SPLASH SCREEN (2 DETIK PAS)
+// 2. CEK APAKAH USER BARU PERTAMA KALI BUKA WEB (PER SESI TAB)
+if (!sessionStorage.getItem("hasSeenSplash")) {
+  // --- SKENARIO A: PERTAMA KALI BUKA ---
   setTimeout(() => {
-    // Hilangkan splash screen secara mulus
     $("#splash-screen").addClass("opacity-0 pointer-events-none");
 
-    // Hapus dari HTML setelah transisi fade-out selesai & jalankan animasi Hero
     setTimeout(() => {
       $("#splash-screen").remove();
       startScrollAnimations();
-    }, 300); // 300ms sesuai duration-300 di CSS
-  }, 2000); // Loading selama 2 detik
-});
+      // Simpan penanda bahwa splash sudah pernah tampil
+      sessionStorage.setItem("hasSeenSplash", "true");
+    }, 300);
+  }, 2000); // Tampil 2 detik
+} else {
+  // --- SKENARIO B: SUDAH PERNAH BUKA (REFRESH / PINDAH HALAMAN) ---
+  // Langsung hapus splash screen tanpa nunggu & langsung jalankan animasi hero
+  $("#splash-screen").remove();
+  startScrollAnimations();
+}
