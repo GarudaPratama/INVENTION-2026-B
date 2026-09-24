@@ -483,33 +483,6 @@ $("#navbar").load("../Navigasi/navbar.html", function () {
   $(this).find("img").attr("src", "../Navigasi/Logo-9.png");
 });
 
-// Mobile Menu
-function bukaMenu() {
-  $("#mobile-menu").removeClass("-translate-y-full");
-  $("#backdrop").removeClass("opacity-0 pointer-events-none");
-  $("body").addClass("overflow-hidden");
-}
-
-function tutupMenu() {
-  $("#mobile-menu").addClass("-translate-y-full");
-  $("#backdrop").addClass("opacity-0 pointer-events-none");
-  $("body").removeClass("overflow-hidden");
-
-  $("#submenu-mobile").addClass("hidden");
-  $("#icon-fitur-mobile").removeClass("rotate-180");
-}
-
-$(document).on("click", "#btn-hamburger", bukaMenu);
-$(document).on("click", "#btn-close", tutupMenu);
-$(document).on("click", "#backdrop", tutupMenu);
-$(document).on("click", "#mobile-menu a", tutupMenu);
-
-// Submenu Fitur Mobile
-$(document).on("click", "#btn-fitur-mobile", function () {
-  $("#submenu-mobile").toggleClass("hidden");
-  $("#icon-fitur-mobile").toggleClass("rotate-180");
-});
-
 // Variabel penanda agar kode tidak dieksekusi terus-menerus saat scroll
 let isScrolled = false;
 
