@@ -51,8 +51,8 @@
   // 3. MENU MOBILE — panel turun dari atas + latar blur
   // ============================================================
   function bukaMenu() {
-    $('#mobile-menu').removeClass('-translate-y-full');           // panel turun dari atas
-    $('#backdrop').removeClass('opacity-0 pointer-events-none');  // blur muncul
+    $('#mobile-menu').removeClass('-translate-y-full hidden');           // panel turun dari atas
+    $('#backdrop').removeClass('opacity-0 pointer-events-none hidden');  // blur muncul
     $('body').addClass('overflow-hidden');                        // larang scroll halaman
   }
 
