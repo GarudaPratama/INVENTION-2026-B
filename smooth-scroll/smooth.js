@@ -1,82 +1,36 @@
-let targetY = window.scrollY,
-  currentY = window.scrollY;
-const ease = 0.08; // Sedikit dinaikkan agar lebih responsif di HP
+// Cek apakah perangkat menggunakan layar sentuh (HP / Tablet)
+const isTouchDevice =
+  'ontouchstart' in window ||
+  navigator.maxTouchPoints > 0 ||
+  window.matchMedia('(pointer: coarse)').matches;
 
-function clamp(val, min, max) {
-  return Math.max(min, Math.min(val, max));
+// HANYA jalankan smooth scroll kustom di Desktop (Non-Touch)
+if (!isTouchDevice) {
+  let targetY = window.scrollY,
+    currentY = window.scrollY;
+  const ease = 0.065; // Tingkat kelembutan scroll
+
+  window.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault(); // Matikan scroll kaku bawaan browser desktop
+      targetY += e.deltaY;
+      targetY = Math.max(
+        0,
+        Math.min(targetY, document.body.scrollHeight - window.innerHeight)
+      );
+    },
+    { passive: false }
+  );
+
+  function smoothScroll() {
+    currentY += (targetY - currentY) * ease;
+    window.scrollTo(0, currentY);
+    requestAnimationFrame(smoothScroll);
+  }
+
+  smoothScroll();
 }
-
-function getMaxScroll() {
-  return document.body.scrollHeight - window.innerHeight;
-}
-
-// 1. Desktop (Mouse Wheel)
-window.addEventListener(
-  "wheel",
-  (e) => {
-    e.preventDefault();
-    targetY += e.deltaY;
-    targetY = clamp(targetY, 0, getMaxScroll());
-  },
-  { passive: false },
-);
-
-// 2. HP / Mobile Touch dengan Inersia (Fling Momentum)
-let touchStartY = 0;
-let lastTouchY = 0;
-let velocityY = 0;
-let lastTouchTime = 0;
-
-window.addEventListener(
-  "touchstart",
-  (e) => {
-    touchStartY = e.touches[0].clientY;
-    lastTouchY = touchStartY;
-    lastTouchTime = performance.now();
-    velocityY = 0; // Reset kecepatan saat sentuhan baru
-  },
-  { passive: true },
-);
-
-window.addEventListener(
-  "touchmove",
-  (e) => {
-    const touchCurrentY = e.touches[0].clientY;
-    const now = performance.now();
-    const dt = now - lastTouchTime || 16;
-
-    const deltaY = lastTouchY - touchCurrentY;
-
-    // Hitung kecepatan geseran jari (px/ms)
-    velocityY = deltaY / dt;
-
-    lastTouchY = touchCurrentY;
-    lastTouchTime = now;
-
-    targetY += deltaY * 1.1;
-    targetY = clamp(targetY, 0, getMaxScroll());
-  },
-  { passive: true },
-);
-
-window.addEventListener(
-  "touchend",
-  () => {
-    // Tambahkan lemparan momentum saat jari diangkat berdasarkan kecepatan usapan
-    targetY += velocityY * 220;
-    targetY = clamp(targetY, 0, getMaxScroll());
-  },
-  { passive: true },
-);
-
-// 3. Render Loop
-function smoothScroll() {
-  currentY += (targetY - currentY) * ease;
-  window.scrollTo(0, currentY);
-  requestAnimationFrame(smoothScroll);
-}
-
-smoothScroll();
 
 // Penjelasan kode:
 
