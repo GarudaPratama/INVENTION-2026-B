@@ -146,3 +146,34 @@ if (!sessionStorage.getItem("hasSeenSplash")) {
   $("#splash-screen").remove();
   startScrollAnimations();
 }
+
+//counter untuk section dampak
+$(".counter").each(function () {
+  const el = $(this);
+  const target = +el.data("target");
+  const rupiah = el.text().includes("Rp");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+
+      let start = performance.now();
+
+      function count(time) {
+        const progress = Math.min((time - start) / 2000, 1);
+        const value = Math.floor(progress * target);
+        const number = value.toLocaleString("id-ID");
+
+        el.text(rupiah ? `Rp${number}rb` : `${number}+`);
+
+        if (progress < 1) requestAnimationFrame(count);
+        else observer.disconnect();
+      }
+
+      requestAnimationFrame(count);
+    },
+    { threshold: 0.5 },
+  );
+
+  observer.observe(this);
+});
