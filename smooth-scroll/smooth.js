@@ -1,27 +1,59 @@
 let targetY = window.scrollY,
-          currentY = window.scrollY;
-        const ease = 0.065; // Makin kecil angkanya (misal 0.05), makin "berat/mewah" luncurannya
+  currentY = window.scrollY;
+const ease = 0.065;
 
-        window.addEventListener(
-          "wheel",
-          (e) => {
-            e.preventDefault(); // Matikan scroll kaku bawaan browser
-            targetY += e.deltaY;
-            targetY = Math.max(
-              0,
-              Math.min(targetY, document.body.scrollHeight - window.innerHeight),
-            );
-          },
-          { passive: false },
-        );
+function clamp(val, min, max) {
+  return Math.max(min, Math.min(val, max));
+}
 
-        function smoothScroll() {
-          currentY += (targetY - currentY) * ease;
-          window.scrollTo(0, currentY);
-          requestAnimationFrame(smoothScroll);  
-        }
+function getMaxScroll() {
+  return document.body.scrollHeight - window.innerHeight;
+}
 
-        smoothScroll();
+// 1. Handling Desktop (Mouse Wheel)
+window.addEventListener(
+  "wheel",
+  (e) => {
+    e.preventDefault();
+    targetY += e.deltaY;
+    targetY = clamp(targetY, 0, getMaxScroll());
+  },
+  { passive: false }
+);
+
+// 2. Handling HP / Tablet (Touch Gesture)
+let touchStartY = 0;
+
+window.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartY = e.touches[0].clientY;
+  },
+  { passive: true }
+);
+
+window.addEventListener(
+  "touchmove",
+  (e) => {
+    const touchCurrentY = e.touches[0].clientY;
+    const deltaY = touchStartY - touchCurrentY; // Hitung selisih geseran jari
+    touchStartY = touchCurrentY;
+
+    // Kalikan 1.2 untuk mengatur sensitivitas usapan jari
+    targetY += deltaY * 1.2; 
+    targetY = clamp(targetY, 0, getMaxScroll());
+  },
+  { passive: true }
+);
+
+// 3. Render Loop (Animasi Lerp)
+function smoothScroll() {
+  currentY += (targetY - currentY) * ease;
+  window.scrollTo(0, currentY);
+  requestAnimationFrame(smoothScroll);
+}
+
+smoothScroll();
 
 // Penjelasan kode:
 
@@ -50,3 +82,22 @@ let targetY = window.scrollY,
 // window.scrollTo(0, currentY): Perintah aktual untuk memindahkan posisi layar browser.
 
 // requestAnimationFrame(smoothScroll): Menjalankan fungsi ini terus-menerus di setiap detik layar berkedip (biasanya 60fps/144fps) agar gerakannya super mulus.
+
+// touchstart:
+// Saat jari pertama kali menyentuh layar, kode mencatat posisi awal Y jari (touchStartY = e.touches[0].clientY).
+
+// touchmove:
+// Saat jari digeser:
+
+// deltaY = touchStartY - touchCurrentY: Menghitung seberapa jauh jari bergerak dari titik awal.
+
+// targetY += deltaY * 1.2: Mengubah target scroll berdasarkan jarak geseran tersebut. Angka 1.2 adalah sensitivitas usapan (bisa kamu naikkan jika usapan terasa terlalu pendek/berat).
+
+// touchStartY = touchCurrentY: Mengupdate posisi awal untuk perhitungan frame berikutnya selama jari masih menempel.
+
+
+// Tanpa batas pengaman, targetY bisa bernilai minus (di atas batas top) atau melebihi panjang halaman (di bawah batas bottom).
+
+// getMaxScroll(): Menghitung tinggi maksimal halaman yang bisa di-scroll (tinggi_dokumen - tinggi_layar).
+
+// clamp(val, min, max): Memastikan nilai targetY selalu terkunci di dalam rentang 0 sampai getMaxScroll(), sehingga scroll tidak bablas.
