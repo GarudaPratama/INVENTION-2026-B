@@ -1,27 +1,36 @@
-let targetY = window.scrollY,
-          currentY = window.scrollY;
-        const ease = 0.065; // Makin kecil angkanya (misal 0.05), makin "berat/mewah" luncurannya
+// Cek apakah perangkat menggunakan layar sentuh (HP / Tablet)
+const isTouchDevice =
+  'ontouchstart' in window ||
+  navigator.maxTouchPoints > 0 ||
+  window.matchMedia('(pointer: coarse)').matches;
 
-        window.addEventListener(
-          "wheel",
-          (e) => {
-            e.preventDefault(); // Matikan scroll kaku bawaan browser
-            targetY += e.deltaY;
-            targetY = Math.max(
-              0,
-              Math.min(targetY, document.body.scrollHeight - window.innerHeight),
-            );
-          },
-          { passive: false },
-        );
+// HANYA jalankan smooth scroll kustom di Desktop (Non-Touch)
+if (!isTouchDevice) {
+  let targetY = window.scrollY,
+    currentY = window.scrollY;
+  const ease = 0.065; // Tingkat kelembutan scroll
 
-        function smoothScroll() {
-          currentY += (targetY - currentY) * ease;
-          window.scrollTo(0, currentY);
-          requestAnimationFrame(smoothScroll);  
-        }
+  window.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault(); // Matikan scroll kaku bawaan browser desktop
+      targetY += e.deltaY;
+      targetY = Math.max(
+        0,
+        Math.min(targetY, document.body.scrollHeight - window.innerHeight)
+      );
+    },
+    { passive: false }
+  );
 
-        smoothScroll();
+  function smoothScroll() {
+    currentY += (targetY - currentY) * ease;
+    window.scrollTo(0, currentY);
+    requestAnimationFrame(smoothScroll);
+  }
+
+  smoothScroll();
+}
 
 // Penjelasan kode:
 
@@ -50,3 +59,21 @@ let targetY = window.scrollY,
 // window.scrollTo(0, currentY): Perintah aktual untuk memindahkan posisi layar browser.
 
 // requestAnimationFrame(smoothScroll): Menjalankan fungsi ini terus-menerus di setiap detik layar berkedip (biasanya 60fps/144fps) agar gerakannya super mulus.
+
+// touchstart:
+// Saat jari pertama kali menyentuh layar, kode mencatat posisi awal Y jari (touchStartY = e.touches[0].clientY).
+
+// touchmove:
+// Saat jari digeser:
+
+// deltaY = touchStartY - touchCurrentY: Menghitung seberapa jauh jari bergerak dari titik awal.
+
+// targetY += deltaY * 1.2: Mengubah target scroll berdasarkan jarak geseran tersebut. Angka 1.2 adalah sensitivitas usapan (bisa kamu naikkan jika usapan terasa terlalu pendek/berat).
+
+// touchStartY = touchCurrentY: Mengupdate posisi awal untuk perhitungan frame berikutnya selama jari masih menempel.
+
+// Tanpa batas pengaman, targetY bisa bernilai minus (di atas batas top) atau melebihi panjang halaman (di bawah batas bottom).
+
+// getMaxScroll(): Menghitung tinggi maksimal halaman yang bisa di-scroll (tinggi_dokumen - tinggi_layar).
+
+// clamp(val, min, max): Memastikan nilai targetY selalu terkunci di dalam rentang 0 sampai getMaxScroll(), sehingga scroll tidak bablas.

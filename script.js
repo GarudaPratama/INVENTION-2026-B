@@ -136,10 +136,10 @@ function startScrollAnimations() {
           const $parentSection = $target.closest("section");
           const $throws = $parentSection.find(".reveal-throw");
 
-          // C. Tunggu 800ms (.reveal selesai), baru jalankan animasi sayuran
+          // C. Tunggu 500ms (.reveal selesai), baru jalankan animasi sayuran
           setTimeout(() => {
             $throws.css("animation-play-state", "running");
-          }, 800);
+          }, 500);
 
           observer.unobserve(entry.target);
         }
