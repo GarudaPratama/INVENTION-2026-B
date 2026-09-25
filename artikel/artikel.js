@@ -511,32 +511,3 @@ $(window).on("scroll", function () {
       .addClass("left-0 right-0");
   }
 });
-// ===== LOGIKA DROPDOWN NAVIGASI =====
-
-$(document).on("click", "#btn-fitur", function (e) {
-  e.stopPropagation();
-
-  $(this).find("div > svg").toggleClass("rotate-180");
-
-  const menu = $(this).find("ul");
-
-  if (menu.hasClass("invisible")) {
-    menu
-      .removeClass("opacity-0 invisible translate-y-2")
-      .addClass("opacity-100 visible translate-y-0");
-  } else {
-    menu
-      .removeClass("opacity-100 visible translate-y-0")
-      .addClass("opacity-0 invisible translate-y-2");
-  }
-});
-
-$(document).on("click", function (e) {
-  if (!$(e.target).closest("#btn-fitur").length) {
-    $("#btn-fitur div > svg").removeClass("rotate-180");
-
-    $("#btn-fitur ul")
-      .addClass("opacity-0 invisible translate-y-2")
-      .removeClass("opacity-100 visible translate-y-0");
-  }
-});

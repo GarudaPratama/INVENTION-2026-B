@@ -33,32 +33,6 @@ $(document).ready(function () {
     }
   });
 
-  // 2. Event Handler Dropdown Fitur
-  $(document).on("click", "#btn-fitur", function (e) {
-    e.stopPropagation();
-
-    // Muter SVG panah di dalam div utama
-    $(this).find("div > svg").toggleClass("rotate-180");
-
-    // Toggle dropdown menu
-    $(this)
-      .find("ul")
-      .toggleClass(
-        "opacity-0 invisible translate-y-2 opacity-100 visible translate-y-0",
-      );
-  });
-
-  // 3. Tutup Dropdown saat Klik di Luar
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest("#btn-fitur").length) {
-      $("#btn-fitur div > svg").removeClass("rotate-180");
-
-      $("#btn-fitur ul")
-        .addClass("opacity-0 invisible translate-y-2")
-        .removeClass("opacity-100 visible translate-y-0");
-    }
-  });
-
   // 4. Logika Pergantian Gambar Mockup HP Berdasarkan Scroll (Smooth Fade)
   $(window).on("scroll", function () {
     if ($("#step-1").length && $("#step-2").length && $("#step-3").length) {
