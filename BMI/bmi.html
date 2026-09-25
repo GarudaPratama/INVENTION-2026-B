@@ -30,7 +30,7 @@
         --font-rubik: "Rubik", sans-serif;
       }
 
-      /* Style untuk animasi scroll reveal */
+      /* Animasi Scroll Reveal */
       .reveal {
         opacity: 0;
         transform: translateY(50px);
@@ -57,7 +57,7 @@
     </style>
   </head>
   <body class="bg-[#F9F9F9] min-h-screen flex flex-col">
-    <!-- Tempat Navbar Loaded -->
+    <!-- Container Navbar -->
     <div
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500 ease-in-out pb-3"
@@ -89,11 +89,11 @@
         <span class="font-bold text-[#213D34]">Kalkulator BMI & BMR</span>
       </nav>
 
-      <!-- RESPONSIVE: max-lg jadi 1 kolom (deskripsi di atas, form di bawah) -->
+      <!-- Responsive: Layout Menjadi 1 Kolom -->
       <div
         class="reveal flex justify-center gap-14 items-center max-lg:flex-col max-lg:gap-10 max-sm:gap-8"
       >
-        <!-- kolom kiri bagian deskripsi -->
+        <!-- Kolom Kiri: Deskripsi -->
         <div
           class="max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center"
         >
@@ -143,10 +143,10 @@
           </button>
         </div>
 
-        <!-- bagian kanan : imput nama -->
+        <!-- Kolom Kanan: Form Input -->
         <div class="flex-1 w-full max-lg:flex-none max-lg:max-w-[600px]">
           <form class="flex flex-col gap-4">
-            <!-- Box 1: Jenis Kelamin -->
+            <!-- Form Box 1: Jenis Kelamin -->
             <div
               class="border-2 border-[#213D34] rounded-[25px] p-5 flex flex-col gap-2"
             >
@@ -163,7 +163,7 @@
               </select>
             </div>
 
-            <!-- Box 2: Berat & Tinggi Badan -->
+            <!-- Form Box 2: Berat & Tinggi Badan -->
             <!-- RESPONSIVE: max-sm tetap 2 kolom seperti gambar, input dan label dikecilkan agar muat -->
             <div
               class="bg-[#D9EF78] rounded-[25px] p-5 flex flex-row gap-4 max-sm:gap-3"
@@ -195,7 +195,7 @@
               </div>
             </div>
 
-            <!-- Box 3: Umur -->
+            <!-- Form Box 3: Umur -->
             <div class="bg-[#F1F2ED] rounded-[25px] p-5 flex flex-col gap-1.5">
               <label
                 class="font-bold text-[12px] text-[#213D34] uppercase font-rubik"
@@ -225,8 +225,8 @@
         </div>
       </div>
 
-      <!-- RESULT SECTION (MELEBAR FULL LAYAR/CONTAINER) -->
-      <!-- RESPONSIVE: max-sm avatar di atas, detail hasil di bawah (rata tengah) -->
+      <!-- Section Hasil BMI & BMR -->
+      <!-- Responsive: Hasil Menjadi 1 Kolom di Mobile -->
       <div
         id="resultSection"
         class="reveals hidden w-full bg-[#F1F2ED] rounded-3xl p-10 mt-6 max-lg:p-8 max-sm:p-6"
@@ -234,7 +234,7 @@
         <div
           class="flex items-center justify-center gap-12 max-sm:flex-col max-sm:gap-4"
         >
-          <!-- Avatar Icon -->
+          <!-- Icon Avatar -->
           <div class="flex-shrink-0">
             <!-- Avatar Pria -->
             <svg
@@ -290,7 +290,7 @@
             <p
               class="flex items-center justify-center gap-1.5 text-sm font-bold mt-3 text-gray-700"
             >
-              <!-- Icon Flame -->
+              <!-- Icon Kalori -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -331,7 +331,7 @@
       </div>
     </main>
 
-    <!-- section footer -->
+    <!-- Section Footer -->
     <footer
       class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-6 lg:px-16 bg-transparent relative"
       style="
@@ -342,11 +342,11 @@
       "
     >
       <div class="w-full">
-        <!-- Bagian atas -->
+        <!-- Bagian Atas Footer -->
         <div
           class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6 lg:gap-10 pb-10"
         >
-          <!-- Bagian menu -->
+          <!-- Bagian Menu Footer -->
           <div
             class="grid grid-cols-3 gap-4 md:gap-6 lg:gap-12 text-[#F1F2ED] font-karla font-bold text-[14px] lg:text-[16px] w-full md:w-auto"
           >
@@ -420,7 +420,7 @@
             </div>
           </div>
 
-          <!-- Bagian logo -->
+          <!-- Logo Footer -->
           <div class="ml-2 md:ml-0 lg:ml-0">
             <img
               src="../assets/footerlogo.png"
@@ -430,11 +430,11 @@
           </div>
         </div>
 
-        <!-- Bagian bawah -->
+        <!-- Bagian Bawah Footer -->
         <div
           class="border-t-2 border-[#D9EF78] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 opacity-90"
         >
-          <!-- Bagian sosial media -->
+          <!-- Sosial Media Footer -->
           <div class="flex items-center gap-4 text-[#D9EF78]">
             <a href="https://www.tiktok.com">
               <svg
@@ -523,7 +523,7 @@
             </a>
           </div>
 
-          <!-- Bagian copyright -->
+          <!-- Copyright Footer -->
           <p
             class="text-center md:text-right font-karla font-bold text-[14px] lg:text-[16px]"
           >
@@ -547,3 +547,6 @@
     <script src="../smooth-scroll/smooth-tombol.js"></script>
   </body>
 </html>
+
+
+
