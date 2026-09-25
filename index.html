@@ -16,7 +16,7 @@
       href="./assets/icon2.png"
       class="object-cover"
     />
-    
+
     <!-- link tailwind dan font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +36,7 @@
         --font-rubik: "Rubik", sans-serif;
       }
 
-      /* Style untuk animasi scroll reveal */
+      /* Animasi scroll reveal untuk elemen yang muncul saat discroll */
       .reveal {
         opacity: 0;
         transform: translateY(50px);
@@ -79,20 +79,20 @@
         animation-delay: 0.7s;
       }
 
-      /* Animasi Brokoli Lompat */
+      /* Animasi brokoli pada splash screen */
       @keyframes broccoliJump {
         0%,
         100% {
           transform: translateY(0) scale(1, 1);
         }
         30% {
-          transform: translateY(-30px) scale(0.95, 1.05); /* Melompat ke atas */
+          transform: translateY(-30px) scale(0.95, 1.05); /* Gerakan brokoli saat mencapai titik lompatan */
         }
         50% {
-          transform: translateY(0) scale(1.08, 0.92); /* Sedikit membal saat mendarat */
+          transform: translateY(0) scale(1.08, 0.92); /* Efek squash saat brokoli mendarat */
         }
         75% {
-          transform: translateY(-10px) scale(0.98, 1.02); /* Bouncing kecil */
+          transform: translateY(-10px) scale(0.98, 1.02); /* Pantulan kecil setelah mendarat */
         }
       }
 
@@ -101,7 +101,7 @@
       }
     </style>
 
-    <title>Gizify</title>
+    <title>Lomba Invention 2026 Tim B</title>
   </head>
 
   <body class="min-h-screen">
@@ -109,6 +109,7 @@
       id="splash-screen"
       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#F1F2ED] transition-opacity duration-300 ease-out select-none"
     >
+      <!-- Gambar brokoli — dibuat menggunakan Generate AI Gemini -->
       <img
         src="./assets/BROKOLI.png"
         alt="Loading Brokoli"
@@ -121,7 +122,7 @@
         Menyiapkan Gizi...
       </p>
     </div>
-    <!-- Navbar -->
+
     <header
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-500 ease-in-out pb-3"
@@ -131,7 +132,7 @@
     <section
       class="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden px-6"
     >
-      <!-- svg background -->
+      <!-- Ikon SVG -->
       <svg
         class="absolute inset-0 h-full w-full pointer-events-none z-0"
         viewBox="0 0 1920 1220"
@@ -144,29 +145,32 @@
           fill="#F1F2ED"
         />
       </svg>
-      <!-- Ornamen Makanan -->
+
+      <!-- Gambar bayam — dibuat menggunakan Generate AI Gemini -->
       <img
         src="./assets/BAYAM.png"
         alt="Bayam"
         class="absolute top-2 left-20 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-12 reveal-throw delay-100 max-xl:top-16 max-xl:left-8 max-xl:w-[260px] max-xl:h-[260px] max-lg:top-20 max-lg:-left-8 max-lg:w-[230px] max-lg:-rotate-2 max-lg:h-[230px] max-sm:top-20 max-sm:left-2 max-sm:w-[130px] max-sm:h-[130px]"
       />
+      <!-- Gambar tempe — dibuat menggunakan Generate AI Gemini -->
       <img
         src="./assets/TEMPE.png"
         alt="Tempe"
         class="absolute bottom-2 left-20 w-[400px] h-[400px] object-contain pointer-events-none z-10 reveal-throw delay-300 max-xl:bottom-10 max-xl:left-2 max-xl:w-[280px] max-xl:h-[280px] max-lg:bottom-16 max-lg:left-5 max-lg:w-[230px] max-lg:h-[230px] max-sm:bottom-13 max-sm:left-3 max-sm:w-[135px] max-sm:h-[135px]"
       />
+      <!-- Gambar wortel — dibuat menggunakan Generate AI Gemini -->
       <img
         src="./assets/WORTEL.png"
         alt="Wortel"
         class="absolute top-2 right-12 w-[450px] h-[450px] object-contain pointer-events-none z-10 rotate-6 reveal-throw delay-500 max-xl:top-16 max-xl:right-10 max-xl:w-[300px] max-xl:h-[300px] max-lg:top-20 max-lg:-right-4 max-lg:w-[230px] max-lg:h-[230px] max-sm:top-18 max-sm:-right-2 max-sm:w-[150px] max-sm:h-[150px]"
       />
+      <!-- Gambar brokoli — dibuat menggunakan Generate AI Gemini -->
       <img
         src="./assets/BROKOLI.png"
         alt="Brokoli"
         class="absolute bottom-2 right-20 w-[350px] h-[350px] object-contain pointer-events-none z-10 -rotate-6 reveal-throw delay-700 max-xl:bottom-8 max-xl:right-2 max-xl:w-[270px] max-xl:h-[270px] max-lg:bottom-16 max-lg:right-8 max-lg:w-[230px] max-lg:h-[230px] max-sm:bottom-11 max-sm:right-1 max-sm:w-[145px] max-sm:h-[145px]"
       />
 
-      <!-- Main Content -->
       <div
         class="relative z-20 flex max-w-2xl flex-col items-center text-center reveal"
       >
@@ -184,6 +188,7 @@
           hari ini!
         </p>
 
+        <!-- Tombol Cek Keperluan Gizi -->
         <button
           onclick="window.location.href = '/BMI/bmi.html'"
           class="mt-6 relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full shadow-md group cursor-pointer max-sm:mt-5 max-sm:px-6 max-sm:text-[15px]"
@@ -191,6 +196,7 @@
           <span
             class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
           >
+            <!-- Ikon SVG -->
             <svg
               class="w-6 h-6 max-sm:w-5 max-sm:h-5"
               fill="none"
@@ -217,17 +223,18 @@
       </div>
     </section>
 
-    <!-- Section About -->
+    <!-- Section Tentang Gizify -->
     <section
       class="relative min-h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-16 py-20 max-md:py-12 max-md:px-4"
     >
       <div
         class="max-w-[1200px] w-full mx-auto grid grid-cols-12 gap-8 lg:gap-10 items-center max-md:grid-cols-1 max-md:gap-6"
       >
-        <!-- Gambar Buah -->
         <div
           class="col-span-4 w-full reveal max-md:col-span-1 max-md:max-w-md max-md:mx-auto"
         >
+          <!-- Gambar buah — dibuat menggunakan Generate AI Gemini -->
+          <!-- Gambar buah untuk visual utama About — dibuat menggunakan Generate AI Gemini -->
           <img
             src="./assets/buah.png"
             alt="Gizify"
@@ -235,11 +242,9 @@
           />
         </div>
 
-        <!-- Deskripsi & Card -->
         <div
           class="col-span-8 w-full flex flex-col justify-center reveal max-md:col-span-1 max-md:items-center max-md:text-center"
         >
-          <!-- Badge -->
           <div>
             <span
               class="inline-block font-semibold bg-[#D9EF78] text-[#213D34] font-karla text-[15px] px-4 py-1.5 rounded-full mb-4 max-md:text-[12px] max-md:px-3.5 max-md:py-1 max-md:mb-3"
@@ -248,14 +253,14 @@
             </span>
           </div>
 
-          <!-- Judul -->
+          <!-- Judul utama About -->
           <h2
             class="text-[44px] font-semibold font-rubik text-[#1E3A2B] tracking-tight mb-4 max-md:text-[28px] max-md:mb-3 leading-tight"
           >
             Gizify Bukan Sekedar Web
           </h2>
 
-          <!-- Paragraf -->
+          <!-- Deskripsi About -->
           <p
             class="text-[#5C6660] font-medium text-[16px] lg:text-[17px] leading-relaxed mb-8 max-w-2xl max-md:text-[14px] max-md:mb-6"
           >
@@ -265,17 +270,18 @@
             berkualitas.
           </p>
 
-          <!-- Bagian Card -->
+          <!-- Grid fitur utama -->
           <div
             class="grid grid-cols-3 gap-3 lg:gap-3.5 w-full max-md:grid-cols-2"
           >
-            <!-- Card 1 -->
+            <!-- Card 1: Edukasi Gizi Terpercaya -->
             <div
               class="bg-[#F1F2ED] p-3.5 lg:p-4 rounded-[20px] flex flex-col items-start reveal max-md:rounded-[18px]"
             >
               <div
                 class="w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34] shrink-0 max-md:w-9 max-md:h-9"
               >
+                <!-- Ikon SVG -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -295,6 +301,7 @@
                   <path d="M21 6l0 13" />
                 </svg>
               </div>
+              <!-- Judul Card 1 -->
               <h3
                 class="font-medium text-[16px] lg:text-[18px] font-rubik text-[#213D34] mb-2 leading-snug max-md:text-[16px]"
               >
@@ -308,13 +315,14 @@
               </p>
             </div>
 
-            <!-- Card 2 -->
+            <!-- Card 2: Gaya Hidup Seimbang -->
             <div
               class="bg-[#F1F2ED] p-3.5 lg:p-4 rounded-[20px] flex flex-col items-start reveal max-md:rounded-[18px]"
             >
               <div
                 class="w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34] shrink-0 max-md:w-9 max-md:h-9"
               >
+                <!-- Ikon SVG -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -332,6 +340,7 @@
                   <path d="M12 20l0 -10" />
                 </svg>
               </div>
+              <!-- Judul Card 2 -->
               <h3
                 class="font-medium text-[16px] lg:text-[18px] font-rubik text-[#213D34] mb-2 leading-snug max-md:text-[16px]"
               >
@@ -345,13 +354,14 @@
               </p>
             </div>
 
-            <!-- Card 3 -->
+            <!-- Card 3: Mempunyai Beragam Fitur -->
             <div
               class="bg-[#F1F2ED] p-3.5 lg:p-4 rounded-[20px] flex flex-col items-start reveal max-md:hidden"
             >
               <div
                 class="w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-[#D9EF78] flex items-center justify-center mb-3 text-[#213D34] shrink-0"
               >
+                <!-- Ikon SVG -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -370,6 +380,7 @@
                   <path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
                 </svg>
               </div>
+              <!-- Judul Card 3 -->
               <h3
                 class="font-medium text-[16px] lg:text-[18px] font-rubik text-[#213D34] mb-2 leading-snug"
               >
@@ -387,9 +398,9 @@
       </div>
     </section>
 
-    <!-- Section Cara Kerja Kami -->
+    <!-- Section Cara Kerja Gizify -->
     <section class="relative w-full py-20 flex flex-col items-center">
-      <!-- Background SVG Desktop -->
+      <!-- Ikon SVG -->
       <svg
         class="absolute inset-0 h-full w-full pointer-events-none z-0 max-lg:hidden"
         viewBox="0 0 1440 3000"
@@ -403,7 +414,7 @@
         />
       </svg>
 
-      <!-- Background SVG Tablet -->
+      <!-- Ikon SVG -->
       <svg
         class="hidden max-lg:block max-sm:hidden absolute inset-0 h-full w-full pointer-events-none z-0"
         viewBox="0 0 1440 3000"
@@ -417,7 +428,7 @@
         />
       </svg>
 
-      <!-- Background SVG Mobile -->
+      <!-- Ikon SVG -->
       <svg
         class="hidden max-sm:block absolute inset-0 h-full w-full pointer-events-none z-0"
         viewBox="0 0 1440 3000"
@@ -431,18 +442,18 @@
         />
       </svg>
 
-      <!-- Container Utama -->
       <div class="relative w-full max-w-6xl mx-auto px-6 py-12">
-        <!-- Header Section -->
         <div
           class="reveal relative z-10 w-full max-w-4xl py-16 mx-auto flex flex-col items-center text-center mb-16"
         >
+          <!-- Badge Cara Kerja -->
           <span
             class="inline-block bg-[#D9EF78] text-[#213D34] font-semibold text-[15px] font-karla px-4 py-2 rounded-full mb-4"
           >
             Cara Kerja
           </span>
 
+          <!-- Judul Cara Kerja -->
           <h2
             class="text-[52px] max-md:text-[36px] font-bold font-rubik text-[#213D34] leading-tight"
           >
@@ -450,22 +461,15 @@
           </h2>
         </div>
 
-        <!-- ================================================= -->
-        <!-- DESKTOP & TABLET -->
-        <!-- ================================================= -->
-
         <div
           class="flex flex-row max-md:flex-col gap-16 max-lg:gap-12 items-start relative z-10 max-sm:hidden"
         >
-          <!-- Kolom Kiri: Sticky HP -->
           <div
             class="w-1/2 max-md:w-full sticky top-[calc(50vh-250px)] flex justify-center self-start"
           >
-            <!-- Bingkai Mockup HP -->
             <div
               class="w-[290px] h-[580px] bg-white rounded-[40px] border-4 border-[#213D34] shadow-2xl overflow-hidden relative"
             >
-              <!-- Screen 01 -->
               <div
                 id="img-step-1"
                 class="step-screen absolute inset-0 flex flex-col justify-between bg-white p-5 text-left transition-all duration-500 ease-in-out opacity-100 visible"
@@ -501,6 +505,7 @@
                     </p>
                   </div>
 
+                  <!-- Tombol Cek Hasil -->
                   <button
                     class="bg-[#D9EF78] text-[#213D34] text-[14px] font-semibold px-4 py-2 rounded-xl"
                   >
@@ -525,7 +530,6 @@
                 </div>
               </div>
 
-              <!-- Screen 02 -->
               <div
                 id="img-step-2"
                 class="step-screen absolute inset-0 flex flex-col justify-between bg-white p-5 text-left transition-all duration-500 ease-in-out opacity-0 invisible"
@@ -627,7 +631,6 @@
                 </div>
               </div>
 
-              <!-- Screen 03 -->
               <div
                 id="img-step-3"
                 class="step-screen absolute inset-0 flex flex-col bg-white p-5 text-left transition-all duration-500 ease-in-out opacity-0 invisible"
@@ -641,6 +644,7 @@
                 <div
                   class="flex-1 w-full rounded-2xl overflow-hidden relative bg-[#E7EAE0] border border-[#213D34]/10"
                 >
+                  <!-- Gambar peta pangan pada mockup -->
                   <img
                     src="./assets/petapangan.png"
                     alt="Pangan Segar"
@@ -651,9 +655,7 @@
             </div>
           </div>
 
-          <!-- Kolom Kanan: Teks Langkah -->
           <div class="w-1/2 max-md:w-full flex flex-col">
-            <!-- Step 01 -->
             <div
               id="step-1"
               class="step-item min-h-screen flex flex-col justify-center py-12"
@@ -665,6 +667,7 @@
                 01
               </h1>
 
+              <!-- Judul Step 01 -->
               <h2
                 class="text-[36px] max-lg:text-[28px] font-semibold text-[#213D34] font-rubik mb-3"
               >
@@ -680,7 +683,6 @@
               </p>
             </div>
 
-            <!-- Step 02 -->
             <div
               id="step-2"
               class="step-item min-h-screen flex flex-col justify-center py-12"
@@ -692,6 +694,7 @@
                 02
               </h1>
 
+              <!-- Judul Step 02 -->
               <h2
                 class="text-[36px] max-lg:text-[28px] font-semibold text-[#213D34] font-rubik mb-3"
               >
@@ -708,7 +711,6 @@
               </p>
             </div>
 
-            <!-- Step 03 -->
             <div
               id="step-3"
               class="step-item min-h-screen flex flex-col justify-center py-12"
@@ -720,6 +722,7 @@
                 03
               </h1>
 
+              <!-- Judul Step 03 -->
               <h2
                 class="text-[36px] max-lg:text-[28px] font-semibold text-[#213D34] font-rubik mb-3"
               >
@@ -738,15 +741,8 @@
           </div>
         </div>
 
-        <!-- ================================================= -->
-        <!-- MOBILE -->
-        <!-- ================================================= -->
-
         <div class="hidden max-sm:flex flex-col gap-12 relative z-10 px-4">
-          <!-- ================= CARA 1 ================= -->
-
           <div class="flex flex-col mb-16">
-            <!-- Mockup HP 1 -->
             <div class="flex justify-center mb-8">
               <div
                 class="w-[290px] h-[500px] bg-white rounded-[40px] border-4 border-[#213D34] overflow-hidden relative"
@@ -789,6 +785,7 @@
                       </p>
                     </div>
 
+                    <!-- Tombol Cek Hasil Mobile -->
                     <button
                       class="bg-[#D9EF78] text-[#213D34] text-[14px] font-semibold px-4 py-2 rounded-xl"
                     >
@@ -815,7 +812,6 @@
               </div>
             </div>
 
-            <!-- Text Cara 1 -->
             <div class="w-full">
               <h1
                 class="text-[80px] font-extrabold text-[#D9EF78] leading-none font-rubik"
@@ -823,6 +819,7 @@
                 01
               </h1>
 
+              <!-- Judul Cara 1 Mobile -->
               <h2
                 class="text-[28px] font-semibold text-[#213D34] font-rubik mb-3 leading-none"
               >
@@ -839,10 +836,7 @@
             </div>
           </div>
 
-          <!-- ================= CARA 2 ================= -->
-
           <div class="flex flex-col mb-16">
-            <!-- Mockup HP 2 -->
             <div class="flex justify-center mb-8">
               <div
                 class="w-[290px] h-[500px] bg-white rounded-[40px] border-4 border-[#213D34] overflow-hidden relative"
@@ -949,7 +943,6 @@
               </div>
             </div>
 
-            <!-- Text Cara 2 -->
             <div class="w-full">
               <h1
                 class="text-[80px] font-extrabold text-[#D9EF78] leading-none font-rubik"
@@ -957,6 +950,7 @@
                 02
               </h1>
 
+              <!-- Judul Cara 2 Mobile -->
               <h2
                 class="text-[28px] font-semibold text-[#213D34] font-rubik mb-3 leading-none"
               >
@@ -974,10 +968,7 @@
             </div>
           </div>
 
-          <!-- ================= CARA 3 ================= -->
-
           <div class="flex flex-col mb-16">
-            <!-- Mockup HP 3 -->
             <div class="flex justify-center mb-8">
               <div
                 class="w-[290px] h-[500px] bg-white rounded-[40px] border-4 border-[#213D34] overflow-hidden relative"
@@ -994,6 +985,7 @@
                   <div
                     class="flex-1 w-full rounded-2xl overflow-hidden relative bg-[#E7EAE0] border border-[#213D34]/10"
                   >
+                    <!-- Gambar peta pangan pada mockup -->
                     <img
                       src="./assets/petapangan.png"
                       alt="Pangan Segar"
@@ -1004,7 +996,6 @@
               </div>
             </div>
 
-            <!-- Text Cara 3 -->
             <div class="w-full">
               <h1
                 class="text-[80px] font-extrabold text-[#D9EF78] leading-none font-rubik"
@@ -1012,6 +1003,7 @@
                 03
               </h1>
 
+              <!-- Judul Cara 3 Mobile -->
               <h2
                 class="text-[28px] font-semibold text-[#213D34] font-rubik mb-3 leading-none"
               >
@@ -1036,25 +1028,24 @@
     <section
       class="relative w-full py-20 px-4 sm:px-6 md:px-8 flex justify-center items-center bg-white max-md:py-12 max-sm:py-8"
     >
-      <!-- Container Utama -->
       <div
         class="w-full max-w-[960px] flex flex-col items-center mt-12 mb-24 max-md:mt-6 max-md:mb-12 max-sm:mt-4 max-sm:mb-8"
       >
-        <!-- Badge Top -->
+        <!-- Badge Dampak Nyata -->
         <div
           class="reveal bg-[#D9EF78] text-[#213D34] font-karla text-[15px] font-semibold px-5 py-2 rounded-full mb-3 max-sm:text-[12px] max-sm:px-4 max-sm:py-1.5"
         >
           Dampak Nyata
         </div>
 
-        <!-- Judul Utama -->
+        <!-- Judul utama Dampak Nyata -->
         <h1
           class="reveal text-[52px] font-bold font-rubik text-[#213D34] text-center mb-4 leading-none max-md:text-[38px] max-sm:text-[26px] max-sm:mb-3"
         >
           Bukan Cuma Teori, Ini<br />Buktinya.
         </h1>
 
-        <!-- Deskripsi Sub-heading -->
+        <!-- Deskripsi Dampak Nyata -->
         <p
           class="reveal text-[#5C6660] text-center text-[18px] max-w-lg mb-12 font-medium font-karla max-md:text-[16px] max-md:mb-8 max-sm:text-[13px] max-sm:mb-8"
         >
@@ -1062,7 +1053,6 @@
           cukup, harganya juga masuk akal.
         </p>
 
-        <!-- Kartu Besar Utama -->
         <div
           class="reveal w-full bg-[#213D34] rounded-[28px] p-10 max-md:p-8 max-sm:p-6 flex justify-between items-center mb-6 max-sm:flex-col max-sm:items-start max-sm:gap-6 max-sm:rounded-[24px]"
         >
@@ -1070,7 +1060,7 @@
             <h2
               class="text-[80px] font-extrabold font-rubik text-[#D9EF78] mb-4 max-md:text-[56px] max-sm:text-[42px] max-sm:mb-2"
             >
-              12500+
+              12.500+
             </h2>
             <p
               class="text-[#F1F2ED] text-[16px] font-bold font-karla max-sm:text-[14px] max-sm:leading-tight"
@@ -1088,17 +1078,16 @@
           </div>
         </div>
 
-        <!-- Baris 3 Kartu Kecil -->
         <div
           class="reveal w-full grid grid-cols-3 gap-6 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-4"
         >
-          <!-- Kartu Kecil 1 -->
           <div
             class="bg-[#F1F2ED] rounded-[24px] p-6 flex flex-col justify-between h-52 max-md:h-auto max-md:gap-6 max-sm:h-auto max-sm:gap-4 max-sm:p-6"
           >
             <div
               class="w-12 h-12 rounded-full bg-[#2C4A3B] flex items-center justify-center text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 width="25"
                 height="25"
@@ -1116,7 +1105,7 @@
               <h3
                 class="text-[32px] font-bold font-rubik text-[#213D34] mb-2 max-sm:text-[28px] max-sm:mb-1"
               >
-                4800+
+                4.800+
               </h3>
               <p
                 class="text-[#5C6660] text-[15px] font-karla font-medium max-sm:text-[12px]"
@@ -1126,13 +1115,13 @@
             </div>
           </div>
 
-          <!-- Kartu Kecil 2 -->
           <div
             class="bg-[#F1F2ED] rounded-[24px] p-6 flex flex-col justify-between h-52 max-md:h-auto max-md:gap-6 max-sm:h-auto max-sm:gap-4 max-sm:p-6"
           >
             <div
               class="w-12 h-12 rounded-full bg-[#2C4A3B] flex items-center justify-center text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 width="24"
                 height="23"
@@ -1150,23 +1139,23 @@
               <h3
                 class="text-[32px] font-bold font-rubik text-[#213D34] mb-2 max-sm:text-[28px] max-sm:mb-1"
               >
-                400+
+                650+
               </h3>
               <p
                 class="text-[#5C6660] text-[15px] font-karla font-medium max-sm:text-[12px]"
               >
                 Pasar dan warteg sehat yang sudah terpetakan di berbagai kota
               </p>
-            </div>  
+            </div>
           </div>
 
-          <!-- Kartu Kecil 3 -->
           <div
             class="bg-[#F1F2ED] rounded-[24px] p-6 flex flex-col justify-between h-52 max-md:h-auto max-md:gap-6 max-sm:h-auto max-sm:gap-4 max-sm:p-6"
           >
             <div
               class="w-12 h-12 rounded-full bg-[#2C4A3B] flex items-center justify-center text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -1204,12 +1193,11 @@
       </div>
     </section>
 
-    <!-- section Artikel -->
-
+    <!-- Section Artikel -->
     <section
       class="relative w-full py-20 flex flex-col items-center min-h-screen overflow-hidden px-6 max-xl:min-h-0 max-xl:pb-24 max-md:py-14 max-sm:py-20 max-sm:px-4"
     >
-      <!-- Background SVG -->
+      <!-- Ikon SVG -->
       <svg
         class="absolute inset-0 h-full w-full pointer-events-none z-0"
         width="1440"
@@ -1226,7 +1214,6 @@
       </svg>
 
       <div class="w-full max-w-[1140px] mt-24 max-md:mt-4">
-        <!-- bagian judul -->
         <div
           class="reveal relative flex justify-between items-end mb-16 max-xl:mb-12 max-md:flex-col max-md:items-start max-md:gap-4 max-md:mb-8"
         >
@@ -1244,7 +1231,7 @@
             </h1>
           </div>
 
-          <!-- Tombol Desktop & Tablet -->
+          <!-- Tombol Baca Artikel 1 -->
           <button
             onclick="window.location.href = './artikel/artikel.html'"
             class="inline-flex mt-6 relative items-center justify-center px-8 py-3 max-xl:px-5 max-xl:py-2.5 max-md:px-3 max-md:py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-sm:hidden"
@@ -1252,6 +1239,7 @@
             <span
               class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
             >
+              <!-- Ikon SVG -->
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -1280,15 +1268,14 @@
           </button>
         </div>
 
-        <!-- bagian artikel -->
         <div
           class="reveal grid grid-cols-3 relative gap-12 mb-24 max-xl:gap-6 max-xl:mb-6 max-lg:flex max-lg:overflow-x-auto max-lg:gap-6 max-lg:mb-8"
         >
-          <!-- artikel 1 -->
           <div
             class="bg-white rounded-[24px] p-5 flex flex-col justify-between shadow-sm max-lg:w-[360px] max-lg:min-w-[360px] max-lg:shrink-0 max-sm:w-[300px] max-sm:min-w-[300px]"
           >
             <div>
+              <!-- Gambar artikel 1 — dibuat menggunakan Generate AI Gemini -->
               <img
                 src="./assets/gambarcard1.png"
                 alt="gambar 1"
@@ -1309,8 +1296,8 @@
               </p>
             </div>
 
-            <!-- untuk bagian button -->
             <div class="mt-6 max-xl:mt-4">
+              <!-- Tombol Baca Artikel 2 -->
               <button
                 onclick="
                   window.location.href = 'artikel/detailartikel.html?id=1'
@@ -1327,6 +1314,7 @@
                   Baca Artikel
 
                   <span>
+                    <!-- Ikon SVG -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -1350,11 +1338,11 @@
             </div>
           </div>
 
-          <!-- artikel 2 -->
           <div
             class="bg-white rounded-[24px] p-5 flex flex-col justify-between shadow-sm max-lg:w-[360px] max-lg:min-w-[360px] max-lg:shrink-0 max-sm:w-[300px] max-sm:min-w-[300px]"
           >
             <div>
+              <!-- Gambar artikel 2 — dibuat menggunakan Generate AI Gemini -->
               <img
                 src="./assets/gambarcard2.png"
                 alt="gambar 2"
@@ -1375,8 +1363,8 @@
               </p>
             </div>
 
-            <!-- untuk bagian button -->
             <div class="mt-6 max-xl:mt-4">
+              <!-- Tombol Baca Artikel 3 -->
               <button
                 onclick="
                   window.location.href = 'artikel/detailartikel.html?id=2'
@@ -1393,6 +1381,7 @@
                   Baca Artikel
 
                   <span>
+                    <!-- Ikon SVG -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -1416,11 +1405,11 @@
             </div>
           </div>
 
-          <!-- artikel 3 -->
           <div
             class="bg-white rounded-[24px] p-5 flex flex-col justify-between shadow-sm max-lg:w-[360px] max-lg:min-w-[360px] max-lg:shrink-0 max-sm:w-[300px] max-sm:min-w-[300px]"
           >
             <div>
+              <!-- Gambar artikel 3 — dibuat menggunakan Generate AI Gemini -->
               <img
                 src="./assets/gambarcard3.png"
                 alt="gambar 3"
@@ -1441,8 +1430,8 @@
               </p>
             </div>
 
-            <!-- untuk bagian button -->
             <div class="mt-6 max-xl:mt-4">
+              <!-- Tombol Lihat Lainnya Mobile -->
               <button
                 onclick="
                   window.location.href = 'artikel/detailartikel.html?id=3'
@@ -1459,6 +1448,7 @@
                   Baca Artikel
 
                   <span>
+                    <!-- Ikon SVG -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -1483,8 +1473,8 @@
           </div>
         </div>
 
-        <!-- Tombol Mobile (Khusus Mobile) -->
         <div class="hidden max-sm:flex justify-start mb-6">
+          <!-- Tombol Kirim Pesan -->
           <button
             onclick="window.location.href = './artikel/artikel.html'"
             class="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer"
@@ -1492,6 +1482,7 @@
             <span
               class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
             >
+              <!-- Ikon SVG -->
               <svg
                 class="w-5 h-5"
                 fill="none"
@@ -1522,7 +1513,7 @@
       </div>
     </section>
 
-    <!-- section Pertanyaan dan jawaban -->
+    <!-- Section Pertanyaan dan Jawaban -->
     <section
       class="reveal w-full py-5 flex justify-center mt-24 max-md:mt-16 max-md:px-24 max-xl:px-12 max-sm:mt-10 max-sm:px-8"
     >
@@ -1542,18 +1533,18 @@
         <div
           class="grid grid-cols-2 gap-12 items-start max-md:grid-cols-1 max-md:gap-4"
         >
-          <!-- KOLOM KIRI -->
           <div class="flex flex-col gap-4 max-sm:gap-3">
-            <!-- FAQ 1 -->
             <div
               class="faq-item bg-transparent rounded-[24px] p-6 max-md:p-5 max-sm:p-4"
             >
               <div
                 class="faq-header flex items-start gap-4 cursor-pointer max-sm:relative"
               >
+                <!-- Tombol buka/tutup FAQ -->
                 <button
                   class="faq-btn w-[48px] h-[48px] bg-white rounded-full border border-[#213D34] flex items-center justify-center shrink-0 max-sm:w-[46px] max-sm:h-[46px]"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="arrow-icon w-4 h-4 text-[#213D34] transition-transform duration-200"
                     fill="none"
@@ -1587,16 +1578,17 @@
               </div>
             </div>
 
-            <!-- FAQ 2 -->
             <div
               class="faq-item bg-transparent rounded-[24px] p-6 max-md:p-5 max-sm:p-4"
             >
               <div
                 class="faq-header flex items-start gap-4 cursor-pointer max-sm:relative"
               >
+                <!-- Tombol buka/tutup FAQ -->
                 <button
                   class="faq-btn w-[48px] h-[48px] bg-white rounded-full border border-[#213D34] flex items-center justify-center shrink-0 max-sm:w-[46px] max-sm:h-[46px]"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="arrow-icon w-4 h-4 text-[#213D34] transition-transform duration-200"
                     fill="none"
@@ -1630,16 +1622,17 @@
               </div>
             </div>
 
-            <!-- FAQ 3 -->
             <div
               class="faq-item bg-transparent rounded-[24px] p-6 max-md:p-5 max-sm:p-4"
             >
               <div
                 class="faq-header flex items-start gap-4 cursor-pointer max-sm:relative"
               >
+                <!-- Tombol buka/tutup FAQ -->
                 <button
                   class="faq-btn w-[48px] h-[48px] bg-white rounded-full border border-[#213D34] flex items-center justify-center shrink-0 max-sm:w-[46px] max-sm:h-[46px]"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="arrow-icon w-4 h-4 text-[#213D34] transition-transform duration-200"
                     fill="none"
@@ -1674,18 +1667,18 @@
             </div>
           </div>
 
-          <!-- KOLOM KANAN -->
           <div class="flex flex-col gap-4 max-sm:gap-3">
-            <!-- FAQ 4 -->
             <div
               class="faq-item bg-transparent rounded-[24px] p-6 max-md:p-5 max-sm:p-4"
             >
               <div
                 class="faq-header flex items-start gap-4 cursor-pointer max-sm:relative"
               >
+                <!-- Tombol buka/tutup FAQ -->
                 <button
                   class="faq-btn w-[48px] h-[48px] bg-white rounded-full border border-[#213D34] flex items-center justify-center shrink-0 max-sm:w-[46px] max-sm:h-[46px]"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="arrow-icon w-4 h-4 text-[#213D34] transition-transform duration-200"
                     fill="none"
@@ -1719,16 +1712,17 @@
               </div>
             </div>
 
-            <!-- FAQ 5 -->
             <div
               class="faq-item bg-transparent rounded-[24px] p-6 max-md:p-5 max-sm:p-4"
             >
               <div
                 class="faq-header flex items-start gap-4 cursor-pointer max-sm:relative"
               >
+                <!-- Tombol buka/tutup FAQ -->
                 <button
                   class="faq-btn w-[48px] h-[48px] bg-white rounded-full border border-[#213D34] flex items-center justify-center shrink-0 max-sm:w-[46px] max-sm:h-[46px]"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="arrow-icon w-4 h-4 text-[#213D34] transition-transform duration-200"
                     fill="none"
@@ -1762,16 +1756,17 @@
               </div>
             </div>
 
-            <!-- FAQ 6 -->
             <div
               class="faq-item bg-transparent rounded-[24px] p-6 max-md:p-5 max-sm:p-4"
             >
               <div
                 class="faq-header flex items-start gap-4 cursor-pointer max-sm:relative"
               >
+                <!-- Tombol buka/tutup FAQ -->
                 <button
                   class="faq-btn w-[48px] h-[48px] bg-white rounded-full border border-[#213D34] flex items-center justify-center shrink-0 max-sm:w-[46px] max-sm:h-[46px]"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="arrow-icon w-4 h-4 text-[#213D34] transition-transform duration-200"
                     fill="none"
@@ -1816,7 +1811,6 @@
       <div
         class="flex w-[1200px] overflow-hidden rounded-[36px] max-lg:max-w-[768px] max-lg:w-full max-lg:flex-col max-lg:rounded-[24px] max-sm:rounded-[18px]"
       >
-        <!-- Bagian Informasi Kontak -->
         <div
           class="flex w-1/2 flex-col justify-between bg-[#213D34] p-14 max-lg:w-full max-lg:p-10 max-sm:p-6"
         >
@@ -1843,11 +1837,11 @@
             <div
               class="mb-10 flex flex-col gap-6 max-lg:gap-5 max-sm:mb-5 max-sm:flex-row max-sm:justify-center max-sm:items-center max-sm:gap-3 max-sm:pt-5"
             >
-              <!-- Email -->
               <div class="flex items-center gap-4 max-sm:gap-2">
                 <div
                   class="flex shrink-0 items-center justify-center max-sm:h-4 max-sm:w-4"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="h-6 w-6 text-[#D9EF78] max-sm:h-4 max-sm:w-4"
                     fill="none"
@@ -1878,11 +1872,11 @@
                 </div>
               </div>
 
-              <!-- Telepon -->
               <div class="flex items-center gap-4 max-sm:gap-2">
                 <div
                   class="flex shrink-0 items-center justify-center max-sm:h-4 max-sm:w-4"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     class="h-6 w-6 text-[#D9EF78] max-sm:h-4 max-sm:w-4"
                     fill="none"
@@ -1915,15 +1909,14 @@
             </div>
           </div>
 
-          <!-- Social Media -->
           <div
             class="flex items-center gap-6 max-lg:gap-5 max-sm:justify-center max-sm:gap-4 max-sm:pt-8"
           >
-            <!-- TikTok -->
             <a
               href="https://www.tiktok.com"
               class="flex items-center justify-center text-[#D9EF78] transition duration-300 ease-in-out hover:scale-110 hover:text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -1943,11 +1936,11 @@
               </svg>
             </a>
 
-            <!-- Instagram -->
             <a
               href="https://www.instagram.com"
               class="flex items-center justify-center text-[#D9EF78] transition duration-300 ease-in-out hover:scale-110 hover:text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -1969,11 +1962,11 @@
               </svg>
             </a>
 
-            <!-- X -->
             <a
               href="https://www.x.com"
               class="flex items-center justify-center text-[#D9EF78] transition duration-300 ease-in-out hover:scale-110 hover:text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -1992,11 +1985,11 @@
               </svg>
             </a>
 
-            <!-- GitHub -->
             <a
               href="https://www.github.com"
               class="flex items-center justify-center text-[#D9EF78] transition duration-300 ease-in-out hover:scale-110 hover:text-[#F1F2ED]"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -2018,13 +2011,11 @@
           </div>
         </div>
 
-        <!-- Bagian Form -->
         <div
           class="flex w-1/2 flex-col justify-between bg-[#F1F2ED] p-14 max-lg:w-full max-lg:p-10 max-sm:p-5"
         >
           <form class="flex h-full flex-col justify-between">
             <div>
-              <!-- Nama & Email -->
               <div
                 class="mb-5 grid grid-cols-2 gap-5 max-lg:gap-4 max-sm:mb-4 max-sm:grid-cols-1 max-sm:gap-3"
               >
@@ -2059,7 +2050,6 @@
                 </div>
               </div>
 
-              <!-- Pesan -->
               <div class="mb-6 max-sm:mb-4">
                 <label
                   for="input-message"
@@ -2076,8 +2066,8 @@
               </div>
             </div>
 
-            <!-- Tombol -->
             <div>
+              <!-- Tombol aksi -->
               <button
                 onclick="
                   event.preventDefault();
@@ -2088,6 +2078,7 @@
                 <span
                   class="absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-[#D9EF78] text-[#213D34] transition-transform duration-700 ease-out group-hover:translate-x-0"
                 >
+                  <!-- Ikon SVG -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -2126,7 +2117,7 @@
         </div>
       </div>
     </section>
-    <!-- section footer -->
+
     <footer
       class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-6 lg:px-16 bg-transparent relative"
       style="
@@ -2137,11 +2128,9 @@
       "
     >
       <div class="w-full">
-        <!-- Bagian atas -->
         <div
           class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6 lg:gap-10 pb-10"
         >
-          <!-- Bagian menu -->
           <div
             class="grid grid-cols-3 gap-4 md:gap-6 lg:gap-12 text-[#F1F2ED] font-karla font-bold text-[14px] lg:text-[16px] w-full md:w-auto"
           >
@@ -2179,7 +2168,7 @@
               </h3>
               <ul class="space-y-2 opacity-90">
                 <li>
-                  <a href="/BMI/bmi.html" class="hover:underline">Cek Gizi</a>
+                  <a href="/bmi/bmi.html" class="hover:underline">Cek Gizi</a>
                 </li>
                 <li>
                   <a href="/finder/finder.html" class="hover:underline"
@@ -2215,8 +2204,8 @@
             </div>
           </div>
 
-          <!-- Bagian logo -->
           <div class="ml-2 md:ml-0 lg:ml-0">
+            <!-- Logo Gizify pada footer -->
             <img
               src="../assets/footerlogo.png"
               alt="Logo Gizify"
@@ -2225,13 +2214,12 @@
           </div>
         </div>
 
-        <!-- Bagian bawah -->
         <div
           class="border-t-2 border-[#D9EF78] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 opacity-90"
         >
-          <!-- Bagian sosial media -->
           <div class="flex items-center gap-4 text-[#D9EF78]">
             <a href="https://www.tiktok.com">
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -2254,6 +2242,7 @@
               href="https://www.instagram.com"
               class="hover:text-[#F1F2ED] transition duration-300 ease-in-out hover:scale-110"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -2278,6 +2267,7 @@
               href="https://www.x.com"
               class="hover:text-[#F1F2ED] transition duration-300 ease-in-out hover:scale-110"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -2299,6 +2289,7 @@
               href="https://www.github.com"
               class="hover:text-[#F1F2ED] transition duration-300 ease-in-out hover:scale-110"
             >
+              <!-- Ikon SVG -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -2318,7 +2309,6 @@
             </a>
           </div>
 
-          <!-- Bagian copyright -->
           <p
             class="text-center md:text-right font-karla font-bold text-[14px] lg:text-[16px]"
           >
@@ -2327,7 +2317,7 @@
         </div>
       </div>
     </footer>
-    <!-- External Scripts -->
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
