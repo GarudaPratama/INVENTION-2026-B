@@ -173,11 +173,13 @@
 
         <textarea
           placeholder="Tuliskan Pendapatmu..."
+          id="pesan"
           class="w-full h-[168px] border border-[#213D34] rounded-2xl p-6 font-karla text-[18px] text-[#5C6660] outline-none resize-none max-md:p-4 max-sm:h-[130px] max-sm:text-[15px]"
         ></textarea>
          <button
               onclick="
                   event.preventDefault();
+                  document.getElementById('pesan').value = '';
                   alert('Pendapatmu berhasil dikirim!');
                 "
               class="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"

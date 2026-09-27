@@ -2033,6 +2033,7 @@
                   <input
                     type="text"
                     placeholder="Nama kamu"
+                    id="nama"
                     class="w-full rounded-xl border-2 border-[#213D34] px-4 py-3.5 font-karla text-[15px] font-normal text-[#213D34] outline-none placeholder-[#5C6660] focus:border-[#213D34] max-lg:py-3 max-lg:text-[14px] max-sm:rounded-lg max-sm:px-3 max-sm:py-2.5 max-sm:text-[11px]"
                   />
                 </div>
@@ -2048,6 +2049,7 @@
                   <input
                     type="email"
                     placeholder="kamu@email.com"
+                    id="email"
                     class="w-full rounded-xl border-2 border-[#213D34] px-4 py-3.5 font-karla text-[15px] font-normal text-[#213D34] outline-none placeholder-[#5C6660] focus:border-[#213D34] max-lg:py-3 max-lg:text-[14px] max-sm:rounded-lg max-sm:px-3 max-sm:py-2.5 max-sm:text-[11px]"
                   />
                 </div>
@@ -2064,6 +2066,7 @@
                 <textarea
                   rows="5"
                   placeholder="Ceritakan apa yang ingin kamu tanyakan.."
+                  id="pesan"
                   class="w-full resize-none rounded-xl border-2 border-[#213D34] px-4 py-3.5 font-karla text-[15px] font-normal text-[#213D34] outline-none placeholder-[#5C6660] focus:border-[#213D34] max-lg:py-3 max-lg:text-[14px] max-sm:h-[90px] max-sm:rounded-lg max-sm:px-3 max-sm:py-2.5 max-sm:text-[11px]"
                 ></textarea>
               </div>
@@ -2074,6 +2077,9 @@
               <button
                 onclick="
                   event.preventDefault();
+                  document.getElementById('nama').value = '';
+                  document.getElementById('email').value = '';
+                  document.getElementById('pesan').value = '';
                   alert('Pesan Berhasil Dikirim!');
                 "
                 class="group relative mt-6 inline-flex h-[50px] w-[500px] cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-[#213D34] py-3 font-medium text-[#213D34] transition duration-300 ease-out max-lg:w-full max-lg:h-[48px] max-sm:mt-2 max-sm:h-[40px]"
