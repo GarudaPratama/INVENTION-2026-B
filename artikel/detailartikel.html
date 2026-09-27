@@ -175,6 +175,38 @@
           placeholder="Tuliskan Pendapatmu..."
           class="w-full h-[168px] border border-[#213D34] rounded-2xl p-6 font-karla text-[18px] text-[#5C6660] outline-none resize-none max-md:p-4 max-sm:h-[130px] max-sm:text-[15px]"
         ></textarea>
+         <button
+              onclick="
+                  event.preventDefault();
+                  alert('Pendapatmu berhasil dikirim!');
+                "
+              class="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"
+            >
+              <span
+                class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 -translate-x-full bg-[#D9EF78] group-hover:translate-x-0 ease"
+              >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="icon icon-tabler icons-tabler-filled icon-tabler-send max-sm:h-4 max-sm:w-4"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M21.864 3.549l-6.454 17.868a1.55 1.55 0 0 1 -1.41 .903a1.54 1.54 0 0 1 -1.394 -.874l-2.88 -5.759zm-1.414 -1.414l-12.139 12.138l-5.728 -2.864a1.55 1.55 0 0 1 -.903 -1.409c0 -.606 .353 -1.157 .981 -1.44z"
+                    />
+                  </svg>
+              </span>
+              <span
+                class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
+                >Submit</span
+              >
+              <span class="relative invisible font-karla font-black"
+                >Submit</span
+              >
+            </button>
       </div>
 
       <!-- Bagian Bawah Artikel -->
@@ -197,15 +229,15 @@
           >
             <a
               href="#top"
-              class="mt-6 animate-bounce relative inline-flex items-center justify-center px-2 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"
+              class="mt-6 relative inline-flex items-center justify-center px-2 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"
             >
               <span
                 class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 translate-y-full bg-[#D9EF78] group-hover:-translate-y-0 ease"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="28"
-                  height="28"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -220,48 +252,13 @@
                   <path d="M8 9l4 -4" />
                 </svg>
               </span>
-
               <span
                 class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:-translate-y-full ease"
+                >Ke Atas</span
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-up"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M12 5l0 14" />
-                  <path d="M16 9l-4 -4" />
-                  <path d="M8 9l4 -4" />
-                </svg>
-              </span>
-
-              <span class="relative invisible font-karla font-black">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-up"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M12 5l0 14" />
-                  <path d="M16 9l-4 -4" />
-                  <path d="M8 9l4 -4" />
-                </svg>
-              </span>
+              <span class="relative invisible font-karla font-black"
+                >Ke Atas</span
+              >
             </a>
 
             <!-- Tombol Kembali -->
@@ -290,16 +287,13 @@
                   <path d="M5 12l4 -4" />
                 </svg>
               </span>
-
               <span
                 class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:translate-x-full ease"
+                >Kembali Ke Daftar Artikel</span
               >
-                Kembali Ke Daftar Artikel
-              </span>
-
-              <span class="relative invisible font-karla font-black">
-                Kembali Ke Daftar Artikel
-              </span>
+              <span class="relative invisible font-karla font-black"
+                >Kembali Ke Daftar Artikel</span
+              >
             </button>
           </div>
         </div>
@@ -336,7 +330,7 @@
                   <a href="/index.html" class="hover:underline">Beranda</a>
                 </li>
                 <li>
-                  <a href="/BMI/bmi.html" class="hover:underline">Cek Gizi</a>
+                  <a href="/BMI/bmi.html" class="hover:underline">NutriCalc</a>
                 </li>
                 <li>
                   <a href="/finder/finder.html" class="hover:underline"
@@ -359,7 +353,7 @@
               </h3>
               <ul class="space-y-2 opacity-90">
                 <li>
-                  <a href="/BMI/bmi.html" class="hover:underline">Cek Gizi</a>
+                  <a href="/BMI/bmi.html" class="hover:underline">NutriCalc</a>
                 </li>
                 <li>
                   <a href="/finder/finder.html" class="hover:underline"
@@ -513,8 +507,7 @@
 
     <script src="../Navigasi/navbar.js"></script>
 
-    <script src="../smooth-scroll/smooth-gabung.js"></script>
-    <!-- <script src="../smooth-scroll/smooth.js"></script>
-    <script src="../smooth-scroll/smooth-tombol.js"></script> -->
+    <script src="../smooth-scroll/smooth.js"></script>
+    <script src="../smooth-scroll/smooth-tombol.js"></script>
   </body>
 </html>
