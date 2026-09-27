@@ -42,10 +42,11 @@
   // ============================================================
   // 2. SUBMENU "FITUR" DI MENU MOBILE — buka/tutup seperti akordeon
   // ============================================================
-  $(document).on('click', '#btn-fitur-mobile', function () {
-    $('#submenu-mobile').toggleClass('hidden');
-    $('#icon-fitur-mobile').toggleClass('rotate-180');
-  });
+ $(document).on("click", "#btn-fitur-mobile", function () {
+  $("#submenu-mobile").toggleClass("max-h-0 opacity-0");
+  $("#submenu-mobile").toggleClass("max-h-40 opacity-100");
+  $("#icon-fitur-mobile").toggleClass("rotate-180");
+});
 
   // ============================================================
   // 3. MENU MOBILE — panel turun dari atas + latar blur
