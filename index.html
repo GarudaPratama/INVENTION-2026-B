@@ -104,7 +104,7 @@
     <title>Beranda</title>
   </head>
 
-  <body class="min-h-screen">
+  <body id="top" class="min-h-screen">
     <div
       id="splash-screen"
       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#F1F2ED] transition-opacity duration-300 ease-out select-none"
@@ -2121,6 +2121,38 @@
       </div>
     </section>
 
+    <a
+      href="#top"
+      class="mt-6 relative inline-flex items-center justify-center px-2 py-2 overflow-hidden font-medium text-[#213D34] transition duration-300 ease-out border-2 border-[#213D34] rounded-full group cursor-pointer max-md:mt-0 max-sm:w-full"
+    >
+      <span
+        class="absolute inset-0 flex items-center justify-center w-full h-full text-[#213D34] duration-700 translate-y-full bg-[#D9EF78] group-hover:-translate-y-0 ease"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-up"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 5l0 14" />
+          <path d="M16 9l-4 -4" />
+          <path d="M8 9l4 -4" />
+        </svg>
+      </span>
+      <span
+        class="absolute flex items-center justify-center w-full h-full text-[#213D34] font-karla font-bold transition-all duration-700 transform group-hover:-translate-y-full ease"
+        >Ke Atas</span
+      >
+      <span class="relative invisible font-karla font-black">Ke Atas</span>
+    </a>
+
     <footer
       class="w-full mt-auto text-[#D9EF78] pt-8 pb-8 px-6 lg:px-16 bg-transparent relative"
       style="
@@ -2330,7 +2362,9 @@
 
     <script src="script.js"></script>
     <script src="./Navigasi/navbar.js"></script>
-    <script src="./smooth-scroll/smooth.js"></script>
-    <script src="./smooth-scroll/smooth-tombol.js"></script>
+
+    <script src="./smooth-scroll/smooth-gabung.js"></script>
+    <!-- <script src="./smooth-scroll/smooth.js"></script>
+    <script src="./smooth-scroll/smooth-tombol.js"></script> -->
   </body>
 </html>
